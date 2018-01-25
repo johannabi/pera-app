@@ -1,5 +1,7 @@
 package de.uni_koeln.dh.pera;
 
+import java.io.IOException;
+
 import de.uni_koeln.dh.pera.gui.View;
 
 // TODO Javadoc
@@ -10,7 +12,12 @@ public class Application {
 		view.init();
 		
 		if (view.isInitialized()) {
-			view.loadComponents();			
+			try {
+				view.loadComponents();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}			
 			view.show();
 		}
 		

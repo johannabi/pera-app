@@ -23,14 +23,14 @@ public class TextOutput extends StyledText {
 		this.parent = parent;
 	} 
 	
-	protected void init() {
+	protected void init(String initText) {
 		logger.info("Initialize text output...");
 		
 		setMargin();
 		setLayoutData();
 
 		setColors();		
-		configText(true);
+		configText(true, initText);
 	}
 	
 	private void setColors() {
@@ -38,11 +38,11 @@ public class TextOutput extends StyledText {
 		setForeground(parent.getForeground());
 	}
 	
-	private void configText(boolean justify) {
+	private void configText(boolean justify, String initText) {
 		setEditable(false);
 		setJustify(justify);		
 		setFont(parent.getFont(/*SWT.ITALIC*/SWT.NORMAL));	// TODO font style
-		setText(getDefaultText());
+		setText(initText);
 	}
 	
 	private void setMargin() {

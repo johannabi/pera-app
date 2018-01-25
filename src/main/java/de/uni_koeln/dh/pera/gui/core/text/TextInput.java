@@ -12,6 +12,7 @@ import org.eclipse.swt.widgets.Display;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import de.uni_koeln.dh.pera.Updater;
 import de.uni_koeln.dh.pera.gui.misc.LayoutHelper;
 
 // TODO check
@@ -20,6 +21,7 @@ public class TextInput extends StyledText {
 		private Logger logger = LoggerFactory.getLogger(getClass());
 		
 		private TextComposite parent = null;
+		private Updater updater = null;
 		
 		private final String defaultText = "...";		// TODO default text
 		private int margin = 0;
@@ -47,8 +49,11 @@ public class TextInput extends StyledText {
 				if ((e.keyCode == 0xd) || (e.keyCode == 0x1000050)) {		
 					String str = getText().trim();
 					
-					if (!str.equals("") && !str.equals(defaultText))
+					if (!str.equals("") && !str.equals(defaultText)) {
 						logger.info("INPUT (" + e.keyCode + "): " + str);
+						updater.updateFields();
+					}
+						
 				}
 			}
 			
@@ -58,6 +63,13 @@ public class TextInput extends StyledText {
 	protected TextInput(TextComposite parent) {
 		super(parent, SWT.SINGLE /*| SWT.BORDER*/);
 		this.parent = parent;
+	}
+	
+	protected TextInput(TextComposite parent, Updater updater) {
+		super(parent, SWT.SINGLE /*| SWT.BORDER*/);
+		this.parent = parent;
+		this.updater = updater;
+		updater.setInput(this);
 	}
 	
 	protected void init() {

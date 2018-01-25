@@ -1,5 +1,7 @@
 package de.uni_koeln.dh.pera.gui.core.img;
 
+import java.util.List;
+
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.layout.RowLayout;
@@ -9,6 +11,8 @@ import org.eclipse.swt.widgets.Label;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import de.uni_koeln.dh.pera.data.Player;
+import de.uni_koeln.dh.pera.data.story.Node;
 import de.uni_koeln.dh.pera.gui.core.BaseComposite;
 import de.uni_koeln.dh.pera.gui.misc.LayoutHelper;
 import de.uni_koeln.dh.pera.util.Calc;
@@ -22,11 +26,17 @@ public class ImgComposite extends BaseComposite {
 //		private static int H_HIMGCOMP_PCT = 5;
 		
 		private int innerWidth = 0;
+		
+		private Label comp = null;
 	
 	public ImgComposite(Composite parent) {
 		super(parent);
 	}
 	
+	public ImgComposite(Composite parent, List<Node> nodes, Player player) {
+		super(parent, nodes, player);
+	}
+
 	public void init(int height) {
 		logger.info("Initialize image composite...");	
 		super.init(height);
@@ -46,12 +56,12 @@ public class ImgComposite extends BaseComposite {
 		
 		logger.info("Set XXXXX...");
 		// title
-		Label comp = new Label(this, SWT.CENTER);
+		comp = new Label(this, SWT.CENTER);
 //		comp.setLayout(new GridLayout());
 		comp.setLayoutData(LayoutHelper.getGridData(
 				getInnerWidth(), 20, 
 				true));
-		comp.setText("Einführung");
+		comp.setText(getChapter()); //TODO chapter name
 		comp.setBackground(display.getSystemColor(SWT.COLOR_GREEN));
 		
 		
@@ -98,9 +108,17 @@ public class ImgComposite extends BaseComposite {
 	}
 
 	
+	public void updateAll() {
+		comp.setText(getChapter());
+		//TODO update map?
+	}
 	
 	
-	
+	private String getChapter() {
+		Node node = super.nodes.get(super.currentID);	
+		return node.getChapter();
+	}
+
 	private void setInnerWidth() {
 		innerWidth = (int) Calc.getValByPct(parentWidth, W_WIMGCOMP_PCT);
 	}

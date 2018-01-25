@@ -1,5 +1,7 @@
 package de.uni_koeln.dh.pera.gui.core.text;
 
+import java.util.List;
+
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.FontData;
@@ -7,6 +9,9 @@ import org.eclipse.swt.widgets.Composite;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import de.uni_koeln.dh.pera.Updater;
+import de.uni_koeln.dh.pera.data.Player;
+import de.uni_koeln.dh.pera.data.story.Node;
 import de.uni_koeln.dh.pera.gui.core.BaseComposite;
 import de.uni_koeln.dh.pera.gui.core.img.ImgComposite;
 
@@ -21,6 +26,11 @@ public class TextComposite extends BaseComposite {
 		this.neighbour = neighbour;
 	}
 	
+	public TextComposite(Composite parent, ImgComposite neighbour, List<Node> nodes, Player player) {
+		super(parent, nodes, player);
+		this.neighbour = neighbour;
+	}
+
 	public void init(int height) {
 		logger.info("Initialize text composite...");
 		super.init(height);		
@@ -34,10 +44,15 @@ public class TextComposite extends BaseComposite {
 		logger.info("Add text boxes...");
 		
 		TextOutput output = new TextOutput(this);
-		output.init();
+		Updater updater = new Updater(this, neighbour, output);
 
-		TextInput input = new TextInput(this);
+		TextInput input = new TextInput(this, updater);
+		
+		
+		output.init(updater.getInitialText(player));
 		input.init();
+		
+//		Listener listener = new Listener(this, neighbour, input);
 	}
 
 	private void setColors() {
@@ -58,7 +73,7 @@ public class TextComposite extends BaseComposite {
 		int size = neighbour.getInnerWidth() / 40;
 
 		// TODO Courier: universal font? 
-		FontData data = new FontData("Courier", size, style);
+		FontData data = new FontData("Palatino Linotype", size, style); //Courier
 		return new Font(display, data);
 	}
 	
