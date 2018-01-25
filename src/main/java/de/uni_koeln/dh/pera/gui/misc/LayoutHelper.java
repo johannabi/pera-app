@@ -60,10 +60,15 @@ public class LayoutHelper {
 	}
 	
 	public static void setMargin(StyledText text, int margin) {
-		text.setLeftMargin(margin);
-		text.setRightMargin(margin);
+		setMargin(text, margin, 0);
+	}
+	
+	public static void setMargin(StyledText text, int leftRightMargin, int topBottomMargin) {
+		text.setMargins(leftRightMargin, topBottomMargin, leftRightMargin, topBottomMargin);
 		
-		logger.info("Margin (left / right): " + margin + " / " + margin);
+		logger.info("Margin (left / top / right / bottom): " 
+				+ leftRightMargin + " / " + topBottomMargin + " / " 
+				+ leftRightMargin + " / " + topBottomMargin);
 	}
 	
 }

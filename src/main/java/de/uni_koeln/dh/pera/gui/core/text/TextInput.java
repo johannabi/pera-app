@@ -33,9 +33,9 @@ public class TextInput extends StyledText {
 			}
 			
 			public void focusGained(FocusEvent arg0) {
-				if (!initial) 
+				if (!initial) {
 					if (getText().trim().equals(defaultText)) setText("");
-				else
+				} else
 					initial = false;
 			}
 		};
@@ -48,7 +48,7 @@ public class TextInput extends StyledText {
 					String str = getText().trim();
 					
 					if (!str.equals("") && !str.equals(defaultText))
-						logger.info("INPUT: " + str);
+						logger.info("INPUT (" + e.keyCode + "): " + str);
 				}
 			}
 			
@@ -68,9 +68,8 @@ public class TextInput extends StyledText {
 
 		setColors();
 		configText();
-		
-		// TODO problems around output-listener 
-//		setFocus();
+
+		setFocus();
 	}
 	
 	private void setColors() {
@@ -80,7 +79,7 @@ public class TextInput extends StyledText {
 	
 	// TODO name
 	private GridData getWidth() {
-		int inputWidth = parent.getWidth() - (2*margin) - 1;		// additional pixel required (whyever..)
+		int inputWidth = parent.getWidth() - (2*margin);		// actually less pixel(s) required (whyever..); os different
 		return LayoutHelper.getGridData(inputWidth);
 	}
 	
@@ -95,7 +94,7 @@ public class TextInput extends StyledText {
 	
 	private void setMargin() {
 		margin = parent.getTextMargin();
-		LayoutHelper.setMargin(this, margin);
+		LayoutHelper.setMargin(this, margin, 5);
 	}
 	
 }
