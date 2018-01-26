@@ -86,7 +86,7 @@ public class ImgComposite extends BaseComposite {
 		
 			try {
 				mapPane.setMap(comp2);
-//				mapPane.addPoint(36.010242, 26.060116);
+				mapPane.addPoint(30.9375, 37.668419);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

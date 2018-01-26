@@ -3,25 +3,28 @@ package de.uni_koeln.dh.pera.gui.core.img;
 import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
+import org.geotools.data.DataUtilities;
 import org.geotools.data.shapefile.ShapefileDataStore;
 import org.geotools.data.simple.SimpleFeatureSource;
 import org.geotools.feature.DefaultFeatureCollection;
 import org.geotools.feature.FeatureCollection;
+import org.geotools.feature.SchemaException;
 import org.geotools.feature.simple.SimpleFeatureBuilder;
-import org.geotools.feature.simple.SimpleFeatureTypeBuilder;
 import org.geotools.geometry.jts.JTSFactoryFinder;
 import org.geotools.map.FeatureLayer;
 import org.geotools.map.Layer;
 import org.geotools.map.MapContent;
-import org.geotools.referencing.crs.DefaultGeographicCRS;
 import org.geotools.renderer.lite.StreamingRenderer;
 import org.geotools.styling.SLD;
 import org.geotools.styling.Style;
 import org.geotools.swt.SwtMapPane;
+import org.opengis.feature.Property;
 import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.feature.simple.SimpleFeatureType;
 import org.slf4j.Logger;
@@ -46,47 +49,64 @@ public class MapPane /*extends SwtMapPane*/ {
 		else
 			currentLayer.setVisible(true);
 		
-		mPane.redraw();
+//		mPane.redraw();
 		
 	}
 	
-	public void addPoint(double latitude, double longitude) throws IOException {
+	public void addPoint(double latitude, double longitude) throws IOException, SchemaException {
 		
-		Layer layer = mPane.getMapContent().layers().get(1); //get kapitel layer
-		FeatureCollection<SimpleFeatureType,SimpleFeature> coll = (FeatureCollection<SimpleFeatureType, SimpleFeature>) layer.getFeatureSource().getFeatures();
-		DefaultFeatureCollection collection = new DefaultFeatureCollection(coll);
+		final SimpleFeatureType TYPE = DataUtilities.createType("Location",
+                "the_geom:Point:srid=4326," + // <- the geometry attribute: Point type
+                "Standort:String," +   // <- a String attribute
+                "Reihenfolg:Integer"   // a number attribute
+        );
 		
+		Layer layer = mPane.getMapContent().layers().get(2);
+
+		FeatureCollection<SimpleFeatureType,SimpleFeature> features = (FeatureCollection<SimpleFeatureType, SimpleFeature>) layer
+				.getFeatureSource().getFeatures();
+		DefaultFeatureCollection collection = new DefaultFeatureCollection(features);
 		
-		
-		SimpleFeatureTypeBuilder typeB = new SimpleFeatureTypeBuilder();
-		// set crs
-        typeB.setCRS(DefaultGeographicCRS.WGS84);
-        // add geometry
-        typeB.add("location", Point.class);
-        
-        
-		SimpleFeatureType type = typeB.buildFeatureType();
-		SimpleFeatureBuilder featureBuilder = new SimpleFeatureBuilder(type);
 		
 		GeometryFactory geometryFactory = JTSFactoryFinder.getGeometryFactory();
-        com.vividsolutions.jts.geom.Point point = geometryFactory.createPoint(new Coordinate(latitude, longitude));
-        featureBuilder.add(point);
-        SimpleFeature feature = featureBuilder.buildFeature("FeaturePoint");
-//		
-        collection.add(feature);
-        
-//		type
+		SimpleFeatureBuilder featureBuilder = new SimpleFeatureBuilder(TYPE);
+		
+		
+		Point point = geometryFactory.createPoint(new Coordinate(latitude, longitude));
+		
+		featureBuilder.add(point);
+		featureBuilder.add("aktuell");
+		featureBuilder.add(collection.size() + 1);
+		SimpleFeature feature = featureBuilder.buildFeature("Standort" + (collection.size()+1));
+		
+		Collection<Property> props = feature.getProperties();
+		for (Property prop : props) {
+			logger.info(prop.getName().toString() + ": " + prop.getValue().toString());
+		}
+		
+		
+		logger.info(collection.size() + "");
+		collection.add(feature);
+		logger.info(collection.size() + "");
+		logger.info("------------------------------------------");
+		Iterator<SimpleFeature> iter = collection.iterator();
+		while(iter.hasNext()) {
+			SimpleFeature next = iter.next();
+			props = next.getProperties();
+			for (Property prop : props) {
+				logger.info(prop.getName().toString() + ": " + prop.getValue().toString());
+			}
+			logger.info("---------------");
+//			logger.info(next.getID());
+//			logger.info(next.getAttribute("Standort").toString());
+		}
+		
+		
 		mPane.redraw();
 	}
 	
 	public void setMap(Composite comp) throws Exception {
-		// download: http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/cultural/50m_cultural.zip
 
-		
-//		Layer routeLayer = getShapeLayer("src/main/resources/gis/Reiseroute.shp", "routen");
-//		Layer chapterLayer = getShapeLayer("src/main/resources/gis/Kapitel.shp", "kapitel"); 
-//		Layer positionLayer = getShapeLayer("src/main/resources/gis/positionLayer.shp","standort");
-//		Layer rasterLayer = getRasterLayer("src/main/resources/gis/textadventure_empty_geo.tif");
 		
 		MapContent mContent = new MapContent();
 		mContent.addLayer(getShapeLayer("src/main/resources/gis/Reiseroute.shp", "routen"));
