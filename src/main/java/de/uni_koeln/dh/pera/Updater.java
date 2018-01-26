@@ -207,7 +207,7 @@ public class Updater {
 		if (!player.getInventory().isEmpty()) {
 			StringBuilder sb = new StringBuilder();
 			for (String icon : player.getInventory()) {
-				sb.append(icon + "\t");
+				sb.append(icon + "\t"); //TODO format inventory output
 			}
 			sb.append("\n\n" + currentText);
 			return sb.toString();

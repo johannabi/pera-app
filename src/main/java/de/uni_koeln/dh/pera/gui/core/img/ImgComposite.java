@@ -3,11 +3,15 @@ package de.uni_koeln.dh.pera.gui.core.img;
 import java.util.List;
 
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.ControlEvent;
+import org.eclipse.swt.events.ControlListener;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Listener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -78,9 +82,11 @@ public class ImgComposite extends BaseComposite {
 				getInnerWidth(), mapHeight, 
 				true));
 		comp2.setBackground(display.getSystemColor(SWT.COLOR_YELLOW));
+		final MapPane mapPane = new MapPane();
 		
 			try {
-				MapPane.setMap(comp2);
+				mapPane.setMap(comp2);
+//				mapPane.addPoint(36.010242, 26.060116);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -99,6 +105,14 @@ public class ImgComposite extends BaseComposite {
 		
 		Button but1 = new Button(comp3, SWT.PUSH);
 		but1.setText("Städte");
+		but1.addListener(SWT.Selection, new Listener() {
+
+			public void handleEvent(Event arg0) {
+				mapPane.changeVisibility(2); //layers[2] is "Standorte"
+				
+			}
+			
+		});
 		Button but2 = new Button(comp3, SWT.PUSH);
 		but2.setText("Routen");
 		Button but3 = new Button(comp3, SWT.PUSH);

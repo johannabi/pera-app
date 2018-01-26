@@ -59,33 +59,6 @@ public class TextOutput extends StyledText {
 				true, false));
 	}
 
-	// TODO default text
-	private String getDefaultText() {
-		return "Willkommen meine Damen und Herren. Es ist eine Freude, Sie bei meiner Reise willkommen zu heißen. "
-				+ "Mein Name ist Pero und ich bin stolzer Kastilier und enger Vertrauter unseres verehrten Königs "
-				+ "Juans II. Außerdem bin ich ein direkter Nachfahre des berühmten Pedro Ruiz Tafur, welcher bei "
-				+ "Cordoba unsere Truppen zum Sieg über die gefürchteten Mauren führte."
-				+ "\n\n"
-				+ "Auch ich beabsichtige meiner Familie und meinem Titel alle Ehre zu machen. Um dies zu erreichen,"
-				+ " habe ich beschlossen, den Waffenstillstand zwischen Kastilien und Granada zu nutzen und bin im "
-				+ "Jahr 1435 aufgebrochen, um die Fremde zu erkunden. Meine Abenteuer führten mich nach Italien, "
-				+ "Palästina und Ägypten. Doch nun ist es an der Zeit, weiter zu reisen. Mein nächstes Ziel steht "
-				+ "fest – Konstantinopel. Sie bekommen die einzigartige Gelegenheit, mich bei diesem Kapitel meiner"
-				+ " Reise zu begleiten. Doch Vorsicht! Gefahren lauern an jeder Ecke, sodass jede falsche Entscheidung"
-				+ " schnell zur letzten werden kann..."
-				+ "\n\n"
-				+ "Willkommen meine Damen und Herren. Es ist eine Freude, Sie bei meiner Reise willkommen zu heißen."
-				+ " Mein Name ist Pero und ich bin stolzer Kastilier und enger Vertrauter unseres verehrten Königs "
-				+ "Juans II. Außerdem bin ich ein direkter Nachfahre des berühmten Pedro Ruiz Tafur, welcher bei "
-				+ "Cordoba unsere Truppen zum Sieg über die gefürchteten Mauren führte."
-				+ "\n\n"
-				+ "Auch ich beabsichtige meiner Familie und meinem Titel alle Ehre zu machen. Um dies zu erreichen,"
-				+ " habe ich beschlossen, den Waffenstillstand zwischen Kastilien und Granada zu nutzen und bin im "
-				+ "Jahr 1435 aufgebrochen, um die Fremde zu erkunden. Meine Abenteuer führten mich nach Italien, "
-				+ "Palästina und Ägypten. Doch nun ist es an der Zeit, weiter zu reisen. Mein nächstes Ziel steht fest"
-				+ " – Konstantinopel. Sie bekommen die einzigartige Gelegenheit, mich bei diesem Kapitel meiner Reise"
-				+ " zu begleiten. Doch Vorsicht! Gefahren lauern an jeder Ecke, sodass jede falsche Entscheidung "
-				+ "schnell zur letzten werden kann...";
-	}
+	
 
 }

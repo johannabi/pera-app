@@ -73,7 +73,7 @@ public class TextComposite extends BaseComposite {
 		int size = neighbour.getInnerWidth() / 40;
 
 		// TODO Courier: universal font? 
-		FontData data = new FontData("Palatino Linotype", size, style); //Courier
+		FontData data = new FontData("Courier", size, style); //Courier
 		return new Font(display, data);
 	}
 	
