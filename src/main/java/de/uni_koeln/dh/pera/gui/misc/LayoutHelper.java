@@ -74,7 +74,7 @@ public class LayoutHelper {
 		return data;
 	}
 	
-	private static GridData getAlignment(GridData data, boolean vCenter, boolean hCenter) {
+	public static GridData getAlignment(GridData data, boolean vCenter, boolean hCenter) {
 		if (vCenter) {
 			data.verticalAlignment = SWT.CENTER;
 			data.grabExcessVerticalSpace = true;

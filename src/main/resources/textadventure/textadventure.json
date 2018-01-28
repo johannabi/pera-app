@@ -137,8 +137,8 @@
         "id": 8,
         "chapter": "Kapitel II - Zypern",
         "text": "Im Hafen von Paphos angekommen, bin ich jedoch verwundert. Eigentlich sollte mich der örtliche Bischof empfangen und mich weiter nach Nikosia zum König geleiten. Doch als ich mich dem Hause des Bischofs nähere, wundere ich mich über dessen offene Eingangstür. Nach mehrmaligen Rufen bekomme ich keine Antwort.",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+        "latitude": "34.775278",
+        "longitude": "32.424167",
         "openanswer": false,
         "choices":[
         {
@@ -155,8 +155,8 @@
         "id": 9,
         "chapter": "Kapitel II - Zypern",
         "text": "Sofort nach Eintreten des Hauses schlägt mir ein süßlich-fauler Geruch in die Nase. Entsetzt betrachte ich, wie der Bischof und zwei seiner Knappen gekrümmt auf Bahren aufgereiht liegen. ",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+         "latitude": "34.775278",
+        "longitude": "32.424167",
         "openanswer": false,
         "choices":[
         {
@@ -169,8 +169,8 @@
         "id": 10,
         "chapter": "Kapitel II - Zypern",
         "text": "Die Nachbarn erzählen mir aufgebracht von der Seuche, die Paphos heimsucht und die Mission des Bischofs, all die Ungläubigen zu retten und zum rechten Glauben zu bekehren. In seinen unerschütterlichen Bemühungen anderen zu helfen, hat er sich und seine zwei Knappen selbst angesteckt. Sie sollen noch diesen Nachmittag verbrannt werden. ",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+         "latitude": "34.775278",
+        "longitude": "32.424167",
         "openanswer": false,
         "choices":[
         {
@@ -183,8 +183,8 @@
         "id": 11,
         "chapter": "Kapitel II - Zypern",
         "text": "Entsetzt verschwinde ich so schnell wie möglich aus Paphos und bete zu Gott, dass ich mich nicht auch infiziert habe.",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+         "latitude": "34.775278",
+        "longitude": "32.424167",
         "openanswer": false,
         "choices":[
         {
@@ -195,10 +195,10 @@
     },
     {
         "id": 12,
-        "chapter": "Chapter III -  Nikosia",
+        "chapter": "Kapitel III - Nikosia",
         "text": "Ich reise zum Schloss des Königs und treffe dort einen Kardinal und viele bedeutende Herren des Hofes. Sie sind gekommen, um mich in Empfang zu nehmen und zum König zu geleiten.",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+        "latitude": "35.166667",
+        "longitude": "33.35",
         "openanswer": false,
         "choices":[
         {
@@ -218,10 +218,10 @@
     },
     {
         "id": 13,
-        "chapter": "Chapter III -  Nikosia",
+        "chapter": "Kapitel III - Nikosia",
         "text": "Der König ist beeindruckt von meinem Geschenk. Ich werde äußerst gut empfangen und mit so viel Freundlichkeit behandelt, als wäre ich dort geboren, und sie danken Gott, dass ich nach so langer Zeit in Sicherheit zurückgekehrt bin. Sie bieten mir alles, was ich mir nur wünschen könnte. ",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+        "latitude": "35.166667",
+        "longitude": "33.35",
         "openanswer": false,
         "choices":[
         {
@@ -232,10 +232,10 @@
     },
     {
         "id": 14,
-        "chapter": "Chapter III -  Nikosia",
+        "chapter": "Kapitel III - Nikosia",
         "text": "Der König wirkt uninteressiert an mir, meinem Titel und meinen Geschichten. Ich werde sehr unhöflich behandelt und in einer niederen Herberge untergebracht. Ich soll am nächsten Tag nochmal wiederkommen.",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+        "latitude": "35.166667",
+        "longitude": "33.35",
         "openanswer": false,
         "choices":[
         {
@@ -246,10 +246,10 @@
     },
     {
         "id": 15,
-        "chapter": "Chapter III -  Nikosia",
+        "chapter": "Kapitel III - Nikosia",
         "text": "Am nächsten Morgen jedoch gibt es einen großen Aufruhr unter den Menschen. Alle um mich herum greifen zu den Waffen, einschließlich dem Kardinal und der Lady Ines, seiner Schwester und vielen großen Männern des Königreichs. Die Meute ist erbost über einen Favoriten des Königs namens Jacobo Guiri, der das Richteramt innehat. Sie wollen ihn töten oder gefangen nehmen. Der König ruft mich zu sich und fragt mich, was in dieser Situation bloß zu tun sei. Ich überlege lange und...",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+        "latitude": "35.166667",
+        "longitude": "33.35",
         "openanswer": false,
         "choices":[
         {
@@ -264,10 +264,10 @@
     },
     {
         "id": 16,
-        "chapter": "Chapter III -  Nikosia",
+        "chapter": "Kapitel III - Nikosia",
         "text": "Der König folgt meinem Rat und flieht zu einer Festung an einem anderen Ende der Stadt, welche die Zitadelle genannt wird. Ich kann aus sicherer Entfernung beobachten, wie die Zitadelle schnell umzingelt wird. Der wütende Mob fordert die endgültige Verbannung des Favoriten. Der König ist gezwungen sich zu unterwerfen und schwört, den Richter für ein Jahr zu verbannen. Jacobo Guiri wird daraufhin aus der Stadt geführt und das besänftigte Volk geht zurück in seine Häuser.",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+        "latitude": "35.166667",
+        "longitude": "33.35",
         "openanswer": false,
         "choices":[
         {
@@ -278,10 +278,10 @@
     },
     {
         "id": 17,
-        "chapter": "Chapter III -  Nikosia",
+        "chapter": "Kapitel III - Nikosia",
         "text": "Der wütende Mob dringt immer weiter in das Innere des Hofes ein. Ich versuche mein Bestes, sie zurückzuhalten. Aber ich werde überwältigt und schließlich getötet. Meine Reise endet hier. GAME OVER",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+        "latitude": "35.166667",
+        "longitude": "33.35",
         "openanswer": false,
         "choices":[
         {
@@ -296,10 +296,10 @@
     },
     {
         "id": 18,
-        "chapter": "Chapter III -  Nikosia",
+        "chapter": "Kapitel III - Nikosia",
         "text": "Am nächsten Tag schickt der König nach mir. In Gegenwart des Kardinals und gewisser Adliger bittet er mich, von ihm zu nehmen, was ich für die Kosten meiner Reise haben will. Ich antworte ihm, dass ich seiner Majestät für immer verpflichtet sei, aber seine Großzügigkeit keinesfalls ausnutzen möchte. Ich bitte ihn einzig um sicheres Geleit aus Zypern und um ein Schiff, um mich nach Rhodos zu begleiten.",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+        "latitude": "35.166667",
+        "longitude": "33.35",
         "openanswer": false,
         "choices":[
         {
@@ -310,10 +310,10 @@
     },
     {
         "id": 19,
-        "chapter": "Chapter III -  Nikosia",
+        "chapter": "Kapitel III - Nikosia",
         "text": "Der König willigt ein und gibt mir ein Schiff, beladen mit zehn Stücken Kamel, den feinsten Leinen, einem lebendigen Leoparden und solchen Überflüssen an Proviant für meine Reise nach Rhodos, dass diese ein Jahr lang genügen würden. ",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+        "latitude": "35.166667",
+        "longitude": "33.35",
         "openanswer": false,
         "choices":[
         {
@@ -340,8 +340,8 @@
         "id": 20,
         "chapter": "Kapitel IV – Auf dem Weg nach Rhodos",
         "text": "Mit meinem kleineren alten Schiff und dem vollbeladenen Schiff vom König vom Zypern fahren wir am Golf von Satalia auf dem Weg in die Türkei immer weiter aus Meer hinaus. Aber noch bevor die Uhr zwei schlägt, sehen wir eine bewaffnete türkische Galeere auf uns zukommen, mit der Absicht, uns zu entern und zu zerstören. Meine gesamte Besatzung sieht mich Rat suchend an. ",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+        "latitude": "36.668419",
+        "longitude": "30.9375",
         "openanswer": false,
         "choices":[
         {
@@ -358,8 +358,8 @@
         "id": 21,
         "chapter": "Kapitel IV – Auf dem Weg nach Rhodos",
         "text": "Leider befinden sich in meinem Inventar keinerlei Waffen. Auch der Rest meiner Crew besteht vorrangig aus Händlern. Wir sind den Feinden, trotz ehrenhaftem und erbittertem Einsatz, fast vollkommen wehrlos ausgeliefert. Ich muss mitansehen, wie meine Crew ermordet wird und werde selbst von den Türken gefangen genommen und gefoltert. Konstantinopel werde ich niemals erreichen. Meine Reise endet hier. GAME OVER ",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+        "latitude": "36.668419",
+        "longitude": "30.9375",
         "openanswer": false,
         "choices":[
         {
@@ -376,8 +376,8 @@
         "id": 22,
         "chapter": "Kapitel IV – Auf dem Weg nach Rhodos",
         "text": "Wir kämpfen mit Segeln und Rudern, um mehr Fahrt aufzunehmen und ihnen zu entkommen, aber es scheint kein Entrinnen zu geben. Unsere Arme und Hände werden stetig müder. Ich habe außerordentliches Glück, da ich einen ganz besonderen Bootsmann auf meiner katalanischen Galeere dabeihabe. Er hat vor einiger Zeit einen Neffen seines damaligen Kapitäns im Trunk getötet. Daraufhin wurde er dazu verurteilt, am Hofe des Königs gehängt zu werden. Aber das Seil an dem er aufgeknüpft werden sollte, gab unter seinem Gewicht nach und riss entzwei. Ich, der mir das Spektakel mitangesehen hatte, sah es als Zeichen Gottes und bat den Kapitän, ihn mir zu geben. Der Kapitän stimmte meiner Bitte zu und der Bootsmann wurde einer der geschicktesten Navigatoren, mit denen ich je reisen durfte.",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+        "latitude": "36.668419",
+        "longitude": "30.9375",
         "openanswer": false,
         "choices":[
         {
@@ -390,8 +390,8 @@
         "id": 23,
         "chapter": "Kapitel IV – Auf dem Weg nach Rhodos",
         "text": "Auch in unserer jetzigen Situation scheint Gott auf seiner Seite zu sein. Er navigiert das Schiff gekonnt und gibt den Befehl das Schiff so leicht wie möglich zu machen, damit wir besser vorankommen. Es funktioniert, Gott sei Dank. Das andere unserer Schiffe weigert sich jedoch vehement, die Ware abzuwerfen. Als die Sonne langsam untergeht muss ich mit ansehen, wie die Türken das Schiff schließlich überholen und jeden Mann der Besatzung töten. Aus der Entfernung höre ich immer noch die Schreie der Männer.",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+        "latitude": "36.668419",
+        "longitude": "30.9375",
         "openanswer": false,
         "clearinventory": true,
         "choices":[
@@ -405,8 +405,8 @@
         "id": 24,
         "chapter": "Kapitel IV – Auf dem Weg nach Rhodos",
         "text": "Durch die entstandene Verwirrung nutzen wir die Zeit, unsere Distanz zu vergrößern. Alle nehmen die Ruder in die Hände und arbeiten so gut wie sie nur können. Als die Nacht schließlich hereinbricht, raffen wir die Segel, löschen sämtliche Lichter und drehen steil nach Steuerbord. Wir rudern so lautlos wie möglich und passierten die Galeere unserer Feinde, ohne dass jemand Notiz von uns nimmt. Wir ändern schließlich unseren Kurs und entkommen unseren Verfolgern endgültig.",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+        "latitude": "36.668419",
+        "longitude": "30.9375",
         "openanswer": false,
         "choices":[
         {
@@ -419,8 +419,8 @@
         "id": 25,
         "chapter": "Kapitel IV – Auf dem Weg nach Rhodos",
         "text": "Der restliche Weg nach Rhodos ist durch schlechtes Wetter erschwert und die Stimmung von mir und meiner Besatzung leidet immer noch unter den Folgen des Angriffs. Aber nach zwei langen Tagen Fahrt kommen wir endlich in Rhodos an. Ich verabschiede mich von meiner Crew und wir beschließen alle, getrennte Wege zu gehen. Ich betrete erleichtert den Hafen und gehe zur Herberge von Bruder Nuño de Cabrera, einem ausgezeichneten Ritter, welcher in Kastilien geboren wurde. Er ist dort wohl der reichste und berühmteste Ritter und empfängt mich sehr fröhlich und äußerst wohlwollend. Er versorgt mich außerdem mit ausreichend Proviant für meine weitere Reise. Aufgrund seiner Gesellschaft und Gastfreundschaft verzweifele ich nicht am Erlebten und schöpfe neue Kraft für meine weitere Reise. ",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+        "latitude": "36.668419",
+        "longitude": "30.9375",
         "openanswer": false,
         "choices":[
         {
@@ -438,8 +438,8 @@
         "id": 26,
         "chapter": "Kapitel V – Land in Sicht",
         "text": "Entschlossen, meine Reise fortzusetzen, suche ich im Hafen von Ancona ein Schiff, welches mich nach Konstantinopel bringen kann. Ich gehe einen guten Deal mit dem dortigen Kapitän ein und wir brechen noch am selben Nachmittag auf. Wir legen ein hervorragendes Tempo vor und kommen an den Inseln Samos, Kos und Chios vorbei. Beim Passieren der letzten Insel wendet sich der Wind gegen uns und wir sind gezwungen, neben Chios zu ankern und verbringen die gesamte Nacht dort. Am nächsten Morgen, kurz nach Aufbruch, sehen wir, wie zwei große und zwei kleinere Galeeren auf uns zusteuern. Sie geben uns den Befehl, unverzüglich nach Chios zurückzukehren, um einen Kampf zu vermeiden. Eingekesselt sind wir gezwungen nachzugeben und kehren zum Hafen zurück.",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+        "latitude": "36.433333",
+        "longitude": "28.216667",
         "openanswer": false,
         "choices":[
         {
@@ -452,8 +452,8 @@
         "id": 27,
         "chapter": "Kapitel V – Land in Sicht",
         "text": "Um Mitternacht kommt es zu einem furchtbaren Sturm. Da wir unsicher festgemacht worden sind, löst sich die Verankerung und verhakt sich in einem alten versunkenen Schiffswrack. Wir streifen das Wrack mit voller Wucht und unser Schiff kentert. Ich werde ins Wasser geschleudert.",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+         "latitude": "38.4",
+        "longitude": "26.166667",
         "openanswer": false,
         "choices":[
         {
@@ -470,8 +470,8 @@
         "id": 28,
         "chapter": "Kapitel V – Land in Sicht",
         "text": "Ich sehe die Matrosen vor mir schwimmen. Sie sind in wesentlich besserer Verfassung als ich. Den hohen Wellengang nicht gewohnt, kämpfe ich mich immer weiter zum Ufer heran. Ich kann das Land schon förmlich riechen, als plötzlich eine Welle über mir hereinbricht und es für immer dunkel wird. Meiner Reise endet hier. GAME OVER.",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+        "latitude": "38.4",
+        "longitude": "26.166667",
         "openanswer": false,
         "choices":[
         {
@@ -488,8 +488,8 @@
         "id": 29,
         "chapter": "Kapitel V – Land in Sicht",
         "text": "Ich hänge nur noch leblos an dem Stück Treibholz. Die Wellen sind hoch und das Wasser ist eisig – kein Wunder, es ist schließlich kurz vor Weihnachten. Ich bin kaum noch bei Bewusstsein, als ich auf einmal spüre, wie Arme mich packen und Männer mich aus dem Wasser in ein Ruderboot zerren und zu einer naheliegenden Galeere bringen.",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+        "latitude": "38.4",
+        "longitude": "26.166667",
         "openanswer": false,
         "choices":[
         {
@@ -502,8 +502,8 @@
         "id": 30,
         "chapter": "Kapitel V – Land in Sicht",
         "text": "Ich habe alle meine Gegenstände von meinen Reisen endgültig verloren und sitze 20 Tage lang in Chios fest, was mir die Gelegenheit gibt, mich von den Strapazen zu erholen und mir ein neues Schiff zu kaufen.",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+        "latitude": "38.4",
+        "longitude": "26.166667",
         "openanswer": false,
         "clearinventory": true,
         "choices":[
@@ -517,8 +517,8 @@
         "id": 31,
         "chapter": "Kapitel VI – Troja, Dardanellen und Marmarameer",
         "text": "Der Rest meiner Reise führt mich in die antike Stadt Troja und zur mysteriösen Insel Tenedos. Ich durchquere mühsam mit einem neuen Schiff und neuer Besatzung die Dardanellen und besuche die Stadt Gallipoli. Schließlich erreiche ich das Marmarameer und nach ein paar kurzen Zwischenstopps in Eregli und Silumbria erkenne ich in der Dämmerung einen hohen Berg, ungefähr 100 Meilen von uns entfernt. Der Navigator nickt mir zu und klärt mich auf, dass dies kein Berg, sondern St. Sophia sei. Ich seufze tief vor Erleichterung auf. Konstantinopel ist endlich im Sicht.",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+        "latitude": "38.4",
+        "longitude": "26.166667",
         "openanswer": false,
         "choices":[
         {
@@ -531,12 +531,12 @@
         "id": 32,
         "chapter": "Kapitel VII Willkommen in Pera",
         "text": "Am nächsten Morgen sende ich ein Boot in die Stadt Pera, um dem Kapitän eines Schiffes namens Juan Caro, einem gebürtigen Sevillaner, der ein guter Freund von mir ist, über meiner Ankunft zu informieren. Er kommt mit seiner Mannschaft in Booten zu unserem Schiff heraus, um mich herzlich zu begrüßen. Ich will eigentlich sofort weiter, um dem Kaiser meine Ehre zu erweisen. Ich bin hin und hergerissen. Ich entscheide mich nach einiger Bedenkzeit…",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+        "latitude": "41.031944",
+        "longitude": "28.976111",
         "openanswer": false,
         "choices":[
         {
-            "choice": "...dazu, meinen Freund nach Pera zu begleiten. (33)",
+            "choice": "...dazu, meinen Freund nach Pera zu begleiten.",
             "next": 33
         },
         {
@@ -549,8 +549,8 @@
         "id": 33,
         "chapter": "Kapitel VII Willkommen in Pera",
         "text": "Meine Gefährten und ich folgen den Booten der Kastilier und ankern am Kai von Pera, der zu einem der schönsten der Welt gehört. Jedes noch so große Schiff kann mit seinem Bugspriet nahe dem Land in klarem, tiefem Wasser liegen. Ich genieße die Gesellschaft der Kastilier und anderen Freunden aus verschiedenen Nationen in vollen Zügen und wir gehen in die Kirche, um zusammen zu beten und uns für die sichere Ankunft zu bedanken.",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+        "latitude": "41.031944",
+        "longitude": "28.976111",
         "openanswer": false,
         "choices":[
         {
@@ -562,13 +562,13 @@
     {
         "id": 34,
         "chapter": "Kapitel VII Willkommen in Pera",
-        "text": "",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+        "text": "In der Kirche treffen wir auf den regierenden Gouverneur Peras. Er begrüßt uns sehr herzlich und bittet mich ausführlich um Nachricht aus dem Westen. Er insistiert, dass alles, was ich während meines Aufenthaltes in Pera benötige, sofort geliefert werden soll. Ich danke ihm vielmals für seine Unterstützung und begebe mich zu meiner Unterkunft beim kastilischen Kapitän. Dort finde ich einen ausgezeichneten Empfang mit großen Mengen an Delikatessen vor. Als ich später mein Zimmer betrete, entdecke ich einen weiteren Präsentkorb, gefüllt mit verschiedenen Weinen, Geflügel und freundlichen Grüßen vom Gouverneur.",
+        "latitude": "41.031944",
+        "longitude": "28.976111",
         "openanswer": false,
         "choices":[
         {
-            "choice": "In der Kirche treffen wir auf den regierenden Gouverneur Peras. Er begrüßt uns sehr herzlich und bittet mich ausführlich um Nachricht aus dem Westen. Er insistiert, dass alles, was ich während meines Aufenthaltes in Pera benötige, sofort geliefert werden soll. Ich danke ihm vielmals für seine Unterstützung und begebe mich zu meiner Unterkunft beim kastilischen Kapitän. Dort finde ich einen ausgezeichneten Empfang mit großen Mengen an Delikatessen vor. Als ich später mein Zimmer betrete, entdecke ich einen weiteren Präsentkorb, gefüllt mit verschiedenen Weinen, Geflügel und freundlichen Grüßen vom Gouverneur.",
+            "choice": "Weiter",
             "next": 35
         }
         ],
@@ -585,8 +585,8 @@
         "id": 35,
         "chapter": "Kapitel VII – Konstantinopel: Ein Besuch beim Kaiser",
         "text": "Ich kleide mich so sorgfältig wie möglich für das anstehende Treffen mit dem Kaiser. Ich trage deutlich sichtbar das Emblem des Ordens der Escama, was ein europaweit bekanntes Symbol meines verehrten Königs Juan II ist. Ich bete nur, dass mir dessen guten Namen auch in Konstantinopel eine Hilfe sein wird.",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+        "latitude": "41.031944",
+        "longitude": "28.976111",
         "openanswer": false,
         "choices":[
         {
@@ -599,8 +599,8 @@
         "id": 36,
         "chapter": "Kapitel VII – Konstantinopel: Ein Besuch beim Kaiser",
         "text": "Ich bestelle außerdem einen der Dolmetscher des Kaisers, namens Juan von Sevilla, ein, da dieser gebürtiger Kastilier ist. Ihm wird nachgesagt, dass er in der Gunst des Kaisers steht, weil er ihm liebliche kastilische Romanzen zum Lautenspiel vorsingt. Er begleitet mich zum Palast und als wir zusammen hineingehen, spüre ich eine Erleichterung bei dem Gedanken, einen Landsmann an meiner Seite zu wissen.",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+        "latitude": "41.031944",
+        "longitude": "28.976111",
         "openanswer": false,
         "choices":[
         {
@@ -613,8 +613,8 @@
         "id": 37,
         "chapter": "Kapitel VII – Konstantinopel: Ein Besuch beim Kaiser",
         "text": "Ich muss eine Stunde im Foyer der Eingangshalle warten, während verschiedene Ritter immer wieder an mir vorbeieilen. Durch die Wartezeit entwerfe ich einen Plan, über was ich mit dem Kaiser eigentlich reden möchte.",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+        "latitude": "41.006389",
+        "longitude": "28.977778",
         "openanswer": false,
         "choices":[
         {
@@ -631,13 +631,13 @@
         "id": 38,
         "chapter": "Kapitel VII – Konstantinopel: Ein Besuch beim Kaiser",
         "text": "Dann betrete ich sicheren Schrittes den großen Saal. Ich finde den Kaiser auf einer Tribüne sitzend, mit einem Löwenfell zu seinen Füßen. Ich biete dem Kaiser meine Dienste an und erkläre ihm, dass ich gekommen bin, um seine Person und seinen Besitz mit eigenen Augen zu sehen und seine Ländereien und Herrschaften besser kennenzulernen. Ich teile ihm mit, dass ich sehr erfreut darüber wäre, ihm alles über meine Heimat und meinen Reisen berichten zu dürfen.",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+        "latitude": "41.006389",
+        "longitude": "28.977778",
         "openanswer": false,
         "choices":[
         {
             "choice": "Weiter",
-            "next": 40
+            "next": 41
         }
         ]
     },
@@ -645,8 +645,8 @@
         "id": 39,
         "chapter": "Kapitel VII – Konstantinopel: Ein Besuch beim Kaiser",
         "text": "Dann betrete ich sicheren Schrittes den großen Saal. Ich finde den Kaiser auf einer Tribüne sitzend, mit einem Löwenfell zu seinen Füßen. Ich werde vorgestellt und erkläre ihm, dass es eine Ehre sei ihn kennenzulernen, dass ich aber vor allem gekommen bin, um mehr über die Wahrheit meine Abstammung zu erfahren. Mir war schon früh erzählt worden, dass ich von diesem Ort und von seinem kaiserlichen Blut entstammen würde.",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+        "latitude": "41.006389",
+        "longitude": "28.977778",
         "openanswer": false,
         "choices":[
         {
@@ -659,13 +659,55 @@
         "id": 40,
         "chapter": "Kapitel VII – Konstantinopel: Ein Besuch beim Kaiser",
         "text": "Er antwortet mir nicht sofort, aber sagt schließlich, dass ich willkommen sei, zu verweilen und dass er bezüglich der Frage meiner Abstammung die alten Aufzeichnungen von seinen Gelehrten durchsuchen lassen würde. Er wolle sehen, ob die Behauptungen sich als richtig erweisen würden. Nach einer weiteren längeren Wartezeit erzählt man mir schließlich die Geschichte des vierten Kreuzzugs und damit die Wahrheit über meinen Familienstammbaum.",
-        "latitude": "1.47642",
-        "longitude": "105.356546",
+        "latitude": "41.006389",
+        "longitude": "28.977778",
         "openanswer": false,
         "choices":[
         {
             "choice": "Weiter",
             "next": 43
+        }
+        ]
+    },
+    {
+        "id": 41,
+        "chapter": "Kapitel VII – Konstantinopel: Ein Besuch beim Kaiser",
+        "text": "Er antwortet mir sofort, dass ich willkommen bin zu verweilen, und dass er erfreut sei, mich zu sehen. Er bittet mich um Nachrichten über die christlichen Länder und Fürsten und insbesondere über den König von Spanien, meinen Meister, und über seinen Besitz und seinen Krieg mit den Mauren. Ich antworte auf alle seine Fragen nach bestem Wissen und Gewissen. Danach verabschiede ich mich und gehe zurück in meine Unterkunft.",
+        "latitude": "41.006389",
+        "longitude": "28.977778",
+        "openanswer": false,
+        "choices":[
+        {
+            "choice": "Weiter",
+            "next": 42
+        }
+        ]
+    },
+    {
+        "id": 42,
+        "chapter": "Kapitel VII – Konstantinopel: Ein Besuch beim Kaiser",
+        "text": "Am nächsten Tag schickt der Kaiser nach mir und bittet mich, mit ihm auf die Jagd zu gehen. Er stellt mir eines seiner besten Pferde zur Verfügung. Ich willige ein und gehe mit ihm und seiner wunderschönen Gemahlin, der Kaiserin Maria von Trapezunt, auf die Jagd. Mehrere flüsternde Stimmen am Hof haben mich darüber aufgeklärt, dass dies bereits die dritte Frau des Kaisers ist und noch immer kein Thronfolger gezeugt wurde. Wir haben eine ausgezeichnete Jagd und kehren erst zur Vesperzeit zum Palast zurück, wo ein festliches Abendmahl bereits auf uns wartet.",
+        "latitude": "41.031944",
+        "longitude": "28.976111",
+        "openanswer": false,
+        "choices":[
+        {
+            "choice": "Weiter",
+            "next": 43
+        }
+        ]
+    },
+    {
+        "id": 43,
+        "chapter": "Kapitel VII – Konstantinopel: Ein Besuch beim Kaiser",
+        "text": "Von da an behandelt mich der Kaiser mit großer Zuneigung. Er sagt, dass er es sich wünschen würde, mich in seinem Land zu behalten. Ich solle heiraten und mich niederlassen. Und tatsächlich spiele ich mit dem Gedanken, hier sesshaft zu werden. Aber die Stadt ist schlecht besiedelt, und der Bedarf an guten Soldaten hoch, da die Griechen so viele mächtige Nationen als Feinde haben. Deshalb verwerfe ich die Idee so schnell wie sie gekommen ist auch wieder. Meine Reise soll weitergehen, ich will noch mehr von Griechenland, der Türkei und den Tataren sehen. Als der Kaiser merkt, dass er mich nicht umstimmen kann, befielt er mir, ihn und die Kaiserin noch einmal zu besuchen, bevor ich endgültig in mein Land zurückkehre. Ich schwöre ihm, dass ich dies auf jeden Fall tun werde und verlasse Konstantinopel für ein weiteres Kapitel meines Abenteuers.",
+        "latitude": "41.006389",
+        "longitude": "28.977778",
+        "openanswer": false,
+        "choices":[
+        {
+            "choice": "THE END",
+            "next": 999
         }
         ]
     }

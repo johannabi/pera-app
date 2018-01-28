@@ -3,21 +3,15 @@ package de.uni_koeln.dh.pera.gui.core.img;
 import java.util.List;
 
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.ControlEvent;
-import org.eclipse.swt.events.ControlListener;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Layout;
-import org.eclipse.swt.widgets.Listener;
-import org.geotools.feature.SchemaException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -37,14 +31,6 @@ public class ImgComposite extends BaseComposite {
 	private Label header = null;
 	
 	private Coordinate position = null;
-
-	// // TODO if fitting set to final
-	// private static int W_WIMGCOMP_PCT = 80;
-	//// private static int H_HIMGCOMP_PCT = 5;
-	//
-	// private int innerWidth = 0;
-	//
-	// private Label comp = null;
 
 	// TODO zoom out
 	private SelectionListener zoomOutSelection = new SelectionListener() {
@@ -128,10 +114,12 @@ public class ImgComposite extends BaseComposite {
 		logger.info("Initialize header...");
 
 		header = new Label(this, SWT.CENTER);
-		header.setLayoutData(LayoutHelper.getCenteredData());
+		header.setLayoutData(/*LayoutHelper.getCenteredData()*/LayoutHelper.getAlignment(LayoutHelper.getGridData(parentWidth), true, true));
+//		header.setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_DARK_MAGENTA));
 		header.setForeground(getDefaultFgColor());
 		header.setFont(getHeaderFont(headHeight));
 		header.setText(getChapter());
+		
 	}
 	
 	private void setControls() {
@@ -190,8 +178,7 @@ public class ImgComposite extends BaseComposite {
 			position = newCoordinate;
 			map.updatePosition(position);
 		}
-		
-//		map.updatePosition(postion);
+
 	}
 
 	private String getChapter() {

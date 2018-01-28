@@ -13,6 +13,7 @@ import org.geotools.data.DataUtilities;
 import org.geotools.data.shapefile.ShapefileDataStore;
 import org.geotools.data.simple.SimpleFeatureSource;
 import org.geotools.feature.DefaultFeatureCollection;
+import org.geotools.feature.FeatureCollection;
 import org.geotools.feature.FeatureIterator;
 import org.geotools.feature.SchemaException;
 import org.geotools.feature.simple.SimpleFeatureBuilder;
@@ -25,6 +26,7 @@ import org.geotools.referencing.CRS;
 import org.geotools.renderer.lite.StreamingRenderer;
 import org.geotools.styling.SLD;
 import org.geotools.styling.Style;
+import org.geotools.styling.TextSymbolizer;
 import org.geotools.swt.SwtMapPane;
 import org.opengis.feature.Feature;
 import org.opengis.feature.simple.SimpleFeature;
@@ -142,10 +144,25 @@ public class Map extends Composite {
 	public void updatePosition(Coordinate coordinate) {
 		
 		Layer newLayer = createPositionLayer(coordinate);
+		
 		int currentSize = mPane.getMapContent().layers().size();
-		if(currentSize > 3) {
-			mPane.getMapContent().layers().remove(currentSize - 1);
-		}
+
+		//replace yellow with red
+		if(currentSize > 3) { //TODO zahl anpassen an polit. layer
+			Layer lastLayer = mPane.getMapContent().layers().get(currentSize - 1);
+			Style newStyle = SLD.createPointStyle("Star", Color.RED, Color.RED, 1.0f, 10.0f);
+			
+			try {
+				FeatureCollection<?, ?> featureCollection = lastLayer.getFeatureSource().getFeatures();
+				mPane.getMapContent().layers().remove(currentSize - 1);
+				mPane.getMapContent().addLayer(new FeatureLayer(featureCollection, newStyle, lastLayer.getTitle()));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}	
+			
+		}	
+		
 		mPane.getMapContent().layers().add(newLayer);
 		
 	}
@@ -175,7 +192,7 @@ public class Map extends Composite {
 			DefaultFeatureCollection featureCollection = new DefaultFeatureCollection("position", TYPE);
 			featureCollection.add(feature);
 
-			Style style = SLD.createPointStyle("Cross", Color.BLUE, Color.BLUE, 1.0f, 5.0f);
+			Style style = SLD.createPointStyle("Star", Color.YELLOW, Color.YELLOW, 1.0f, 10.0f);
 			layer = new FeatureLayer(featureCollection, style,"position");
 		} catch (TransformException e) {
 			e.printStackTrace();
@@ -184,7 +201,6 @@ public class Map extends Composite {
 		} catch (FactoryException e) {
 			e.printStackTrace();
 		} catch (SchemaException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -210,7 +226,6 @@ public class Map extends Composite {
 		
 //		FeatureType schema =  featureSource.getSchema();
 //		logger.info(schema.getGeometryDescriptor().toString());
-
 
 		Style style = null;
 		if (title.equals("routen"))
