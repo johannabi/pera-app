@@ -5,6 +5,21 @@
   <evaluateDefaultValues active="0"/>
   <layer-tree-group expanded="1" checked="Qt::Checked" name="">
     <customproperties/>
+    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Kapitel20180119125825559" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/shapelayer/Kapitel_neu.shp" name="Kapitel">
+      <customproperties>
+        <property key="overview" value="1"/>
+        <property key="showFeatureCount" value="1"/>
+      </customproperties>
+    </layer-tree-layer>
+    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Standorte20180119125121720" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/shapelayer/Standorte_neu.shp" name="Standorte">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Reiseroute20180118212638441" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/shapelayer/Reiseroute.shp" name="Reiseroute">
+      <customproperties>
+        <property key="overview" value="0"/>
+        <property key="showFeatureCount" value="1"/>
+      </customproperties>
+    </layer-tree-layer>
     <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Venezianische_Gebiete20180127155114757" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/shapelayer/politische Layer/Venezianische Gebiete.shp" name="Venezianische Gebiete">
       <customproperties/>
     </layer-tree-layer>
@@ -32,21 +47,6 @@
     <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="AegyptischesMamelukenSultanat20180127154834076" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/shapelayer/politische Layer/AegyptischesMamelukenSultanat.shp" name="AegyptischesMamelukenSultanat">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Reiseroute20180118212638441" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/shapelayer/Reiseroute.shp" name="Reiseroute">
-      <customproperties>
-        <property key="overview" value="0"/>
-        <property key="showFeatureCount" value="1"/>
-      </customproperties>
-    </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Kapitel20180119125825559" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/shapelayer/Kapitel_neu.shp" name="Kapitel">
-      <customproperties>
-        <property key="overview" value="1"/>
-        <property key="showFeatureCount" value="1"/>
-      </customproperties>
-    </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Standorte20180119125121720" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/shapelayer/Standorte_neu.shp" name="Standorte">
-      <customproperties/>
-    </layer-tree-layer>
     <layer-tree-layer expanded="0" providerKey="gdal" checked="Qt::Checked" id="textadventure_empty_geo20180126120021268" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/rasterlayer/TextadventrueEmpty_geo.jpg" name="textadventure_empty_geo">
       <customproperties/>
     </layer-tree-layer>
@@ -55,10 +55,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>1909961.16745362756773829</xmin>
-      <ymin>3804813.06158557441085577</ymin>
-      <xmax>4806728.35145584866404533</xmax>
-      <ymax>5415801.03678655531257391</ymax>
+      <xmin>2166654.89316471666097641</xmin>
+      <ymin>3785094.96813011448830366</ymin>
+      <xmax>5063422.07716693729162216</xmax>
+      <ymax>5396082.9433310953900218</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -166,6 +166,21 @@
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="true">
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Kapitel" showFeatureCount="1">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile isInOverview="1" layerid="Kapitel20180119125825559" visible="1"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Standorte" showFeatureCount="0">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="Standorte20180119125121720" visible="1"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Reiseroute" showFeatureCount="1">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="Reiseroute20180118212638441" visible="1"/>
+      </filegroup>
+    </legendlayer>
     <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Venezianische Gebiete" showFeatureCount="0">
       <filegroup open="true" hidden="false">
         <legendlayerfile isInOverview="0" layerid="Venezianische_Gebiete20180127155114757" visible="1"/>
@@ -209,21 +224,6 @@
     <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="AegyptischesMamelukenSultanat" showFeatureCount="0">
       <filegroup open="true" hidden="false">
         <legendlayerfile isInOverview="0" layerid="AegyptischesMamelukenSultanat20180127154834076" visible="1"/>
-      </filegroup>
-    </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Reiseroute" showFeatureCount="1">
-      <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="Reiseroute20180118212638441" visible="1"/>
-      </filegroup>
-    </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Kapitel" showFeatureCount="1">
-      <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="1" layerid="Kapitel20180119125825559" visible="1"/>
-      </filegroup>
-    </legendlayer>
-    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Standorte" showFeatureCount="0">
-      <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="Standorte20180119125121720" visible="1"/>
       </filegroup>
     </legendlayer>
     <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="textadventure_empty_geo" showFeatureCount="0">
@@ -1996,7 +1996,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <extent>
         <xmin>26.0288889999999995</xmin>
         <ymin>31.2134999999999998</ymin>
@@ -2047,7 +2047,7 @@ def my_form_open(dialog, layer, feature):
       </edittypes>
       <renderer-v2 forceraster="0" symbollevels="0" type="singleSymbol" enableorderby="0">
         <symbols>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="0">
+          <symbol alpha="0.270588" clip_to_extent="1" type="marker" name="0">
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="227,25,15,255"/>
@@ -2075,6 +2075,7 @@ def my_form_open(dialog, layer, feature):
       </renderer-v2>
       <labeling type="simple"/>
       <customproperties>
+        <property key="embeddedWidgets/count" value="0"/>
         <property key="labeling" value="pal"/>
         <property key="labeling/addDirectionSymbol" value="false"/>
         <property key="labeling/angleOffset" value="0"/>
@@ -2201,12 +2202,14 @@ def my_form_open(dialog, layer, feature):
         <property key="labeling/shapeSizeY" value="0"/>
         <property key="labeling/shapeTransparency" value="0"/>
         <property key="labeling/shapeType" value="0"/>
+        <property key="labeling/substitutions" value="&lt;substitutions/>"/>
         <property key="labeling/textColorA" value="255"/>
         <property key="labeling/textColorB" value="0"/>
         <property key="labeling/textColorG" value="0"/>
         <property key="labeling/textColorR" value="0"/>
         <property key="labeling/textTransp" value="0"/>
         <property key="labeling/upsidedownLabels" value="0"/>
+        <property key="labeling/useSubstitutions" value="false"/>
         <property key="labeling/wrapChar" value=""/>
         <property key="labeling/xOffset" value="0"/>
         <property key="labeling/yOffset" value="0"/>
@@ -2240,7 +2243,7 @@ def my_form_open(dialog, layer, feature):
         <selectedonly on=""/>
       </labelattributes>
       <SingleCategoryDiagramRenderer diagramType="Pie" sizeLegend="0" attributeLegend="1">
-        <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="-4.65661e-10">
+        <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="0">
           <fontProperties description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0" style=""/>
           <attribute field="" color="#000000" label=""/>
         </DiagramCategory>

@@ -1,5 +1,7 @@
 package de.uni_koeln.dh.pera.gui;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 import org.eclipse.swt.widgets.Composite;
@@ -10,6 +12,7 @@ import de.uni_koeln.dh.pera.data.Player;
 import de.uni_koeln.dh.pera.data.story.Node;
 import de.uni_koeln.dh.pera.gui.core.img.ImgComposite;
 import de.uni_koeln.dh.pera.gui.core.text.TextComposite;
+import de.uni_koeln.dh.pera.io.IO;
 import de.uni_koeln.dh.pera.util.Calc;
 import de.uni_koeln.dh.pera.util.Serializer;
 
@@ -27,14 +30,11 @@ public class ClientWrapper {
 	
 	protected ClientWrapper(Composite parent) {
 		this.parent = parent;
-		
-		player = Serializer.deserialize(player);
-	}
-	
-	protected ClientWrapper(Composite parent, List<Node> nodes) {
-		this.parent = parent;
-		this.nodes = nodes;
-
+		try {
+			this.nodes = IO.readJson(new File("src/main/resources/textadventure/textadventure.json"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		player = Serializer.deserialize(player);
 	}
 	

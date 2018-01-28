@@ -26,8 +26,7 @@ public class View {
 
 	private Logger logger = LoggerFactory.getLogger(getClass());
 
-	// TODO if fitting set to final
-	private static int H_HMONITOR_PCT = 90, // "height: 90% of the height of the monitor"
+	private static final int H_HMONITOR_PCT = 90, // "height: 90% of the height of the monitor"
 			W_HEIGHT_PCT = /* 75 */80; // "width: 80% of the height (of the app)"
 
 	private Display display = null;
@@ -80,9 +79,12 @@ public class View {
 		initialized = true;
 	}
 
+	/**
+	 * reads textAdventure json and creats ClientWrapper Object
+	 * @throws IOException
+	 */
 	public void loadComponents() throws IOException {
-		List<Node> nodes = IO.readJson(new File("src/main/resources/textadventure/textadventure.json"));
-		ClientWrapper client = new ClientWrapper(shell, nodes);
+		ClientWrapper client = new ClientWrapper(shell);
 		client.wrap();
 
 	}
@@ -127,7 +129,8 @@ public class View {
 		// shell.getBounds() == outer area (!= client area)
 		Rectangle bounds = shell.getBounds();
 
-		int x = (monitorBounds.width - bounds.width) / 2, y = (monitorBounds.height - bounds.height) / 2;
+		int x = (monitorBounds.width - bounds.width) / 2,
+				y = (monitorBounds.height - bounds.height) / 2;
 
 		logger.info("Location (x / y): " + x + " / " + y);
 		return new Point(x, y);

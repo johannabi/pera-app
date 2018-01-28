@@ -45,7 +45,6 @@ public class TextComposite extends BaseComposite {
 		
 		TextOutput output = new TextOutput(this);
 		Updater updater = new Updater(this, neighbour, output);
-
 		TextInput input = new TextInput(this, updater);
 		
 		
@@ -56,11 +55,11 @@ public class TextComposite extends BaseComposite {
 	}
 
 	private void setColors() {
-		setBackground(display.getSystemColor(SWT.COLOR_BLACK));
-		setForeground(display.getSystemColor(SWT.COLOR_WHITE));
+		setBackground(getDefaultBgColor());
+		setForeground(getDefaultFgColor());
 	}
 	
-	protected int getTextMargin() {
+	protected int getLeftRightMargin() {
 		return (parentWidth - neighbour.getInnerWidth()) / 4;
 	}
 	
@@ -69,12 +68,8 @@ public class TextComposite extends BaseComposite {
 	}
 	
 	protected Font getFont(int style) {	
-		// TODO check calculation
-		int size = neighbour.getInnerWidth() / 40;
-
-		// TODO Courier: universal font? 
-		FontData data = new FontData("Courier", size, style); //Courier
-		return new Font(display, data);
+		int fHeight = getHeight() / 25;
+		return getFont("Courier", fHeight, style);
 	}
 	
 }
