@@ -3,6 +3,9 @@ package de.uni_koeln.dh.pera.gui.core;
 import java.util.List;
 
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.slf4j.Logger;
@@ -64,6 +67,19 @@ public class BaseComposite extends Composite {
 			logger.error("Core composite not initialized.");
 		
 		return initialized;
+	}
+	
+	protected Color getDefaultFgColor() {
+		return display.getSystemColor(SWT.COLOR_WHITE);
+	}
+	
+	public Color getDefaultBgColor() {
+		return display.getSystemColor(SWT.COLOR_BLACK);
+	}
+	
+	protected Font getFont(String name, int height, int style) {
+		FontData data = new FontData(name, height, style);
+		return new Font(display, data);
 	}
 
 	public List<Node> getNodes() {

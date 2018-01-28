@@ -42,7 +42,6 @@ public class TextInput extends StyledText {
 			}
 		};
 		
-		// TODO delete defaultText if firstEvent == keyEvent 
 		private KeyListener key = new KeyListener() {
 			public void keyReleased(KeyEvent e) {
 				// RETURN or ENTER
@@ -50,7 +49,7 @@ public class TextInput extends StyledText {
 					String str = getText().trim();
 					
 					if (!str.equals("") && !str.equals(defaultText)) {
-						logger.info("INPUT (" + e.keyCode + "): " + str);
+//						logger.info("INPUT (" + e.keyCode + "): " + str);
 						updater.updateFields();
 					}
 						

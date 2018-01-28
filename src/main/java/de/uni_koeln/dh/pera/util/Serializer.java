@@ -34,7 +34,21 @@ public class Serializer {
 			sb.append(string + ",");
 		}
 		sb.append("\n" + "node: " + currentID);
-		FileWriter fw = new FileWriter(storageFolder + "/gamestatus.config");
+		File configFile = new File(storageFolder + "/gamestatus.config");
+		if(!configFile.exists()) {
+			File folder = new File(storageFolder);
+			if(!folder.exists()) {
+				folder.createNewFile();
+				
+			}
+			folder.mkdirs();
+			//TODO causes exception if folder doesn't exist
+			configFile.createNewFile();
+		}
+			
+
+			
+		FileWriter fw = new FileWriter(configFile);
 		fw.write(sb.toString());
 		fw.close();
 
@@ -85,7 +99,10 @@ public class Serializer {
 			
 			for (int i = 0; i < files.length; i++) {
 				File file = new File(storageFolder + "/" + files[i]);
-				file.delete();
+				String path = file.getAbsolutePath();
+				if (path.endsWith(".config"))
+					file.delete();
+				
 			}
 		}
 		

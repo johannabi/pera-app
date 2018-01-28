@@ -36,6 +36,26 @@ public class View {
 
 	private String title = null;
 	private boolean initialized = false;
+	
+	private ShellListener shellListener = new ShellListener() {
+		
+		public void shellIconified(ShellEvent arg0) {
+		}
+		
+		public void shellDeiconified(ShellEvent arg0) {
+		}
+		
+		public void shellDeactivated(ShellEvent arg0) {		
+		}
+		
+		public void shellClosed(ShellEvent arg0) {
+			logger.info("close without saving");
+			Serializer.deleteFiles();
+		}
+		
+		public void shellActivated(ShellEvent arg0) {		
+		}
+	};
 
 	public View(String title) {
 		this.display = new Display();
@@ -49,28 +69,11 @@ public class View {
 		logger.info("Initialize shell ('" + title + "')...");
 
 		shell = new Shell(display, getStyle());
-		shell.addShellListener(new ShellListener() {
-
-			public void shellIconified(ShellEvent arg0) {
-			}
-
-			public void shellDeiconified(ShellEvent arg0) {
-			}
-
-			public void shellDeactivated(ShellEvent arg0) {
-			}
-
-			public void shellClosed(ShellEvent arg0) {
-				logger.info("close without saving");
-				Serializer.deleteFiles();
-			}
-
-			public void shellActivated(ShellEvent arg0) {
-			}
-		});
+		shell.addShellListener(shellListener);
 		shell.setSize(getSizeByHeight(H_HMONITOR_PCT));
 		shell.setLocation(getCenter());
 		shell.setLayout(LayoutHelper.getNormalizedLayout());
+		shell.setBackgroundMode(SWT.INHERIT_FORCE);		// allows transparent backgrounds
 		// shell.setBackground(display.getSystemColor(SWT.COLOR_RED));
 		shell.setText(title);
 
@@ -78,7 +81,7 @@ public class View {
 	}
 
 	public void loadComponents() throws IOException {
-		List<Node> nodes = IO.readJson(new File("src/main/resources/textadventure.json"));
+		List<Node> nodes = IO.readJson(new File("src/main/resources/textadventure/textadventure.json"));
 		ClientWrapper client = new ClientWrapper(shell, nodes);
 		client.wrap();
 

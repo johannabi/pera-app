@@ -50,7 +50,7 @@ public class ClientWrapper {
 		imgComp.init(imgCompHeight);
 		
 		if (imgComp.isInitialized()) {
-			imgComp.setXXXXX();
+			imgComp.addMapComponents();
 		
 			TextComposite txtComp = new TextComposite(parent, imgComp, nodes, player);
 			txtComp.init(txtCompHeight);

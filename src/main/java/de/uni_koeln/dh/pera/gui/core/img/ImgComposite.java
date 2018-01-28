@@ -5,15 +5,23 @@ import java.util.List;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ControlEvent;
 import org.eclipse.swt.events.ControlListener;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Layout;
 import org.eclipse.swt.widgets.Listener;
+import org.geotools.feature.SchemaException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.vividsolutions.jts.geom.Coordinate;
 
 import de.uni_koeln.dh.pera.data.Player;
 import de.uni_koeln.dh.pera.data.story.Node;
@@ -23,122 +31,174 @@ import de.uni_koeln.dh.pera.util.Calc;
 
 public class ImgComposite extends BaseComposite {
 
-		private Logger logger = LoggerFactory.getLogger(getClass());
-		
-		// TODO if fitting set to final
-		private static int W_WIMGCOMP_PCT = 80;
-//		private static int H_HIMGCOMP_PCT = 5;
-		
-		private int innerWidth = 0;
-		
-		private Label comp = null;
+	private Logger logger = LoggerFactory.getLogger(getClass());
+
+	private Map map = null;
+	private Label header = null;
 	
+	private Coordinate position = null;
+
+	// // TODO if fitting set to final
+	// private static int W_WIMGCOMP_PCT = 80;
+	//// private static int H_HIMGCOMP_PCT = 5;
+	//
+	// private int innerWidth = 0;
+	//
+	// private Label comp = null;
+
+	// TODO zoom out
+	private SelectionListener zoomOutSelection = new SelectionListener() {
+		public void widgetSelected(SelectionEvent e) {
+			System.out.println("zoomOut");
+		}
+
+		public void widgetDefaultSelected(SelectionEvent e) {
+		}
+	};
+
+	// TODO zoom in
+	private SelectionListener zoomInSelection = new SelectionListener() {
+		public void widgetSelected(SelectionEvent e) {
+			System.out.println("zoomIn");
+		}
+
+		public void widgetDefaultSelected(SelectionEvent e) {
+		}
+	};
+
+	// TODO city layer
+	private SelectionListener citySelection = new SelectionListener() {
+		public void widgetSelected(SelectionEvent e) {
+			System.out.println("city: " + ((Button) e.widget).getSelection());
+			map.changeVisibility(2); //layer[2] = standorte
+		}
+
+		public void widgetDefaultSelected(SelectionEvent e) {
+		}
+	};
+
+	// TODO route layer
+	private SelectionListener routeSelection = new SelectionListener() {
+		public void widgetSelected(SelectionEvent e) {
+			System.out.println("route: " + ((Button) e.widget).getSelection());
+			map.changeVisibility(0); //layer[0] = routen
+		}
+
+		public void widgetDefaultSelected(SelectionEvent e) {
+		}
+	};
+
 	public ImgComposite(Composite parent) {
 		super(parent);
 	}
-	
+
 	public ImgComposite(Composite parent, List<Node> nodes, Player player) {
 		super(parent, nodes, player);
 	}
 
 	public void init(int height) {
-		logger.info("Initialize image composite...");	
+		logger.info("Initialize image composite...");
 		super.init(height);
-		setInnerWidth();
-		
-		setBackground(display.getSystemColor(SWT.COLOR_DARK_RED));		// TODO background
+
+		// sample data:
+		// http://al-teef.info/wp-content/uploads/2017/12/texture-seamless-seamless-city-textures-door-texture-65-best-wood-texture-images-on-pinterest-wood-texture-and-wood.jpg
+		setBackgroundImage(new Image(display, "src/main/resources/img/wood.jpg"));
 		setInitialized(true);
 	}
-	
-	// TODO components
-	public void setXXXXX() {
-		int mapHeight = (int) Calc.getValByPct(getHeight(), 75);
-		
-		
-		
-		
-		
-		logger.info("Set XXXXX...");
-		// title
-		comp = new Label(this, SWT.CENTER);
-//		comp.setLayout(new GridLayout());
-		comp.setLayoutData(LayoutHelper.getGridData(
-				getInnerWidth(), 20, 
-				true));
-		comp.setText(getChapter()); //TODO chapter name
-		comp.setBackground(display.getSystemColor(SWT.COLOR_GREEN));
-		
-		
-		
-		
-		
-		
-		
-		
-		// map; see core.img.MapPane
-		Composite comp2 = new Composite(this, SWT.NONE);
-		comp2.setLayout(new GridLayout());
-		comp2.setLayoutData(LayoutHelper.getGridData(
-				getInnerWidth(), mapHeight, 
-				true));
-		comp2.setBackground(display.getSystemColor(SWT.COLOR_YELLOW));
-		final MapPane mapPane = new MapPane();
-		
-			try {
-				mapPane.setMap(comp2);
-				mapPane.addPoint(30.9375, 37.668419);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		
-			
-			
-			
-			
-		// controls
-		Composite comp3 = new Composite(this, SWT.NONE);
-		comp3.setLayout(new RowLayout());
-		comp3.setLayoutData(LayoutHelper.getGridData(
-				getInnerWidth(), 20, 
-				true));
-		comp3.setBackground(display.getSystemColor(SWT.COLOR_MAGENTA));
-		
-		Button but1 = new Button(comp3, SWT.PUSH);
-		but1.setText("Städte");
-		but1.addListener(SWT.Selection, new Listener() {
 
-			public void handleEvent(Event arg0) {
-				mapPane.changeVisibility(2); //layers[2] is "Standorte"
-				
-			}
-			
-		});
-		Button but2 = new Button(comp3, SWT.PUSH);
-		but2.setText("Routen");
-		Button but3 = new Button(comp3, SWT.PUSH);
-		but3.setText("+");
-		Button but4 = new Button(comp3, SWT.PUSH);
-		but4.setText("-");
+	public void addMapComponents() {
+		logger.info("Add map components...");
+
+		int height = getHeight();
+		int mapHeight = (int) Calc.getValByPct(height, Map.H_HIMGCOMP_PCT);
+		int headHeight = (height - mapHeight) / 2;
+
+		setHeader(headHeight);
+		map = new Map(this);
+		map.init(mapHeight);
+		position = new Coordinate(Double.parseDouble(nodes.get(currentID).getLatitude()),
+				Double.parseDouble(nodes.get(currentID).getLongitude()));
+		
+		map.updatePosition(position);
+
+		setControls();
 	}
 
-	
-	public void updateAll() {
-		comp.setText(getChapter());
-		//TODO update map?
-	}
-	
-	
-	private String getChapter() {
-		Node node = super.nodes.get(super.currentID);	
-		return node.getChapter();
-	}
+	private void setHeader(int headHeight) {
+		logger.info("Initialize header...");
 
-	private void setInnerWidth() {
-		innerWidth = (int) Calc.getValByPct(parentWidth, W_WIMGCOMP_PCT);
+		header = new Label(this, SWT.CENTER);
+		header.setLayoutData(LayoutHelper.getCenteredData());
+		header.setForeground(getDefaultFgColor());
+		header.setFont(getHeaderFont(headHeight));
+		header.setText(getChapter());
+	}
+	
+	private void setControls() {
+		logger.info("Initialize controls...");
+		
+		Composite ctrlComp = new Composite(this, SWT.NONE);
+		ctrlComp.setLayout(getCtrlLayout());
+		ctrlComp.setLayoutData(LayoutHelper.getCenteredData());
+//		ctrlComp.setBackground(display.getSystemColor(SWT.COLOR_MAGENTA));
+		
+		// TODO button images
+		
+		Button zoomOutButton = new Button(ctrlComp, SWT.PUSH);
+		zoomOutButton.setText("-");
+		zoomOutButton.addSelectionListener(zoomOutSelection);
+		
+		Button zoomInButton = new Button(ctrlComp, SWT.PUSH);
+		zoomInButton.setText("+");
+		zoomInButton.addSelectionListener(zoomInSelection);
+		
+		Button cityButton = new Button(ctrlComp, SWT.TOGGLE);
+		cityButton.setText("S");	
+		cityButton.addSelectionListener(citySelection);
+		
+		Button routeButton = new Button(ctrlComp, SWT.TOGGLE);
+		routeButton.setText("R");
+		routeButton.addSelectionListener(routeSelection);
+
+	}
+	
+	private Font getHeaderFont(int headHeight) {
+		Font font = getFont("Palatino Linotype", (headHeight / 3), SWT.BOLD);
+		return font;
+	}
+	
+	private Layout getCtrlLayout() {
+		RowLayout layout = LayoutHelper.getRowLayout(parentWidth / 10);
+		return layout;
+	}
+	
+	protected int getWidth() {
+		return parentWidth;
 	}
 	
 	public int getInnerWidth() {
-		return innerWidth;
+		return map.getWidth();
 	}
-	
+
+	public void updateAll() {
+		header.setText(getChapter());
+		
+		Coordinate newCoordinate = new Coordinate(Double.parseDouble(nodes.get(currentID).getLatitude()),
+				Double.parseDouble(nodes.get(currentID).getLongitude()));
+		
+		if(!newCoordinate.equals(position)) { //if position changed
+			position = newCoordinate;
+			map.updatePosition(position);
+		}
+		
+//		map.updatePosition(postion);
+	}
+
+	private String getChapter() {
+		Node node = super.nodes.get(super.currentID);
+		return node.getChapter();
+	}
+
+
+
 }
