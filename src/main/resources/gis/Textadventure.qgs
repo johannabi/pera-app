@@ -3,7 +3,7 @@
   <title></title>
   <autotransaction active="0"/>
   <evaluateDefaultValues active="0"/>
-  <layer-tree-group expanded="1" checked="Qt::Checked" name="">
+  <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
     <customproperties/>
     <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Kapitel20180119125825559" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/shapelayer/Kapitel_neu.shp" name="Kapitel">
       <customproperties>
@@ -20,34 +20,37 @@
         <property key="showFeatureCount" value="1"/>
       </customproperties>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Venezianische_Gebiete20180127155114757" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/shapelayer/politische Layer/Venezianische Gebiete.shp" name="Venezianische Gebiete">
+    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Venezianische_Gebiete20180127155114757" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/shapelayer/politicallayer/Venezianische Gebiete.shp" name="Venezianische Gebiete">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="OsmanischesReich20180127155056856" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/shapelayer/politische Layer/OsmanischesReich.shp" name="OsmanischesReich">
+    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="OsmanischesReich20180127155056856" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/shapelayer/politicallayer/OsmanischesReich.shp" name="OsmanischesReich">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Königreich_Zypern20180127155034983" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/shapelayer/politische Layer/Königreich Zypern.shp" name="Königreich Zypern">
+    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Königreich_Zypern20180127155034983" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/shapelayer/politicallayer/Königreich Zypern.shp" name="Königreich Zypern">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Kamariden_Emirat20180127155021247" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/shapelayer/politische Layer/Kamariden Emirat.shp" name="Kamariden Emirat">
+    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Kamariden_Emirat20180127155021247" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/shapelayer/politicallayer/Kamariden Emirat.shp" name="Kamariden Emirat">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Johanniterorden20180127155009052" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/shapelayer/politische Layer/Johanniterorden.shp" name="Johanniterorden">
+    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Johanniterorden20180127155009052" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/shapelayer/politicallayer/Johanniterorden.shp" name="Johanniterorden">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Herzogtum_Naxos20180127154950338" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/shapelayer/politische Layer/Herzogtum Naxos.shp" name="Herzogtum Naxos">
+    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Herzogtum_Naxos20180127154950338" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/shapelayer/politicallayer/Herzogtum Naxos.shp" name="Herzogtum Naxos">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Genuesische_Gebiete20180127154936833" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/shapelayer/politische Layer/Genuesische Gebiete.shp" name="Genuesische Gebiete">
+    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Genuesische_Gebiete20180127154936833" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/shapelayer/politicallayer/Genuesische Gebiete.shp" name="Genuesische Gebiete">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Byzantinische_Gebiete20180127154907918" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/shapelayer/politische Layer/Byzantinische Gebiete.shp" name="Byzantinische Gebiete">
+    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="Byzantinische_Gebiete20180127154907918" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/shapelayer/politicallayer/Byzantinische Gebiete.shp" name="Byzantinische Gebiete">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="AegyptischesMamelukenSultanat20180127154834076" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/shapelayer/politische Layer/AegyptischesMamelukenSultanat.shp" name="AegyptischesMamelukenSultanat">
+    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="AegyptischesMamelukenSultanat20180127154834076" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/shapelayer/politicallayer/AegyptischesMamelukenSultanat.shp" name="AegyptischesMamelukenSultanat">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="0" providerKey="gdal" checked="Qt::Checked" id="textadventure_empty_geo20180126120021268" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/rasterlayer/TextadventrueEmpty_geo.jpg" name="textadventure_empty_geo">
+    <layer-tree-layer expanded="1" providerKey="gdal" checked="Qt::Checked" id="Textadventrue_neu_proj20180129142244353" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/rasterlayer/Textadventrue_neu_proj.tif" name="Textadventrue_neu_proj">
+      <customproperties/>
+    </layer-tree-layer>
+    <layer-tree-layer expanded="1" providerKey="gdal" checked="Qt::Unchecked" id="Textadventrue_neu20180129141817390" source="C:/Users/Johanna/git/pera-app/src/main/resources/gis/rasterlayer/Textadventrue_neu.tif" name="Textadventrue_neu">
       <customproperties/>
     </layer-tree-layer>
   </layer-tree-group>
@@ -55,10 +58,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>2166654.89316471666097641</xmin>
-      <ymin>3785094.96813011448830366</ymin>
-      <xmax>5063422.07716693729162216</xmax>
-      <ymax>5396082.9433310953900218</ymax>
+      <xmin>1471143.96037210244685411</xmin>
+      <ymin>3532703.3719002166762948</ymin>
+      <xmax>4367911.14437432494014502</xmax>
+      <ymax>5143691.34710119944065809</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -76,6 +79,7 @@
     </destinationsrs>
     <rendermaptile>0</rendermaptile>
     <layer_coordinate_transform_info>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="textadventure20180129125312467"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Textadventrue20180123123844731"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Herzogtum_Naxos20180127154950338"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Standorte20180119124903113"/>
@@ -94,12 +98,13 @@
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Pero_Tafur620180119135212167"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Reiseroute20180117185245444"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Pero_Tafur20180118211839165"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Textadventrue_neu20180129141817390"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Unbenannt20180119153052810"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="map20180119154618717"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Map20180118211609552"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Venezianische_Gebiete20180127155114757"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Textadventrue_geo20180123124024942"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Reiseroute20180118212638441"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Reiseroute20180118212638441"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="" srcDatumTransform="-1" destDatumTransform="-1" layerid="OSM_Plugin_layer20180118205657524"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="PoliticalLayer20180119161018242"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="TextadventrueEmpty20180124182135682"/>
@@ -109,7 +114,7 @@
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="MapSurfer_ASTER_GDEM_SRTM_Hillshade20180117191923829"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="OpenLayers_plugin_layer20180117193702971"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Landsat__Gis_Lab_info_20180117190604204"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="Standorte20180119125121720"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Standorte20180119125121720"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Stamen_Watercolor_OSM20180117191454167"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Johanniterorden20180127155009052"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="eAtlas_EGIP20180117190442530"/>
@@ -140,7 +145,8 @@
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Textadventrue_geo20180123124006643"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="OpenLayers_plugin_layer20180117193727106"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="07___Pero_Tafur20180118210657209"/>
-      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100000" srcDatumTransform="-1" destDatumTransform="-1" layerid="textadventure_empty_geo20180126120021268"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="textadventure_empty_geo20180126120021268"/>
+      <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Textadventrue_neu_proj20180129142244353"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100003" srcDatumTransform="-1" destDatumTransform="-1" layerid="Unbenannt_modifiziert20180119153735485"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="USER:100003" srcDatumTransform="-1" destDatumTransform="-1" layerid="Pero_Tafur520180119134835736"/>
       <layer_coordinate_transform destAuthId="EPSG:3857" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="Outdoors20180117190152002"/>
@@ -153,7 +159,6 @@
       <item>Reiseroute20180118212638441</item>
       <item>Standorte20180119125121720</item>
       <item>Kapitel20180119125825559</item>
-      <item>textadventure_empty_geo20180126120021268</item>
       <item>AegyptischesMamelukenSultanat20180127154834076</item>
       <item>Byzantinische_Gebiete20180127154907918</item>
       <item>Genuesische_Gebiete20180127154936833</item>
@@ -163,6 +168,8 @@
       <item>Königreich_Zypern20180127155034983</item>
       <item>OsmanischesReich20180127155056856</item>
       <item>Venezianische_Gebiete20180127155114757</item>
+      <item>Textadventrue_neu20180129141817390</item>
+      <item>Textadventrue_neu_proj20180129142244353</item>
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="true">
@@ -226,9 +233,14 @@
         <legendlayerfile isInOverview="0" layerid="AegyptischesMamelukenSultanat20180127154834076" visible="1"/>
       </filegroup>
     </legendlayer>
-    <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="textadventure_empty_geo" showFeatureCount="0">
-      <filegroup open="false" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="textadventure_empty_geo20180126120021268" visible="1"/>
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="Textadventrue_neu_proj" showFeatureCount="0">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="Textadventrue_neu_proj20180129142244353" visible="1"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Textadventrue_neu" showFeatureCount="0">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile isInOverview="0" layerid="Textadventrue_neu20180129141817390" visible="0"/>
       </filegroup>
     </legendlayer>
   </legend>
@@ -241,7 +253,7 @@
         <ymax>4544938.40401745494455099</ymax>
       </extent>
       <id>AegyptischesMamelukenSultanat20180127154834076</id>
-      <datasource>./shapelayer/politische Layer/AegyptischesMamelukenSultanat.shp</datasource>
+      <datasource>./shapelayer/politicallayer/AegyptischesMamelukenSultanat.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -353,7 +365,7 @@
         <ymax>5083845.7681870274245739</ymax>
       </extent>
       <id>Byzantinische_Gebiete20180127154907918</id>
-      <datasource>./shapelayer/politische Layer/Byzantinische Gebiete.shp</datasource>
+      <datasource>./shapelayer/politicallayer/Byzantinische Gebiete.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -465,7 +477,7 @@
         <ymax>4773707.89197854977101088</ymax>
       </extent>
       <id>Genuesische_Gebiete20180127154936833</id>
-      <datasource>./shapelayer/politische Layer/Genuesische Gebiete.shp</datasource>
+      <datasource>./shapelayer/politicallayer/Genuesische Gebiete.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -577,7 +589,7 @@
         <ymax>4752391.35062761791050434</ymax>
       </extent>
       <id>Herzogtum_Naxos20180127154950338</id>
-      <datasource>./shapelayer/politische Layer/Herzogtum Naxos.shp</datasource>
+      <datasource>./shapelayer/politicallayer/Herzogtum Naxos.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -689,7 +701,7 @@
         <ymax>4467491.93423128221184015</ymax>
       </extent>
       <id>Johanniterorden20180127155009052</id>
-      <datasource>./shapelayer/politische Layer/Johanniterorden.shp</datasource>
+      <datasource>./shapelayer/politicallayer/Johanniterorden.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -801,7 +813,7 @@
         <ymax>4828868.71661781892180443</ymax>
       </extent>
       <id>Kamariden_Emirat20180127155021247</id>
-      <datasource>./shapelayer/politische Layer/Kamariden Emirat.shp</datasource>
+      <datasource>./shapelayer/politicallayer/Kamariden Emirat.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -1261,7 +1273,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>4258574.28444059006869793</ymax>
       </extent>
       <id>Königreich_Zypern20180127155034983</id>
-      <datasource>./shapelayer/politische Layer/Königreich Zypern.shp</datasource>
+      <datasource>./shapelayer/politicallayer/Königreich Zypern.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -1376,7 +1388,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>5176615.06658472679555416</ymax>
       </extent>
       <id>OsmanischesReich20180127155056856</id>
-      <datasource>./shapelayer/politische Layer/OsmanischesReich.shp</datasource>
+      <datasource>./shapelayer/politicallayer/OsmanischesReich.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -1671,7 +1683,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression>COALESCE( "Id", '&lt;NULL>' )</previewExpression>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <extent>
         <xmin>25.92514723063776927</xmin>
         <ymin>31.18112064570187059</ymin>
@@ -1686,14 +1698,14 @@ def my_form_open(dialog, layer, feature):
       <layername>Reiseroute</layername>
       <srs>
         <spatialrefsys>
-          <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
-          <srsid>3452</srsid>
-          <srid>4326</srid>
-          <authid>EPSG:4326</authid>
-          <description>WGS 84</description>
-          <projectionacronym>longlat</projectionacronym>
+          <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs</proj4>
+          <srsid>3857</srsid>
+          <srid>3857</srid>
+          <authid>EPSG:3857</authid>
+          <description>WGS 84 / Pseudo Mercator</description>
+          <projectionacronym>merc</projectionacronym>
           <ellipsoidacronym>WGS84</ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <provider encoding="System">ogr</provider>
@@ -1756,6 +1768,7 @@ def my_form_open(dialog, layer, feature):
       </renderer-v2>
       <labeling type="simple"/>
       <customproperties>
+        <property key="embeddedWidgets/count" value="0"/>
         <property key="labeling" value="pal"/>
         <property key="labeling/addDirectionSymbol" value="false"/>
         <property key="labeling/angleOffset" value="0"/>
@@ -1882,12 +1895,14 @@ def my_form_open(dialog, layer, feature):
         <property key="labeling/shapeSizeY" value="0"/>
         <property key="labeling/shapeTransparency" value="0"/>
         <property key="labeling/shapeType" value="0"/>
+        <property key="labeling/substitutions" value="&lt;substitutions/>"/>
         <property key="labeling/textColorA" value="255"/>
         <property key="labeling/textColorB" value="0"/>
         <property key="labeling/textColorG" value="0"/>
         <property key="labeling/textColorR" value="0"/>
         <property key="labeling/textTransp" value="0"/>
         <property key="labeling/upsidedownLabels" value="0"/>
+        <property key="labeling/useSubstitutions" value="false"/>
         <property key="labeling/wrapChar" value=""/>
         <property key="labeling/xOffset" value="0"/>
         <property key="labeling/yOffset" value="0"/>
@@ -1921,7 +1936,7 @@ def my_form_open(dialog, layer, feature):
         <selectedonly on=""/>
       </labelattributes>
       <SingleCategoryDiagramRenderer diagramType="Pie" sizeLegend="0" attributeLegend="1">
-        <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="-4.65661e-10">
+        <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="inf">
           <fontProperties description="MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0" style=""/>
           <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
@@ -2011,14 +2026,14 @@ def my_form_open(dialog, layer, feature):
       <layername>Standorte</layername>
       <srs>
         <spatialrefsys>
-          <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
-          <srsid>3452</srsid>
-          <srid>4326</srid>
-          <authid>EPSG:4326</authid>
-          <description>WGS 84</description>
-          <projectionacronym>longlat</projectionacronym>
+          <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs</proj4>
+          <srsid>3857</srsid>
+          <srid>3857</srid>
+          <authid>EPSG:3857</authid>
+          <description>WGS 84 / Pseudo Mercator</description>
+          <projectionacronym>merc</projectionacronym>
           <ellipsoidacronym>WGS84</ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <provider encoding="System">ogr</provider>
@@ -2243,7 +2258,7 @@ def my_form_open(dialog, layer, feature):
         <selectedonly on=""/>
       </labelattributes>
       <SingleCategoryDiagramRenderer diagramType="Pie" sizeLegend="0" attributeLegend="1">
-        <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="0">
+        <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="inf">
           <fontProperties description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0" style=""/>
           <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
@@ -2327,6 +2342,107 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression>COALESCE( "Standort", '&lt;NULL>' )</previewExpression>
     </maplayer>
+    <maplayer minimumScale="inf" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+      <extent>
+        <xmin>1866375.14591818163171411</xmin>
+        <ymin>3566942.5305006904527545</ymin>
+        <xmax>4069185.20099729439243674</xmax>
+        <ymax>5107313.32988572213798761</ymax>
+      </extent>
+      <id>Textadventrue_neu20180129141817390</id>
+      <datasource>./rasterlayer/Textadventrue_neu.tif</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>Textadventrue_neu</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs</proj4>
+          <srsid>3857</srsid>
+          <srid>3857</srid>
+          <authid>EPSG:3857</authid>
+          <description>WGS 84 / Pseudo Mercator</description>
+          <projectionacronym>merc</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <customproperties>
+        <property key="embeddedWidgets/count" value="0"/>
+        <property key="identify/format" value="Value"/>
+      </customproperties>
+      <provider>gdal</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="0"/>
+      </noData>
+      <map-layer-style-manager current="">
+        <map-layer-style name=""/>
+      </map-layer-style-manager>
+      <pipe>
+        <rasterrenderer gradient="BlackToWhite" opacity="1" alphaBand="0" type="singlebandgray" grayBand="1">
+          <rasterTransparency/>
+          <contrastEnhancement>
+            <minValue>18</minValue>
+            <maxValue>240</maxValue>
+            <algorithm>StretchToMinimumMaximum</algorithm>
+          </contrastEnhancement>
+        </rasterrenderer>
+        <brightnesscontrast brightness="0" contrast="0"/>
+        <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+        <rasterresampler maxOversampling="2"/>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+      <extent>
+        <xmin>1866375.14591818139888346</xmin>
+        <ymin>3566942.53050068859010935</ymin>
+        <xmax>4069185.20099729299545288</xmax>
+        <ymax>5107313.32988571934401989</ymax>
+      </extent>
+      <id>Textadventrue_neu_proj20180129142244353</id>
+      <datasource>./rasterlayer/Textadventrue_neu_proj.tif</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>Textadventrue_neu_proj</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs</proj4>
+          <srsid>3857</srsid>
+          <srid>3857</srid>
+          <authid>EPSG:3857</authid>
+          <description>WGS 84 / Pseudo Mercator</description>
+          <projectionacronym>merc</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <customproperties>
+        <property key="identify/format" value="Value"/>
+      </customproperties>
+      <provider>gdal</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="0"/>
+      </noData>
+      <map-layer-style-manager current="">
+        <map-layer-style name=""/>
+      </map-layer-style-manager>
+      <pipe>
+        <rasterrenderer gradient="BlackToWhite" opacity="1" alphaBand="-1" type="singlebandgray" grayBand="1">
+          <rasterTransparency/>
+          <contrastEnhancement>
+            <minValue>18</minValue>
+            <maxValue>240</maxValue>
+            <algorithm>StretchToMinimumMaximum</algorithm>
+          </contrastEnhancement>
+        </rasterrenderer>
+        <brightnesscontrast brightness="0" contrast="0"/>
+        <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+        <rasterresampler maxOversampling="2"/>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
     <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <extent>
         <xmin>2155932.92732071876525879</xmin>
@@ -2335,7 +2451,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>5076045.58018771559000015</ymax>
       </extent>
       <id>Venezianische_Gebiete20180127155114757</id>
-      <datasource>./shapelayer/politische Layer/Venezianische Gebiete.shp</datasource>
+      <datasource>./shapelayer/politicallayer/Venezianische Gebiete.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -2630,375 +2746,83 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression>COALESCE( "Id", '&lt;NULL>' )</previewExpression>
     </maplayer>
-    <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
-      <extent>
-        <xmin>1853903.6151346554979682</xmin>
-        <ymin>3566620.44080834183841944</ymin>
-        <xmax>4750670.79913688451051712</xmax>
-        <ymax>5114926.00868093315511942</ymax>
-      </extent>
-      <id>textadventure_empty_geo20180126120021268</id>
-      <datasource>./rasterlayer/TextadventrueEmpty_geo.jpg</datasource>
-      <keywordList>
-        <value></value>
-      </keywordList>
-      <layername>textadventure_empty_geo</layername>
-      <srs>
-        <spatialrefsys>
-          <proj4>+proj=merc +lon_0=0 +lat_ts=0 +x_0=0 +y_0=0 +a=6378137 +b=6378137 +units=m +no_defs</proj4>
-          <srsid>100000</srsid>
-          <srid>0</srid>
-          <authid>USER:100000</authid>
-          <description> * Erzeugtes KBS (+proj=merc +lon_0=0 +lat_ts=0 +x_0=0 +y_0=0 +a=6378137 +b=6378137 +units=m +no_defs)</description>
-          <projectionacronym>merc</projectionacronym>
-          <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
-        </spatialrefsys>
-      </srs>
-      <customproperties>
-        <property key="identify/format" value="Value"/>
-      </customproperties>
-      <provider>gdal</provider>
-      <noData>
-        <noDataList bandNo="1" useSrcNoData="1"/>
-      </noData>
-      <map-layer-style-manager current="">
-        <map-layer-style name=""/>
-      </map-layer-style-manager>
-      <pipe>
-        <rasterrenderer opacity="1" alphaBand="-1" band="1" type="paletted">
-          <rasterTransparency/>
-          <colorPalette>
-            <paletteEntry value="0" color="#0066dd" label="0"/>
-            <paletteEntry value="1" color="#0a6aae" label="1"/>
-            <paletteEntry value="2" color="#0074de" label="2"/>
-            <paletteEntry value="3" color="#057a9d" label="3"/>
-            <paletteEntry value="4" color="#007ab4" label="4"/>
-            <paletteEntry value="5" color="#158697" label="5"/>
-            <paletteEntry value="6" color="#0086dd" label="6"/>
-            <paletteEntry value="7" color="#108cb5" label="7"/>
-            <paletteEntry value="8" color="#0090c3" label="8"/>
-            <paletteEntry value="9" color="#0094b1" label="9"/>
-            <paletteEntry value="10" color="#0094b9" label="10"/>
-            <paletteEntry value="11" color="#2d89b2" label="11"/>
-            <paletteEntry value="12" color="#0094db" label="12"/>
-            <paletteEntry value="13" color="#0f91cd" label="13"/>
-            <paletteEntry value="14" color="#1295ac" label="14"/>
-            <paletteEntry value="15" color="#009fd1" label="15"/>
-            <paletteEntry value="16" color="#1c9ba9" label="16"/>
-            <paletteEntry value="17" color="#00a3c7" label="17"/>
-            <paletteEntry value="18" color="#039fe6" label="18"/>
-            <paletteEntry value="19" color="#00a3e1" label="19"/>
-            <paletteEntry value="20" color="#0ca4c0" label="20"/>
-            <paletteEntry value="21" color="#4c9b73" label="21"/>
-            <paletteEntry value="22" color="#15a5bb" label="22"/>
-            <paletteEntry value="23" color="#00abdd" label="23"/>
-            <paletteEntry value="24" color="#00b0cb" label="24"/>
-            <paletteEntry value="25" color="#0caed2" label="25"/>
-            <paletteEntry value="26" color="#29aaab" label="26"/>
-            <paletteEntry value="27" color="#18afbb" label="27"/>
-            <paletteEntry value="28" color="#5f9ea3" label="28"/>
-            <paletteEntry value="29" color="#21afc5" label="29"/>
-            <paletteEntry value="30" color="#28adc9" label="30"/>
-            <paletteEntry value="31" color="#36abbb" label="31"/>
-            <paletteEntry value="32" color="#d78466" label="32"/>
-            <paletteEntry value="33" color="#00bcdd" label="33"/>
-            <paletteEntry value="34" color="#09b9e1" label="34"/>
-            <paletteEntry value="35" color="#13b9cd" label="35"/>
-            <paletteEntry value="36" color="#10b8ea" label="36"/>
-            <paletteEntry value="37" color="#1db8d3" label="37"/>
-            <paletteEntry value="38" color="#10bdcb" label="38"/>
-            <paletteEntry value="39" color="#2db5de" label="39"/>
-            <paletteEntry value="40" color="#28b8da" label="40"/>
-            <paletteEntry value="41" color="#36b5d1" label="41"/>
-            <paletteEntry value="42" color="#2db9c7" label="42"/>
-            <paletteEntry value="43" color="#32b7cd" label="43"/>
-            <paletteEntry value="44" color="#24bdc5" label="44"/>
-            <paletteEntry value="45" color="#40b7c8" label="45"/>
-            <paletteEntry value="46" color="#23bfd3" label="46"/>
-            <paletteEntry value="47" color="#d2966e" label="47"/>
-            <paletteEntry value="48" color="#2abed9" label="48"/>
-            <paletteEntry value="49" color="#21c5bd" label="49"/>
-            <paletteEntry value="50" color="#23c5c5" label="50"/>
-            <paletteEntry value="51" color="#12c8dc" label="51"/>
-            <paletteEntry value="52" color="#36bfce" label="52"/>
-            <paletteEntry value="53" color="#40bdc6" label="53"/>
-            <paletteEntry value="54" color="#3cbdd3" label="54"/>
-            <paletteEntry value="55" color="#48bdce" label="55"/>
-            <paletteEntry value="56" color="#27c5e8" label="56"/>
-            <paletteEntry value="57" color="#1fc8e2" label="57"/>
-            <paletteEntry value="58" color="#21cad0" label="58"/>
-            <paletteEntry value="59" color="#36c3df" label="59"/>
-            <paletteEntry value="60" color="#31c5da" label="60"/>
-            <paletteEntry value="61" color="#2bc9d6" label="61"/>
-            <paletteEntry value="62" color="#daa34e" label="62"/>
-            <paletteEntry value="63" color="#51c1be" label="63"/>
-            <paletteEntry value="64" color="#43c3d9" label="64"/>
-            <paletteEntry value="65" color="#3fc5d4" label="65"/>
-            <paletteEntry value="66" color="#45c5c7" label="66"/>
-            <paletteEntry value="67" color="#4ac4ce" label="67"/>
-            <paletteEntry value="68" color="#4ec3d3" label="68"/>
-            <paletteEntry value="69" color="#3ec9d1" label="69"/>
-            <paletteEntry value="70" color="#39cadf" label="70"/>
-            <paletteEntry value="71" color="#56c4c8" label="71"/>
-            <paletteEntry value="72" color="#3ec9e4" label="72"/>
-            <paletteEntry value="73" color="#e0a28e" label="73"/>
-            <paletteEntry value="74" color="#5ac4cf" label="74"/>
-            <paletteEntry value="75" color="#5bc3db" label="75"/>
-            <paletteEntry value="76" color="#46cad9" label="76"/>
-            <paletteEntry value="77" color="#5dc2e5" label="77"/>
-            <paletteEntry value="78" color="#60c8ab" label="78"/>
-            <paletteEntry value="79" color="#4bc9df" label="79"/>
-            <paletteEntry value="80" color="#63c3d6" label="80"/>
-            <paletteEntry value="81" color="#55c8d9" label="81"/>
-            <paletteEntry value="82" color="#51cad3" label="82"/>
-            <paletteEntry value="83" color="#32d1ec" label="83"/>
-            <paletteEntry value="84" color="#39d1df" label="84"/>
-            <paletteEntry value="85" color="#41cfe4" label="85"/>
-            <paletteEntry value="86" color="#35d5db" label="86"/>
-            <paletteEntry value="87" color="#44cfec" label="87"/>
-            <paletteEntry value="88" color="#4dcfde" label="88"/>
-            <paletteEntry value="89" color="#49d1d9" label="89"/>
-            <paletteEntry value="90" color="#3dd5d5" label="90"/>
-            <paletteEntry value="91" color="#51cee4" label="91"/>
-            <paletteEntry value="92" color="#57cfd9" label="92"/>
-            <paletteEntry value="93" color="#52cef3" label="93"/>
-            <paletteEntry value="94" color="#deaf8d" label="94"/>
-            <paletteEntry value="95" color="#5bcede" label="95"/>
-            <paletteEntry value="96" color="#dbb097" label="96"/>
-            <paletteEntry value="97" color="#d8b0a2" label="97"/>
-            <paletteEntry value="98" color="#dbb474" label="98"/>
-            <paletteEntry value="99" color="#68cbe4" label="99"/>
-            <paletteEntry value="100" color="#42d7e5" label="100"/>
-            <paletteEntry value="101" color="#6dcbde" label="101"/>
-            <paletteEntry value="102" color="#d3b58e" label="102"/>
-            <paletteEntry value="103" color="#ccb3b7" label="103"/>
-            <paletteEntry value="104" color="#4bd5ea" label="104"/>
-            <paletteEntry value="105" color="#3fdbd2" label="105"/>
-            <paletteEntry value="106" color="#d3b598" label="106"/>
-            <paletteEntry value="107" color="#ddb486" label="107"/>
-            <paletteEntry value="108" color="#57d4d6" label="108"/>
-            <paletteEntry value="109" color="#cfb6a3" label="109"/>
-            <paletteEntry value="110" color="#50d6de" label="110"/>
-            <paletteEntry value="111" color="#d4b886" label="111"/>
-            <paletteEntry value="112" color="#62d2d5" label="112"/>
-            <paletteEntry value="113" color="#67d0db" label="113"/>
-            <paletteEntry value="114" color="#56d5e4" label="114"/>
-            <paletteEntry value="115" color="#eab388" label="115"/>
-            <paletteEntry value="116" color="#35dfec" label="116"/>
-            <paletteEntry value="117" color="#5ed5df" label="117"/>
-            <paletteEntry value="118" color="#76d0d6" label="118"/>
-            <paletteEntry value="119" color="#43dcf7" label="119"/>
-            <paletteEntry value="120" color="#44dfe5" label="120"/>
-            <paletteEntry value="121" color="#4dddeb" label="121"/>
-            <paletteEntry value="122" color="#75d2e5" label="122"/>
-            <paletteEntry value="123" color="#52dcf1" label="123"/>
-            <paletteEntry value="124" color="#4edfe0" label="124"/>
-            <paletteEntry value="125" color="#57dce4" label="125"/>
-            <paletteEntry value="126" color="#64dae4" label="126"/>
-            <paletteEntry value="127" color="#5ddceb" label="127"/>
-            <paletteEntry value="128" color="#67daec" label="128"/>
-            <paletteEntry value="129" color="#6ddbd8" label="129"/>
-            <paletteEntry value="130" color="#63dee1" label="130"/>
-            <paletteEntry value="131" color="#e7bda4" label="131"/>
-            <paletteEntry value="132" color="#72dae5" label="132"/>
-            <paletteEntry value="133" color="#f8b9a5" label="133"/>
-            <paletteEntry value="134" color="#e1c0a4" label="134"/>
-            <paletteEntry value="135" color="#dac2a6" label="135"/>
-            <paletteEntry value="136" color="#ecbe9b" label="136"/>
-            <paletteEntry value="137" color="#8fd4d4" label="137"/>
-            <paletteEntry value="138" color="#5de1e9" label="138"/>
-            <paletteEntry value="139" color="#dfc1ac" label="139"/>
-            <paletteEntry value="140" color="#6fdde1" label="140"/>
-            <paletteEntry value="141" color="#c6caa8" label="141"/>
-            <paletteEntry value="142" color="#d4c98e" label="142"/>
-            <paletteEntry value="143" color="#7ed9ee" label="143"/>
-            <paletteEntry value="144" color="#e7c29d" label="144"/>
-            <paletteEntry value="145" color="#f1bdb3" label="145"/>
-            <paletteEntry value="146" color="#80dae1" label="146"/>
-            <paletteEntry value="147" color="#ebc294" label="147"/>
-            <paletteEntry value="148" color="#6ae0e9" label="148"/>
-            <paletteEntry value="149" color="#efc385" label="149"/>
-            <paletteEntry value="150" color="#57e7f5" label="150"/>
-            <paletteEntry value="151" color="#e8c3b3" label="151"/>
-            <paletteEntry value="152" color="#e8c886" label="152"/>
-            <paletteEntry value="153" color="#e4c8a0" label="153"/>
-            <paletteEntry value="154" color="#67e5f6" label="154"/>
-            <paletteEntry value="155" color="#63e7ef" label="155"/>
-            <paletteEntry value="156" color="#edc5ab" label="156"/>
-            <paletteEntry value="157" color="#e6c998" label="157"/>
-            <paletteEntry value="158" color="#e3c7b8" label="158"/>
-            <paletteEntry value="159" color="#e9c7a7" label="159"/>
-            <paletteEntry value="160" color="#e3c9a6" label="160"/>
-            <paletteEntry value="161" color="#e0c9b3" label="161"/>
-            <paletteEntry value="162" color="#60eae7" label="162"/>
-            <paletteEntry value="163" color="#ddcab9" label="163"/>
-            <paletteEntry value="164" color="#e8c8ad" label="164"/>
-            <paletteEntry value="165" color="#e6c8b4" label="165"/>
-            <paletteEntry value="166" color="#6de7e8" label="166"/>
-            <paletteEntry value="167" color="#e3caae" label="167"/>
-            <paletteEntry value="168" color="#72e6f0" label="168"/>
-            <paletteEntry value="169" color="#78e6e9" label="169"/>
-            <paletteEntry value="170" color="#80e7e5" label="170"/>
-            <paletteEntry value="171" color="#86e7df" label="171"/>
-            <paletteEntry value="172" color="#ebcdb8" label="172"/>
-            <paletteEntry value="173" color="#fbcab0" label="173"/>
-            <paletteEntry value="174" color="#efceb4" label="174"/>
-            <paletteEntry value="175" color="#ebcec0" label="175"/>
-            <paletteEntry value="176" color="#e9d0b3" label="176"/>
-            <paletteEntry value="177" color="#e7d0b9" label="177"/>
-            <paletteEntry value="178" color="#f2ceae" label="178"/>
-            <paletteEntry value="179" color="#f5cea8" label="179"/>
-            <paletteEntry value="180" color="#ecd1a8" label="180"/>
-            <paletteEntry value="181" color="#e5d1c0" label="181"/>
-            <paletteEntry value="182" color="#eecfbb" label="182"/>
-            <paletteEntry value="183" color="#ecd1ae" label="183"/>
-            <paletteEntry value="184" color="#8be9e9" label="184"/>
-            <paletteEntry value="185" color="#f9cdc2" label="185"/>
-            <paletteEntry value="186" color="#e8d4af" label="186"/>
-            <paletteEntry value="187" color="#93e8eb" label="187"/>
-            <paletteEntry value="188" color="#e5d5bc" label="188"/>
-            <paletteEntry value="189" color="#f1d2bd" label="189"/>
-            <paletteEntry value="190" color="#efd2c4" label="190"/>
-            <paletteEntry value="191" color="#eed4b7" label="191"/>
-            <paletteEntry value="192" color="#ecd4bd" label="192"/>
-            <paletteEntry value="193" color="#e8d6b7" label="193"/>
-            <paletteEntry value="194" color="#81efef" label="194"/>
-            <paletteEntry value="195" color="#f5cfd9" label="195"/>
-            <paletteEntry value="196" color="#e9d5c4" label="196"/>
-            <paletteEntry value="197" color="#a7e7e9" label="197"/>
-            <paletteEntry value="198" color="#f3d7b4" label="198"/>
-            <paletteEntry value="199" color="#f2d6c7" label="199"/>
-            <paletteEntry value="200" color="#f7d6bb" label="200"/>
-            <paletteEntry value="201" color="#f5d6c1" label="201"/>
-            <paletteEntry value="202" color="#edd8c7" label="202"/>
-            <paletteEntry value="203" color="#f2d8bc" label="203"/>
-            <paletteEntry value="204" color="#efdab5" label="204"/>
-            <paletteEntry value="205" color="#e2deb6" label="205"/>
-            <paletteEntry value="206" color="#f0d9c2" label="206"/>
-            <paletteEntry value="207" color="#eddbbc" label="207"/>
-            <paletteEntry value="208" color="#e9dbc9" label="208"/>
-            <paletteEntry value="209" color="#ecdbc3" label="209"/>
-            <paletteEntry value="210" color="#a4ebf9" label="210"/>
-            <paletteEntry value="211" color="#dfe0c5" label="211"/>
-            <paletteEntry value="212" color="#f6d9cb" label="212"/>
-            <paletteEntry value="213" color="#f1dbcb" label="213"/>
-            <paletteEntry value="214" color="#9cf2e2" label="214"/>
-            <paletteEntry value="215" color="#f7ddaa" label="215"/>
-            <paletteEntry value="216" color="#bce7fb" label="216"/>
-            <paletteEntry value="217" color="#fbdcc8" label="217"/>
-            <paletteEntry value="218" color="#fedcc0" label="218"/>
-            <paletteEntry value="219" color="#f3decd" label="219"/>
-            <paletteEntry value="220" color="#f8dec1" label="220"/>
-            <paletteEntry value="221" color="#faddcf" label="221"/>
-            <paletteEntry value="222" color="#f6dfc8" label="222"/>
-            <paletteEntry value="223" color="#eee5ab" label="223"/>
-            <paletteEntry value="224" color="#f4e1c1" label="224"/>
-            <paletteEntry value="225" color="#ffdcd3" label="225"/>
-            <paletteEntry value="226" color="#efe2cf" label="226"/>
-            <paletteEntry value="227" color="#f2e2c9" label="227"/>
-            <paletteEntry value="228" color="#f6e1d0" label="228"/>
-            <paletteEntry value="229" color="#f5e2d7" label="229"/>
-            <paletteEntry value="230" color="#9efafb" label="230"/>
-            <paletteEntry value="231" color="#f9e4d2" label="231"/>
-            <paletteEntry value="232" color="#f3e6d3" label="232"/>
-            <paletteEntry value="233" color="#f9e5ec" label="233"/>
-            <paletteEntry value="234" color="#fde7d6" label="234"/>
-            <paletteEntry value="235" color="#fbe8de" label="235"/>
-            <paletteEntry value="236" color="#faead1" label="236"/>
-            <paletteEntry value="237" color="#f8ebd8" label="237"/>
-            <paletteEntry value="238" color="#d1f7e7" label="238"/>
-            <paletteEntry value="239" color="#befefd" label="239"/>
-            <paletteEntry value="240" color="#edf3fe" label="240"/>
-            <paletteEntry value="241" color="#ccfefe" label="241"/>
-            <paletteEntry value="242" color="#fef3df" label="242"/>
-            <paletteEntry value="243" color="#fff4d9" label="243"/>
-            <paletteEntry value="244" color="#faf7ce" label="244"/>
-            <paletteEntry value="245" color="#fdf2f7" label="245"/>
-            <paletteEntry value="246" color="#d4feff" label="246"/>
-            <paletteEntry value="247" color="#f4f9e8" label="247"/>
-            <paletteEntry value="248" color="#e4fefe" label="248"/>
-            <paletteEntry value="249" color="#f9fbe1" label="249"/>
-            <paletteEntry value="250" color="#f0fcf4" label="250"/>
-            <paletteEntry value="251" color="#fff9ef" label="251"/>
-            <paletteEntry value="252" color="#f1feff" label="252"/>
-            <paletteEntry value="253" color="#fcfcf9" label="253"/>
-            <paletteEntry value="254" color="#fbfcff" label="254"/>
-            <paletteEntry value="255" color="#ffffff" label="255"/>
-          </colorPalette>
-        </rasterrenderer>
-        <brightnesscontrast brightness="0" contrast="0"/>
-        <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
-        <rasterresampler maxOversampling="2"/>
-      </pipe>
-      <blendMode>0</blendMode>
-    </maplayer>
   </projectlayers>
   <properties>
-    <Variables>
-      <variableNames type="QStringList"/>
-      <variableValues type="QStringList"/>
-    </Variables>
-    <WMSContactPerson type="QString"></WMSContactPerson>
-    <WMSOnlineResource type="QString"></WMSOnlineResource>
-    <WMSUseLayerIDs type="bool">false</WMSUseLayerIDs>
-    <WMSContactOrganization type="QString"></WMSContactOrganization>
+    <WMSUrl type="QString"></WMSUrl>
+    <SpatialRefSys>
+      <ProjectCRSProj4String type="QString">+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs</ProjectCRSProj4String>
+      <ProjectCrs type="QString">EPSG:3857</ProjectCrs>
+      <ProjectCRSID type="int">3857</ProjectCRSID>
+      <ProjectionsEnabled type="int">1</ProjectionsEnabled>
+    </SpatialRefSys>
+    <Measurement>
+      <DistanceUnits type="QString">meters</DistanceUnits>
+      <AreaUnits type="QString">m2</AreaUnits>
+    </Measurement>
     <WMSExtent type="QStringList">
       <value></value>
       <value></value>
       <value></value>
       <value></value>
     </WMSExtent>
-    <WMSKeywordList type="QStringList">
-      <value></value>
-    </WMSKeywordList>
-    <WFSUrl type="QString"></WFSUrl>
-    <Paths>
-      <Absolute type="bool">false</Absolute>
-    </Paths>
-    <WMSServiceTitle type="QString"></WMSServiceTitle>
-    <WFSLayers type="QStringList"/>
-    <WMSRestrictedLayers type="QStringList"/>
+    <Legend>
+      <filterByMap type="bool">false</filterByMap>
+    </Legend>
+    <DefaultStyles>
+      <Fill type="QString"></Fill>
+      <Line type="QString"></Line>
+      <Marker type="QString"></Marker>
+      <RandomColors type="bool">true</RandomColors>
+      <AlphaInt type="int">255</AlphaInt>
+      <ColorRamp type="QString"></ColorRamp>
+    </DefaultStyles>
+    <WMSAccessConstraints type="QString">None</WMSAccessConstraints>
+    <WMSSegmentizeFeatureInfoGeometry type="bool">false</WMSSegmentizeFeatureInfoGeometry>
     <WMSContactMail type="QString"></WMSContactMail>
+    <WMSImageQuality type="int">90</WMSImageQuality>
     <WMSRestrictedComposers type="QStringList"/>
-    <PositionPrecision>
-      <DecimalPlaces type="int">2</DecimalPlaces>
-      <Automatic type="bool">true</Automatic>
-      <DegreeFormat type="QString">MU</DegreeFormat>
-    </PositionPrecision>
-    <WCSUrl type="QString"></WCSUrl>
-    <WMSServiceCapabilities type="bool">true</WMSServiceCapabilities>
+    <WMSServiceTitle type="QString"></WMSServiceTitle>
     <WMSContactPhone type="QString"></WMSContactPhone>
-    <WMSServiceAbstract type="QString"></WMSServiceAbstract>
-    <WMSContactPosition type="QString"></WMSContactPosition>
-    <WMSAddWktGeometry type="bool">false</WMSAddWktGeometry>
-    <Measure>
-      <Ellipsoid type="QString">WGS84</Ellipsoid>
-    </Measure>
-    <WMSPrecision type="QString">8</WMSPrecision>
     <WFSTLayers>
       <Insert type="QStringList"/>
       <Update type="QStringList"/>
       <Delete type="QStringList"/>
     </WFSTLayers>
-    <Gui>
-      <SelectionColorBluePart type="int">0</SelectionColorBluePart>
-      <CanvasColorGreenPart type="int">255</CanvasColorGreenPart>
-      <CanvasColorRedPart type="int">255</CanvasColorRedPart>
-      <SelectionColorRedPart type="int">255</SelectionColorRedPart>
-      <SelectionColorAlphaPart type="int">255</SelectionColorAlphaPart>
-      <SelectionColorGreenPart type="int">255</SelectionColorGreenPart>
-      <CanvasColorBluePart type="int">255</CanvasColorBluePart>
-    </Gui>
+    <WCSLayers type="QStringList"/>
+    <WMSRestrictedLayers type="QStringList"/>
+    <WMSFees type="QString">conditions unknown</WMSFees>
+    <Macros>
+      <pythonCode type="QString"></pythonCode>
+    </Macros>
+    <WMSAddWktGeometry type="bool">false</WMSAddWktGeometry>
+    <WCSUrl type="QString"></WCSUrl>
+    <WMSOnlineResource type="QString"></WMSOnlineResource>
+    <WMSPrecision type="QString">8</WMSPrecision>
     <Digitizing>
       <DefaultSnapToleranceUnit type="int">2</DefaultSnapToleranceUnit>
       <LayerSnappingList type="QStringList">
+        <value>AegyptischesMamelukenSultanat20180127154834076</value>
+        <value>Byzantinische_Gebiete20180127154907918</value>
+        <value>Genuesische_Gebiete20180127154936833</value>
+        <value>Herzogtum_Naxos20180127154950338</value>
+        <value>Johanniterorden20180127155009052</value>
+        <value>Kamariden_Emirat20180127155021247</value>
         <value>Kapitel20180119125825559</value>
-        <value>PoliticalLayer20180119161018242</value>
+        <value>Königreich_Zypern20180127155034983</value>
+        <value>OsmanischesReich20180127155056856</value>
         <value>Reiseroute20180118212638441</value>
         <value>Standorte20180119125121720</value>
+        <value>Venezianische_Gebiete20180127155114757</value>
       </LayerSnappingList>
       <LayerSnappingEnabledList type="QStringList">
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
         <value>disabled</value>
         <value>disabled</value>
         <value>disabled</value>
@@ -3011,8 +2835,24 @@ def my_form_open(dialog, layer, feature):
         <value>2</value>
         <value>2</value>
         <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
+        <value>2</value>
       </LayerSnappingToleranceUnitList>
       <LayerSnapToList type="QStringList">
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
@@ -3025,40 +2865,54 @@ def my_form_open(dialog, layer, feature):
         <value>0.000000</value>
         <value>0.000000</value>
         <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
+        <value>0.000000</value>
       </LayerSnappingToleranceList>
     </Digitizing>
     <Identify>
       <disabledLayers type="QStringList"/>
     </Identify>
-    <Macros>
-      <pythonCode type="QString"></pythonCode>
-    </Macros>
-    <WMSAccessConstraints type="QString">None</WMSAccessConstraints>
-    <WCSLayers type="QStringList"/>
-    <Legend>
-      <filterByMap type="bool">false</filterByMap>
-    </Legend>
-    <SpatialRefSys>
-      <ProjectCRSProj4String type="QString">+proj=longlat +datum=WGS84 +no_defs</ProjectCRSProj4String>
-      <ProjectCrs type="QString">EPSG:4326</ProjectCrs>
-      <ProjectCRSID type="int">3452</ProjectCRSID>
-      <ProjectionsEnabled type="int">1</ProjectionsEnabled>
-    </SpatialRefSys>
-    <DefaultStyles>
-      <Fill type="QString"></Fill>
-      <Line type="QString"></Line>
-      <Marker type="QString"></Marker>
-      <RandomColors type="bool">true</RandomColors>
-      <AlphaInt type="int">255</AlphaInt>
-      <ColorRamp type="QString"></ColorRamp>
-    </DefaultStyles>
-    <WMSFees type="QString">conditions unknown</WMSFees>
-    <WMSImageQuality type="int">90</WMSImageQuality>
-    <Measurement>
-      <DistanceUnits type="QString">meters</DistanceUnits>
-      <AreaUnits type="QString">m2</AreaUnits>
-    </Measurement>
-    <WMSUrl type="QString"></WMSUrl>
+    <WMSContactPerson type="QString"></WMSContactPerson>
+    <WMSContactOrganization type="QString"></WMSContactOrganization>
+    <WMSKeywordList type="QStringList">
+      <value></value>
+    </WMSKeywordList>
+    <Variables>
+      <variableNames type="QStringList"/>
+      <variableValues type="QStringList"/>
+    </Variables>
+    <Paths>
+      <Absolute type="bool">false</Absolute>
+    </Paths>
+    <WMSContactPosition type="QString"></WMSContactPosition>
+    <PositionPrecision>
+      <DecimalPlaces type="int">2</DecimalPlaces>
+      <Automatic type="bool">true</Automatic>
+      <DegreeFormat type="QString">MU</DegreeFormat>
+    </PositionPrecision>
+    <Gui>
+      <SelectionColorBluePart type="int">0</SelectionColorBluePart>
+      <CanvasColorGreenPart type="int">255</CanvasColorGreenPart>
+      <CanvasColorRedPart type="int">255</CanvasColorRedPart>
+      <SelectionColorRedPart type="int">255</SelectionColorRedPart>
+      <SelectionColorAlphaPart type="int">255</SelectionColorAlphaPart>
+      <SelectionColorGreenPart type="int">255</SelectionColorGreenPart>
+      <CanvasColorBluePart type="int">255</CanvasColorBluePart>
+    </Gui>
+    <WFSLayers type="QStringList"/>
+    <WMSServiceAbstract type="QString"></WMSServiceAbstract>
+    <Measure>
+      <Ellipsoid type="QString">WGS84</Ellipsoid>
+    </Measure>
+    <WFSUrl type="QString"></WFSUrl>
+    <WMSServiceCapabilities type="bool">true</WMSServiceCapabilities>
+    <WMSUseLayerIDs type="bool">false</WMSUseLayerIDs>
   </properties>
   <visibility-presets/>
 </qgis>

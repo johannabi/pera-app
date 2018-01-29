@@ -2,9 +2,11 @@ package de.uni_koeln.dh.pera.gui.misc;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StyledText;
+import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.layout.RowLayout;
+import org.eclipse.swt.widgets.Layout;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -101,6 +103,15 @@ public class LayoutHelper {
 		logger.info("Margin (left / top / right / bottom): " 
 				+ leftRightMargin + " / " + topBottomMargin + " / " 
 				+ leftRightMargin + " / " + topBottomMargin);
+	}
+
+	public static Layout getVerticalFillLayout() {
+		FillLayout layout = new FillLayout(SWT.VERTICAL);
+		layout.marginWidth = 5;
+		layout.marginHeight = 5;
+		
+		logger.info("FillLayout (margin): " + layout.marginWidth);
+		return layout;
 	}
 	
 }

@@ -3,17 +3,25 @@ package de.uni_koeln.dh.pera.gui.core.img;
 import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.TreeMap;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.widgets.Shell;
 import org.geotools.coverage.grid.io.AbstractGridFormat;
 import org.geotools.coverage.grid.io.GridCoverage2DReader;
 import org.geotools.coverage.grid.io.GridFormatFinder;
 import org.geotools.data.DataUtilities;
+import org.geotools.data.FileDataStore;
+import org.geotools.data.FileDataStoreFinder;
 import org.geotools.data.shapefile.ShapefileDataStore;
 import org.geotools.data.simple.SimpleFeatureSource;
 import org.geotools.factory.CommonFactoryFinder;
@@ -61,42 +69,76 @@ import de.uni_koeln.dh.pera.util.Calc;
 
 public class Map extends Composite {
 
+	//////////////// ATTRIBUTES/////////////////////////////
 	private Logger logger = LoggerFactory.getLogger(getClass());
 
 	protected static final int H_HIMGCOMP_PCT = 75;
 	private static final int W_WIMGCOMP_PCT = /* 80 */77;
 
+	private static Color BLACK_AWT = Color.BLACK, DARK_RED_AWT = new Color(202, 30, 0);
+
 	private ImgComposite parent = null;
 
 	private GridLayout layout = null;
-	private GridCoverage2DReader reader = null;
-	private StyleFactory sf = CommonFactoryFinder.getStyleFactory();
-	private FilterFactory2 ff = CommonFactoryFinder.getFilterFactory2();
-	
+	// private GridCoverage2DReader reader = null;
+	// private StyleFactory sf = CommonFactoryFinder.getStyleFactory();
+	// private FilterFactory2 ff = CommonFactoryFinder.getFilterFactory2();
+
 	/** number of layers (exclusive the layers of player location */
 	private int layersWithoutLocation = 0;
 
 	private SwtMapPane mPane = null;
+	private Shell legendShell;
 
 	private int width = 0, height = 0;
 
+	private List<Layer> territoryLayers;
+	private java.util.Map<String, Integer[]> territoriesMap;
+
+	/// LISTENERS////////////////////
+	private Listener labelListener = new Listener() {
+		public void handleEvent(Event e) {
+			String labelText = ((Label) e.widget).getText();
+
+			for (Layer layer : territoryLayers) {
+				if (!layer.getTitle().equals(labelText))
+					layer.setVisible(false);
+				else
+					layer.setVisible(true);
+			}
+		}
+	};
+
+	// TODO fix delay?
+	private Listener shellListener = new Listener() {
+		public void handleEvent(Event e) {
+			setLayerVisibilities(true, territoryLayers, null);
+		}
+	};
+
+	//////////////////// CONSTRUCTORS////////////////////////
 	public Map(ImgComposite parent) {
 		super(parent, SWT.NONE);
 		this.parent = parent;
 	}
 
+	///////////////// METHODS//////////////////////////////
 	public void init(int height) {
 		this.height = height;
 
 		configComposite();
+
+		// TODO kapseln (stefan)
+		setTerritories();
 		configMapPane();
+		setLegend();
 
 	}
-	
+
 	public int getWidth() {
 		return width;
 	}
-	
+
 	public void changeVisibility(boolean selected, int layer) {
 		Layer currentLayer = mPane.getMapContent().layers().get(layer);
 
@@ -106,7 +148,7 @@ public class Map extends Composite {
 
 	public void updatePosition(Coordinate coordinate) {
 
-		Layer newLayer = createPositionLayer(coordinate);
+		Layer newLayer = LayerCreator.createPositionLayer(coordinate);
 
 		int currentSize = mPane.getMapContent().layers().size();
 
@@ -129,6 +171,27 @@ public class Map extends Composite {
 
 	}
 
+	public void setLayerVisibilities(boolean selected, List<Layer> layers, Composite comp) {
+		for (Layer layer : layers)
+			setLayerVisibility(selected, layer);
+
+		if (comp != null)
+			comp.setVisible(selected);
+	}
+
+	public List<Layer> getTerritoryLayers() {
+		return territoryLayers;
+	}
+
+	///////////////////// PROTECTED////////////////////////////
+	protected Shell getLegendShell(String tooltip) {
+		if (legendShell.getText().equals(""))
+			legendShell.setText(tooltip);
+
+		return legendShell;
+	}
+
+	////////////////// PRIVATE///////////////////////////////////
 	private void configComposite() {
 		logger.info("Initialize map composite...");
 
@@ -137,78 +200,132 @@ public class Map extends Composite {
 		setBackground(parent.getDefaultBgColor());
 	}
 
+	private void setTerritories() {
+		territoriesMap = new TreeMap<String, Integer[]>(); // name, rgb
+
+		territoriesMap.put("Aegyptisches Mameluken Sultanat", new Integer[] { 180, 133, 21 }); // brown
+		territoriesMap.put("Byzantinische Gebiete", new Integer[] { 227, 25, 77 }); // red
+		territoriesMap.put("Genuesische Gebiete", new Integer[] { 195, 54, 176 }); // pink/magenta
+		territoriesMap.put("Herzogtum Naxos", new Integer[] { 14, 38, 178 }); // dark blue
+		territoriesMap.put("Johanniterorden", new Integer[] { 91, 245, 71 }); // bright green
+		territoriesMap.put("Kamariden Emirat", new Integer[] { 31, 120, 180 }); // bright blue
+		territoriesMap.put("Königreich Zypern", new Integer[] { 235, 131, 23 }); // orange
+		territoriesMap.put("Osmanisches Reich", new Integer[] { 238, 234, 73 }); // yellow
+		territoriesMap.put("Venezianische Gebiete", new Integer[] { 36, 112, 31 }); // dark green
+	}
+
 	// TODO GeoTools (GIS)
 	private void configMapPane() {
 		logger.info("Add map pane...");
 
 		MapContent mContent = new MapContent();
-		try {
-			
-			mContent.addLayer(getRasterLayer("src/main/resources/gis/rasterlayer/Textadventrue_neu_Proj.tif", "karte"));
-			Layer layer = mContent.layers().get(0);
-			logger.info(layer.getTitle() + "\n" + layer.getFeatureSource().getSchema()
-					.getCoordinateReferenceSystem().getCoordinateSystem().toString());
-			mContent.addLayer(getShapeLayer("src/main/resources/gis/shapelayer/Reiseroute.shp",
-					"routen", new Color(202,30,0), true));
-			layer = mContent.layers().get(1);
-			logger.info(layer.getTitle() + "\n" + layer.getFeatureSource().getSchema()
-					.getCoordinateReferenceSystem().getCoordinateSystem().toString());
-			mContent.addLayer(getShapeLayer("src/main/resources/gis/shapelayer/Standorte_neu.shp", 
-					"orte", new Color(202,30,0))); //TODO font
-			layer = mContent.layers().get(2);
-			logger.info(layer.getTitle() + "\n" + layer.getFeatureSource().getSchema()
-					.getCoordinateReferenceSystem().getCoordinateSystem().toString());
-			mContent.addLayer(getShapeLayer
-					("src/main/resources/gis/shapelayer/politicallayer/AegyptischesMamelukenSultanat.shp",
-							"AegyptischesMamelukenSultanat", new Color(180,133,21)));
-			layer = mContent.layers().get(3);
-			logger.info(layer.getTitle() + "\n" + layer.getFeatureSource().getSchema()
-					.getCoordinateReferenceSystem().getCoordinateSystem().toString());
-			mContent.addLayer(getShapeLayer
-					("src/main/resources/gis/shapelayer/politicallayer/Byzantinische Gebiete.shp/",
-							"Byzantinische Gebiete", new Color(227,25,77)));
-			mContent.addLayer(getShapeLayer
-					("src/main/resources/gis/shapelayer/politicallayer/Genuesische Gebiete.shp",
-							"Genuesische Gebiete", new Color(14,38,178)));
-			mContent.addLayer(getShapeLayer
-					("src/main/resources/gis/shapelayer/politicallayer/Herzogtum Naxos.shp",
-							"Herzogtum Naxos", new Color(91,245,71)));
-			mContent.addLayer(getShapeLayer
-					("src/main/resources/gis/shapelayer/politicallayer/Johanniterorden.shp",
-							"Johanniterorden", new Color(31,120,180)));
-			mContent.addLayer(getShapeLayer
-					("src/main/resources/gis/shapelayer/politicallayer/Kamariden Emirat.shp",
-							"Kamariden Emirat", new Color(235,131,23)));
-			mContent.addLayer(getShapeLayer
-					("src/main/resources/gis/shapelayer/politicallayer/Königreich Zypern.shp",
-							"Königreich Zypern", new Color(238,234,73)));
-			mContent.addLayer(getShapeLayer
-					("src/main/resources/gis/shapelayer/politicallayer/OsmanischesReich.shp",
-							"Osmanisches Reich", new Color(36,112,31)));
-			mContent.addLayer(getShapeLayer
-					("src/main/resources/gis/shapelayer/politicallayer/Venezianische Gebiete.shp",
-							"Venezianische Gebiete", new Color(195,54,176)));
 
-			layersWithoutLocation = mContent.layers().size();
-			
-			mPane = new SwtMapPane(this, SWT.NO_BACKGROUND);
-			mPane.setBackground(parent.getDefaultBgColor()); // TODO pane standard color?
-			mPane.setRenderer(new StreamingRenderer());
-			mPane.setMapContent(mContent);
-			mPane.setLayoutData(getMapLayoutData());
+		mContent.addLayer(
+				LayerCreator.getRasterLayer("src/main/resources/gis/rasterlayer/Textadventrue_neu_Proj.tif", "karte"));
 
-			// TODO bug: SwtMapPane/MapMouseListener and macOS because of THIS (Composite)
-			int eventType = SWT.MouseDown;
-			for (Listener listener : mPane.getListeners(eventType))
-				mPane.removeListener(eventType, listener);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		mContent.addLayer(LayerCreator.getShapeLayer("src/main/resources/gis/shapelayer/Reiseroute.shp", "routen",
+				new Color(202, 30, 0), true));
+		mContent.addLayer(LayerCreator.getShapeLayer("src/main/resources/gis/shapelayer/Standorte_neu.shp", "orte",
+				new Color(202, 30, 0))); // TODO font
+
+		territoryLayers = setShapeLayers("territories");
+
+		// territoryLayers.add(LayerCreator.getShapeLayer(
+		// "src/main/resources/gis/shapelayer/politicallayer/AegyptischesMamelukenSultanat.shp",
+		// "AegyptischesMamelukenSultanat", new Color(180, 133, 21)));
+		//
+		// territoryLayers.add(LayerCreator.getShapeLayer(
+		// "src/main/resources/gis/shapelayer/politicallayer/Byzantinische
+		// Gebiete.shp/", "Byzantinische Gebiete",
+		// new Color(227, 25, 77)));
+		// territoryLayers.add(
+		// LayerCreator.getShapeLayer("src/main/resources/gis/shapelayer/politicallayer/Genuesische
+		// Gebiete.shp",
+		// "Genuesische Gebiete", new Color(14, 38, 178)));
+		// territoryLayers
+		// .add(LayerCreator.getShapeLayer("src/main/resources/gis/shapelayer/politicallayer/Herzogtum
+		// Naxos.shp",
+		// "Herzogtum Naxos", new Color(91, 245, 71)));
+		// territoryLayers
+		// .add(LayerCreator.getShapeLayer("src/main/resources/gis/shapelayer/politicallayer/Johanniterorden.shp",
+		// "Johanniterorden", new Color(31, 120, 180)));
+		// territoryLayers
+		// .add(LayerCreator.getShapeLayer("src/main/resources/gis/shapelayer/politicallayer/Kamariden
+		// Emirat.shp",
+		// "Kamariden Emirat", new Color(235, 131, 23)));
+		// territoryLayers.add(
+		// LayerCreator.getShapeLayer("src/main/resources/gis/shapelayer/politicallayer/Königreich
+		// Zypern.shp",
+		// "Königreich Zypern", new Color(238, 234, 73)));
+		// territoryLayers
+		// .add(LayerCreator.getShapeLayer("src/main/resources/gis/shapelayer/politicallayer/OsmanischesReich.shp",
+		// "Osmanisches Reich", new Color(36, 112, 31)));
+		// territoryLayers.add(
+		// LayerCreator.getShapeLayer("src/main/resources/gis/shapelayer/politicallayer/Venezianische
+		// Gebiete.shp",
+		// "Venezianische Gebiete", new Color(195, 54, 176)));
+
+		mContent.addLayers(territoryLayers);
+
+		layersWithoutLocation = mContent.layers().size();
+
+		mPane = new SwtMapPane(this, SWT.NO_BACKGROUND);
+		mPane.setBackground(parent.getDefaultBgColor()); // TODO pane standard color?
+		mPane.setRenderer(new StreamingRenderer());
+		mPane.setMapContent(mContent);
+		mPane.setLayoutData(getMapLayoutData());
+
+		// TODO bug: SwtMapPane/MapMouseListener and macOS because of THIS (Composite)
+		int eventType = SWT.MouseDown;
+		for (Listener listener : mPane.getListeners(eventType))
+			mPane.removeListener(eventType, listener);
+
+	}
+
+	private List<Layer> setShapeLayers(String dirName) {
+		List<Layer> layers = new ArrayList<Layer>();
+
+		String subPath = dirName.concat(File.separator);
+		boolean visible = false;
+
+		layers.add(setShapeLayer(subPath.concat("AegyptischesMamelukenSultanat"), visible));
+		layers.add(setShapeLayer(subPath.concat("Byzantinische Gebiete"), visible));
+		layers.add(setShapeLayer(subPath.concat("Herzogtum Naxos"), visible));
+		layers.add(setShapeLayer(subPath.concat("Johanniterorden"), visible));
+		layers.add(setShapeLayer(subPath.concat("Kamariden Emirat"), visible));
+		layers.add(setShapeLayer(subPath.concat("Königreich Zypern"), visible));
+		layers.add(setShapeLayer(subPath.concat("OsmanischesReich"), visible));
+		layers.add(setShapeLayer(subPath.concat("Venezianische Gebiete"), visible));
+		layers.add(setShapeLayer(subPath.concat("Genuesische Gebiete"), visible));
+
+		return layers;
 	}
 
 	private GridLayout getCompositeLayout() {
 		layout = LayoutHelper.getGridLayout();
 		return layout;
+	}
+
+	private void setLegend() {
+		Display display = Display.getCurrent();
+
+		legendShell = new Shell(display, SWT.TITLE | SWT.MIN);
+		legendShell.setLayout(LayoutHelper.getVerticalFillLayout());
+		legendShell.setBackground(parent.getDefaultBgColor());
+
+		for (String name : territoriesMap.keySet()) {
+			Integer[] c = territoriesMap.get(name);
+
+			Label label = new Label(legendShell, SWT.NONE);
+			label.setText(name);
+			// TODO alpha?
+			label.setBackground(new org.eclipse.swt.graphics.Color(display, c[0], c[1], c[2]));
+			label.addListener(SWT.MouseEnter, labelListener);
+		}
+
+		legendShell.addListener(SWT.MouseEnter, shellListener);
+		legendShell.setVisible(false);
+		legendShell.pack();
 	}
 
 	private void setCompositeLayoutData() {
@@ -222,117 +339,61 @@ public class Map extends Composite {
 		return LayoutHelper.getGridData(width, height);
 	}
 
-	
+	private void setLayerVisibility(boolean selected, Layer layer) {
+		layer.setVisible(selected);
+	}
 
-	private Layer createPositionLayer(Coordinate coordinate) {
+	private Layer setShapeLayer(String subPath, boolean visible) {
 		Layer layer = null;
+		// TODO file reference (deployment)
+		File file = new File("src/main/resources/gis/shapelayer", subPath + ".shp");
+
 		try {
-			// transform 4326 to 3857
-			CoordinateReferenceSystem sourceCRS = CRS.decode("EPSG:4326");
-			CoordinateReferenceSystem targetCRS = CRS.decode("EPSG:3857");
+			FileDataStore dataStore = FileDataStoreFinder.getDataStore(file);
+			SimpleFeatureSource fileSrc = dataStore.getFeatureSource();
 
-			MathTransform transform = CRS.findMathTransform(sourceCRS, targetCRS);
-			JTS.transform(coordinate, coordinate, transform);
+			Style style = null;
+			String layerName = null;
 
-			SimpleFeatureType TYPE = DataUtilities.createType("Location", "the_geom:Point:srid=3857");
+			if (!subPath.contains(File.separator)) {
+				if (subPath.startsWith("Standorte")) {
+					float size = (float) width / 80; // TODO pct calculation
 
-			GeometryFactory geometryFactory = JTSFactoryFinder.getGeometryFactory();
-			SimpleFeatureBuilder featureBuilder = new SimpleFeatureBuilder(TYPE);
+					style = SLD.createPointStyle("Circle", BLACK_AWT, DARK_RED_AWT, 1.0f, size, "Standort",
+							LayerCreator.getPlacesFont(width));
+				} else if (subPath.startsWith("Reiseroute")) {
+					float size = (float) width / 400; // TODO pct calculation
 
-			Point point = geometryFactory.createPoint(coordinate);
-			featureBuilder.add(point);
-			SimpleFeature feature = featureBuilder.buildFeature(null);
+					style = SLD.createLineStyle(DARK_RED_AWT, size);
+				}
+			} else { // territories/
+				// TODO optimize workaround?
+				String namePrefix = file.getName().substring(0, 8);
 
-			DefaultFeatureCollection featureCollection = new DefaultFeatureCollection("position", TYPE);
-			featureCollection.add(feature);
+				for (String name : territoriesMap.keySet()) {
+					if (name.startsWith(namePrefix)) {
+						layerName = name;
 
-			Style style = SLD.createPointStyle("Star", Color.YELLOW, Color.YELLOW, 1.0f, 10.0f);
-			layer = new FeatureLayer(featureCollection, style, "position");
-		} catch (TransformException e) {
-			e.printStackTrace();
-		} catch (NoSuchAuthorityCodeException e) {
-			e.printStackTrace();
-		} catch (FactoryException e) {
-			e.printStackTrace();
-		} catch (SchemaException e) {
+						Integer[] c = territoriesMap.get(name);
+						Color color = new Color(c[0], c[1], c[2]);
+
+						style = SLD.createPolygonStyle(BLACK_AWT, color, 0.5f);
+
+						break;
+					}
+				}
+			}
+
+			layer = new FeatureLayer(fileSrc, style);
+			layer.setTitle(layerName);
+
+			if (!visible)
+				layer.setVisible(false);
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
 		return layer;
 	}
-
-	private Layer getRasterLayer(String path, String title) {
-		File rasterFile = new File(path);
-		AbstractGridFormat format = GridFormatFinder.findFormat(rasterFile);
-		Hints hints = new Hints();
-
-		if (format instanceof GeoTiffFormat)
-			hints = new Hints(Hints.FORCE_LONGITUDE_FIRST_AXIS_ORDER, Boolean.TRUE);
-
-		reader = format.getReader(rasterFile, hints);
-		Style rasterStyle = createGreyscaleStyle(/* 1 */);
-
-		return new GridReaderLayer(reader, rasterStyle, title);
-	}
-
-	private Style createGreyscaleStyle(/* int band */) {
-		
-		ContrastEnhancement ce = sf.contrastEnhancement(ff.literal(1.0), ContrastMethod.NORMALIZE);
-		SelectedChannelType sct = sf.createSelectedChannelType(String.valueOf(/* band */1), ce);
-	
-		RasterSymbolizer sym = sf.getDefaultRasterSymbolizer();
-		ChannelSelection sel = sf.channelSelection(sct);
-		sym.setChannelSelection(sel);
-		return SLD.wrapSymbolizers(sym);
-	}
-	/**
-	 * default: layer set invisible
-	 * @param path
-	 * @param title
-	 * @param color
-	 * @return
-	 * @throws IOException
-	 */
-	private Layer getShapeLayer(String path, String title, Color color) throws IOException {
-		return getShapeLayer(path, title, color, false);
-	}
-
-	private Layer getShapeLayer(String path, String title, Color color, boolean visible) throws IOException {
-		File file = new File(path);
-		ShapefileDataStore shapeFile = new ShapefileDataStore(file.toURI().toURL());
-		SimpleFeatureSource featureSource = shapeFile.getFeatureSource();
-
-//		try {
-//			CoordinateReferenceSystem crs = CRS.decode("EPSG:3857");
-//			shapeFile.forceSchemaCRS(crs);
-//			
-//		} catch (NoSuchAuthorityCodeException e) {
-//			e.printStackTrace();
-//		} catch (FactoryException e) {
-//			e.printStackTrace();
-//		}
-
-		Style style = null;
-		if (title.equals("routen"))
-			style = SLD.createLineStyle(color, 1.5f);
-		else if (title.equals("orte")) {
-			Font font = sf.getDefaultFont();
-			font.setSize(ff.literal(15));
-			font.setStyle(ff.literal(Font.Style.ITALIC));
-			font.setWeight(ff.literal(Font.Weight.BOLD));
-			//TODO font color
-			style = SLD.createPointStyle("Circle", Color.BLACK, color, 1.0f, 7.0f, "Standort", font);
-		} else {
-			// TODO transparent
-			style = SLD.createPolygonStyle(Color.BLACK, color, /*0.27f*/0.5f);
-		}
-
-
-		FeatureLayer layer = new FeatureLayer(featureSource, style, title);
-		layer.setVisible(visible);
-		return layer;
-	}
-
-	
 
 }

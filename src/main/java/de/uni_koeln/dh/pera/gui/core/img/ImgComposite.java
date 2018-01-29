@@ -1,7 +1,5 @@
 package de.uni_koeln.dh.pera.gui.core.img;
 
-import java.util.List;
-
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
@@ -10,10 +8,11 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Layout;
+import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Shell;
-import org.geotools.map.Layer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -79,20 +78,30 @@ public class ImgComposite extends BaseComposite {
 
 	private Shell mapLegend;
 
-	private SelectionListener territorySelection = new SelectionListener() {
-		public void widgetSelected(SelectionEvent e) {
-			boolean selected = ((Button) e.widget).getSelection();
-			// System.out.println("polit.: " + selected);
-			mapLegend.setVisible(selected);
-			for (int i = 3; i <= 11; i++) { //layer[3] - layer[11] = hoheitsgebiete
-				map.changeVisibility(selected, i);
-			}
-			// for (Layer layer : map.getPolitLayers())
-			// layer.setVisible(selected);
+	private Listener territorySelection = new Listener() {
+//		public void widgetSelected(SelectionEvent e) {
+//			map.setLayerVisibilities(
+//					getSelection(e), 
+//					map.getTerritoryLayers(), 
+//					map.getLegendShell(getTooltip(e)));
+////			boolean selected = ((Button) e.widget).getSelection();
+////
+////			mapLegend.setVisible(selected);
+////			for (int i = 3; i <= 11; i++) { //layer[3] - layer[11] = hoheitsgebiete
+////				map.changeVisibility(selected, i);
+////			}
+//			// for (Layer layer : map.getPolitLayers())
+//			// layer.setVisible(selected);
+//		}
+
+		public void handleEvent(Event e) {
+			map.setLayerVisibilities(
+					getSelection(e), 
+					map.getTerritoryLayers(), 
+					map.getLegendShell(getTooltip(e)));
 		}
 
-		public void widgetDefaultSelected(SelectionEvent e) {
-		}
+		
 	};
 
 	public ImgComposite(Composite parent) {
@@ -115,10 +124,10 @@ public class ImgComposite extends BaseComposite {
 	public void addMapComponents() {
 		logger.info("Add map components...");
 
-		mapLegend = new Shell(display, SWT.TITLE | SWT.MIN);
-		mapLegend.setText("Child Shell");
-		mapLegend.setSize(200, 200);
-		mapLegend.setVisible(false);
+//		mapLegend = new Shell(display, SWT.TITLE | SWT.MIN);
+//		mapLegend.setText("Child Shell");
+//		mapLegend.setSize(200, 200);
+//		mapLegend.setVisible(false);
 		//TODO enable closing
 
 		int height = getHeight();
@@ -178,7 +187,7 @@ public class ImgComposite extends BaseComposite {
 		politButton = new Button(ctrlComp, SWT.TOGGLE);
 		politButton.setText("♕");
 		politButton.setToolTipText("Hoheitsgebiete");
-		politButton.addSelectionListener(territorySelection);
+		politButton.addListener(SWT.Selection, territorySelection);
 
 	}
 
@@ -216,6 +225,14 @@ public class ImgComposite extends BaseComposite {
 	private String getChapter() {
 		Node node = super.nodes.get(super.currentID);
 		return node.getChapter();
+	}
+	
+	private boolean getSelection(Event e) {
+		return ((Button)e.widget).getSelection();
+	}
+	
+	private String getTooltip(Event e) {
+		return ((Button)e.widget).getToolTipText();
 	}
 
 }

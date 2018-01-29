@@ -40,7 +40,6 @@ public class TextComposite extends BaseComposite {
 		setInitialized(true);
 	}
 	
-	// TODO base class for in- and output (see 'margin' etc)
 	public void addTexts() {
 		logger.info("Add text boxes...");
 		
