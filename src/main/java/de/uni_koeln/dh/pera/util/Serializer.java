@@ -16,6 +16,7 @@ import de.uni_koeln.dh.pera.data.Player;
 public class Serializer {
 	
 	private static String storageFolder = "src/main/resources/gamestatus";
+	private static String demoConfig = "src/main/resources/demo.config";
 
 	/**
 	 * serializes players inventory at the given node
@@ -106,6 +107,35 @@ public class Serializer {
 			}
 		}
 		
+	}
+
+	public static Player deserializeDemo(Player player) {
+		player = new Player();
+		FileInputStream in;
+		try {
+			in = new FileInputStream(demoConfig);
+			InputStreamReader isr = new InputStreamReader(in);
+			BufferedReader bfr = new BufferedReader(isr);
+			
+			String currentLine;
+			while((currentLine = bfr.readLine()) != null) {
+				if(currentLine.startsWith("elements: ")){
+					player.setInventory(new ArrayList<String>(Arrays.asList(
+							currentLine.replace("elements: ", "").split(","))));
+				}
+				if(currentLine.startsWith("node: "))
+					player.setCurrentChapterNode(Integer.parseInt(currentLine.replace("node: ", "")));
+			}
+			bfr.close();
+		} catch (FileNotFoundException e) {
+			
+		} catch (NumberFormatException e) {
+			
+		} catch (IOException e) {
+			
+		}
+
+		return player;
 	}
 
 }

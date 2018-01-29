@@ -54,7 +54,6 @@ public class Updater {
 	public void updateFields() {
 
 		try {
-			//TODO nodes über id und nicht ID
 			// game status before text input
 			int currentID = txtComp.getCurrentID();
 			Node node = nodes.get(currentID);
@@ -67,8 +66,10 @@ public class Updater {
 				notifyInventory = addElements(node);
 			String in = input.getText().toLowerCase().trim();
 
+			//// proof text input ////
+			// special cases
 			if (in.equals("help")) {
-				String currentText = buildNodeText(nodes.get(currentID));
+				String currentText = buildNodeText(node);
 				String help = "save: speichert am letzten Kapitel und schließt das Spiel\n"
 						+ "inventory: zeigt das Inventar an\n"
 						+ "about: zeigt das Impressum an\n\n";
@@ -77,10 +78,22 @@ public class Updater {
 				return;
 			}
 			
-			// proof text input
-			// special cases
 			if (in.equals("demo")) {
-				// TODO cheat
+				player = Serializer.deserializeDemo(player);
+				currentID = player.getCurrentChapterNode();
+
+				node = nodes.get(currentID);
+				currentChapter = node.getChapter();
+				notifyInventory = false; // variable is set to true every time the inventory is updated (added,
+													// deleted,...)
+				if (node.getClearinventory()) // all things in inventory are deleted
+					notifyInventory = deleteElements();
+				if (!node.getElements().isEmpty()) // node contains elements to collect
+					notifyInventory = addElements(node);
+
+				output.setText(buildNodeText(node));
+				input.setText("");
+				return;
 			}
 
 			if (in.equals("save")) {
@@ -89,7 +102,7 @@ public class Updater {
 			}
 
 			if (in.equals("about")) {
-				String currentText = buildNodeText(nodes.get(currentID));
+				String currentText = buildNodeText(node);
 				String credits = "Credits\n"
 						+ "Johanna Binnewitt\n"
 						+ "Stefan Krause\n"
