@@ -195,7 +195,7 @@ public class LayerCreator {
 		return layer;
 	}
 
-	public static Font getPlacesFont(int width) {
+	protected static Font getPlacesFont(int width) {
 		int size = width / 38;		// TODO pct calculation
 		
 		Font font = sf.getDefaultFont();
