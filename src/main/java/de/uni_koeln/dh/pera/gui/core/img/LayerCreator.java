@@ -53,6 +53,8 @@ public class LayerCreator {
 	private static GridCoverage2DReader reader = null;
 	private static StyleFactory sf = CommonFactoryFinder.getStyleFactory();
 	private static FilterFactory2 ff = CommonFactoryFinder.getFilterFactory2();
+	
+	
 
 	protected static Layer getRasterLayer(String path, String title) {
 		File rasterFile = new File(path);
@@ -158,7 +160,7 @@ public class LayerCreator {
 
 	}
 
-	protected static Layer createPositionLayer(Coordinate coordinate) {
+	protected static Layer createPositionLayer(Coordinate coordinate, int width, Color currentPosition, int proportion) {
 		Layer layer = null;
 		try {
 			// transform 4326 to 3857
@@ -179,8 +181,9 @@ public class LayerCreator {
 
 			DefaultFeatureCollection featureCollection = new DefaultFeatureCollection("position", TYPE);
 			featureCollection.add(feature);
-
-			Style style = SLD.createPointStyle("Star", Color.YELLOW, Color.YELLOW, 1.0f, 10.0f);
+			
+			float size = (float) width / proportion; // TODO STEFAN pct calculation
+			Style style = SLD.createPointStyle("Star", currentPosition, currentPosition, 1.0f, size);
 			layer = new FeatureLayer(featureCollection, style, "position");
 		} catch (TransformException e) {
 			e.printStackTrace();

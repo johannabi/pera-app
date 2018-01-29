@@ -35,73 +35,29 @@ public class ImgComposite extends BaseComposite {
 
 	private Coordinate position = null;
 
-	// private SelectionListener zoomOutSelection = new SelectionListener() {
-	// public void widgetSelected(SelectionEvent e) {
-	// System.out.println("zoomOut");
-	// }
-	//
-	// public void widgetDefaultSelected(SelectionEvent e) {
-	// }
-	// };
-
-	// private SelectionListener zoomInSelection = new SelectionListener() {
-	// public void widgetSelected(SelectionEvent e) {
-	// System.out.println("zoomIn");
-	// }
-	//
-	// public void widgetDefaultSelected(SelectionEvent e) {
-	// }
-	// };
-
-	// TODO city layer
-	private SelectionListener placesSelection = new SelectionListener() {
-		public void widgetSelected(SelectionEvent e) {
-			boolean selected = ((Button) e.widget).getSelection();
-			System.out.println("places: " + selected);
-			map.changeVisibility(selected, 2); // layer[2] = orte
-		}
-
-		public void widgetDefaultSelected(SelectionEvent e) {
+	private Listener placesSelection = new Listener() {
+		public void handleEvent(Event e) {
+			map.setLayerVisibility(
+					getSelection(e), 
+					map.getPlacesLayer());
 		}
 	};
 
-	private SelectionListener routeSelection = new SelectionListener() {
-		public void widgetSelected(SelectionEvent e) {
-			boolean selected = ((Button) e.widget).getSelection();
-			System.out.println("route: " + selected);
-			map.changeVisibility(selected, 1); // layer[1] = routen
-		}
-
-		public void widgetDefaultSelected(SelectionEvent e) {
+	private Listener routeSelection = new Listener() {
+		public void handleEvent(Event e) {
+			map.setLayerVisibility(
+					getSelection(e), 
+					map.getRouteLayer());
 		}
 	};
-
-	private Shell mapLegend;
 
 	private Listener territorySelection = new Listener() {
-//		public void widgetSelected(SelectionEvent e) {
-//			map.setLayerVisibilities(
-//					getSelection(e), 
-//					map.getTerritoryLayers(), 
-//					map.getLegendShell(getTooltip(e)));
-////			boolean selected = ((Button) e.widget).getSelection();
-////
-////			mapLegend.setVisible(selected);
-////			for (int i = 3; i <= 11; i++) { //layer[3] - layer[11] = hoheitsgebiete
-////				map.changeVisibility(selected, i);
-////			}
-//			// for (Layer layer : map.getPolitLayers())
-//			// layer.setVisible(selected);
-//		}
-
 		public void handleEvent(Event e) {
 			map.setLayerVisibilities(
 					getSelection(e), 
 					map.getTerritoryLayers(), 
 					map.getLegendShell(getTooltip(e)));
-		}
-
-		
+		}		
 	};
 
 	public ImgComposite(Composite parent) {
@@ -123,12 +79,6 @@ public class ImgComposite extends BaseComposite {
 
 	public void addMapComponents() {
 		logger.info("Add map components...");
-
-//		mapLegend = new Shell(display, SWT.TITLE | SWT.MIN);
-//		mapLegend.setText("Child Shell");
-//		mapLegend.setSize(200, 200);
-//		mapLegend.setVisible(false);
-		//TODO enable closing
 
 		int height = getHeight();
 		int mapHeight = (int) Calc.getValByPct(height, Map.H_HIMGCOMP_PCT);
@@ -165,24 +115,16 @@ public class ImgComposite extends BaseComposite {
 		ctrlComp.setLayout(getCtrlLayout());
 		ctrlComp.setLayoutData(LayoutHelper.getCenteredData());
 
-		// Button zoomOutButton = new Button(ctrlComp, SWT.PUSH);
-		// zoomOutButton.setText("-");
-		// zoomOutButton.addSelectionListener(zoomOutSelection);
-
-		// Button zoomInButton = new Button(ctrlComp, SWT.PUSH);
-		// zoomInButton.setText("+");
-		// zoomInButton.addSelectionListener(zoomInSelection);
-
 		cityButton = new Button(ctrlComp, SWT.TOGGLE);
 		cityButton.setText("\u25bc");
 		cityButton.setToolTipText("Orte");
-		cityButton.addSelectionListener(placesSelection);
+		cityButton.addListener(SWT.Selection, placesSelection);
 		
 		routeButton = new Button(ctrlComp, SWT.TOGGLE);
 		routeButton.setText("⚓︎");
 		routeButton.setSelection(true);
 		routeButton.setToolTipText("Reiseroute");
-		routeButton.addSelectionListener(routeSelection);
+		routeButton.addListener(SWT.Selection, routeSelection);
 		
 		politButton = new Button(ctrlComp, SWT.TOGGLE);
 		politButton.setText("♕");

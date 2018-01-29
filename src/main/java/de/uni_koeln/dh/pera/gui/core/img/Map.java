@@ -75,14 +75,16 @@ public class Map extends Composite {
 	protected static final int H_HIMGCOMP_PCT = 75;
 	private static final int W_WIMGCOMP_PCT = /* 80 */77;
 
-	private static Color BLACK_AWT = Color.BLACK, DARK_RED_AWT = new Color(202, 30, 0);
+	private static Color BLACK_AWT = Color.BLACK,
+			DARK_RED_AWT = new Color(202, 30, 0),
+			CURRENT_POSITION = Color.YELLOW, //TODO STEFAN color star
+			LAST_POSITION = Color.RED;
+	
+	private int STAR_PROPORTION = 40; //TODO STEFAN size star
 
 	private ImgComposite parent = null;
 
 	private GridLayout layout = null;
-	// private GridCoverage2DReader reader = null;
-	// private StyleFactory sf = CommonFactoryFinder.getStyleFactory();
-	// private FilterFactory2 ff = CommonFactoryFinder.getFilterFactory2();
 
 	/** number of layers (exclusive the layers of player location */
 	private int layersWithoutLocation = 0;
@@ -94,6 +96,8 @@ public class Map extends Composite {
 
 	private List<Layer> territoryLayers;
 	private java.util.Map<String, Integer[]> territoriesMap;
+	private Layer routeLayer;
+	private Layer placesLayer;
 
 	/// LISTENERS////////////////////
 	private Listener labelListener = new Listener() {
@@ -138,6 +142,14 @@ public class Map extends Composite {
 	public int getWidth() {
 		return width;
 	}
+	
+	public Layer getRouteLayer() {
+		return routeLayer;
+	}
+
+	public Layer getPlacesLayer() {
+		return placesLayer;
+	}
 
 	public void changeVisibility(boolean selected, int layer) {
 		Layer currentLayer = mPane.getMapContent().layers().get(layer);
@@ -148,14 +160,18 @@ public class Map extends Composite {
 
 	public void updatePosition(Coordinate coordinate) {
 
-		Layer newLayer = LayerCreator.createPositionLayer(coordinate);
+		Layer newLayer = LayerCreator.createPositionLayer(coordinate, width, 
+				CURRENT_POSITION, STAR_PROPORTION);
 
 		int currentSize = mPane.getMapContent().layers().size();
 
 		// replace yellow with red
 		if (currentSize > layersWithoutLocation) { // TODO zahl anpassen an polit. layer
 			Layer lastLayer = mPane.getMapContent().layers().get(currentSize - 1);
-			Style newStyle = SLD.createPointStyle("Star", Color.RED, Color.RED, 1.0f, 10.0f);
+			
+			float size = (float) width / STAR_PROPORTION; // TODO STEFAN pct calculation
+			Style newStyle = SLD.createPointStyle("Star", LAST_POSITION, LAST_POSITION,
+					1.0f, size);
 
 			try {
 				FeatureCollection<?, ?> featureCollection = lastLayer.getFeatureSource().getFeatures();
@@ -223,48 +239,12 @@ public class Map extends Composite {
 		mContent.addLayer(
 				LayerCreator.getRasterLayer("src/main/resources/gis/rasterlayer/Textadventrue_neu_Proj.tif", "karte"));
 
-		mContent.addLayer(LayerCreator.getShapeLayer("src/main/resources/gis/shapelayer/Reiseroute.shp", "routen",
-				new Color(202, 30, 0), true));
-		mContent.addLayer(LayerCreator.getShapeLayer("src/main/resources/gis/shapelayer/Standorte_neu.shp", "orte",
-				new Color(202, 30, 0))); // TODO font
-
+		routeLayer = setShapeLayer("Reiseroute", true);		// parent.getRouteSelection()	
+		mContent.addLayer(routeLayer);
+		placesLayer = setShapeLayer("Standorte_neu", false);	// parent.getCitySelection()
+		mContent.addLayer(placesLayer);
+		
 		territoryLayers = setShapeLayers("territories");
-
-		// territoryLayers.add(LayerCreator.getShapeLayer(
-		// "src/main/resources/gis/shapelayer/politicallayer/AegyptischesMamelukenSultanat.shp",
-		// "AegyptischesMamelukenSultanat", new Color(180, 133, 21)));
-		//
-		// territoryLayers.add(LayerCreator.getShapeLayer(
-		// "src/main/resources/gis/shapelayer/politicallayer/Byzantinische
-		// Gebiete.shp/", "Byzantinische Gebiete",
-		// new Color(227, 25, 77)));
-		// territoryLayers.add(
-		// LayerCreator.getShapeLayer("src/main/resources/gis/shapelayer/politicallayer/Genuesische
-		// Gebiete.shp",
-		// "Genuesische Gebiete", new Color(14, 38, 178)));
-		// territoryLayers
-		// .add(LayerCreator.getShapeLayer("src/main/resources/gis/shapelayer/politicallayer/Herzogtum
-		// Naxos.shp",
-		// "Herzogtum Naxos", new Color(91, 245, 71)));
-		// territoryLayers
-		// .add(LayerCreator.getShapeLayer("src/main/resources/gis/shapelayer/politicallayer/Johanniterorden.shp",
-		// "Johanniterorden", new Color(31, 120, 180)));
-		// territoryLayers
-		// .add(LayerCreator.getShapeLayer("src/main/resources/gis/shapelayer/politicallayer/Kamariden
-		// Emirat.shp",
-		// "Kamariden Emirat", new Color(235, 131, 23)));
-		// territoryLayers.add(
-		// LayerCreator.getShapeLayer("src/main/resources/gis/shapelayer/politicallayer/Königreich
-		// Zypern.shp",
-		// "Königreich Zypern", new Color(238, 234, 73)));
-		// territoryLayers
-		// .add(LayerCreator.getShapeLayer("src/main/resources/gis/shapelayer/politicallayer/OsmanischesReich.shp",
-		// "Osmanisches Reich", new Color(36, 112, 31)));
-		// territoryLayers.add(
-		// LayerCreator.getShapeLayer("src/main/resources/gis/shapelayer/politicallayer/Venezianische
-		// Gebiete.shp",
-		// "Venezianische Gebiete", new Color(195, 54, 176)));
-
 		mContent.addLayers(territoryLayers);
 
 		layersWithoutLocation = mContent.layers().size();
@@ -308,7 +288,7 @@ public class Map extends Composite {
 
 	private void setLegend() {
 		Display display = Display.getCurrent();
-
+		//TODO enable closing on win10
 		legendShell = new Shell(display, SWT.TITLE | SWT.MIN);
 		legendShell.setLayout(LayoutHelper.getVerticalFillLayout());
 		legendShell.setBackground(parent.getDefaultBgColor());
@@ -339,7 +319,7 @@ public class Map extends Composite {
 		return LayoutHelper.getGridData(width, height);
 	}
 
-	private void setLayerVisibility(boolean selected, Layer layer) {
+	protected void setLayerVisibility(boolean selected, Layer layer) {
 		layer.setVisible(selected);
 	}
 
