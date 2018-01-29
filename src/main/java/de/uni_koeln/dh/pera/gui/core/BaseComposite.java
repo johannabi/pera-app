@@ -1,6 +1,7 @@
 package de.uni_koeln.dh.pera.gui.core;
 
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
@@ -20,7 +21,7 @@ public class BaseComposite extends Composite {
 		private Logger logger = LoggerFactory.getLogger(getClass());
 		
 		protected Display display = null;
-		protected List<Node> nodes = null;
+		protected Map<Integer, Node> nodes = null;
 		protected int currentID = 0;
 		protected Player player = null; //TODO does imgComp really needs player?
 		
@@ -37,7 +38,7 @@ public class BaseComposite extends Composite {
 		this.display = getDisplay();
 	}
 
-	public BaseComposite(Composite parent, List<Node> nodes, Player player) {
+	public BaseComposite(Composite parent, Map<Integer, Node> nodes, Player player) {
 		super(parent, SWT.NONE);
 		parentWidth = parent.getBounds().width;
 		
@@ -82,11 +83,11 @@ public class BaseComposite extends Composite {
 		return new Font(display, data);
 	}
 
-	public List<Node> getNodes() {
+	public Map<Integer, Node> getNodes() {
 		return nodes;
 	}
 
-	public void setNodes(List<Node> nodes) {
+	public void setNodes(Map<Integer, Node> nodes) {
 		this.nodes = nodes;
 	}
 

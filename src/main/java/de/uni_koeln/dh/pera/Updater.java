@@ -3,6 +3,7 @@ package de.uni_koeln.dh.pera;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,7 +32,7 @@ public class Updater {
 	private ImgComposite imgComp;
 	private TextOutput output;
 	private TextInput input;
-	private List<Node> nodes = null;
+	private Map<Integer, Node> nodes = null;
 	private Player player;
 
 	public Updater(TextComposite txtComp, ImgComposite imgComp, TextOutput output) {
@@ -53,6 +54,7 @@ public class Updater {
 	public void updateFields() {
 
 		try {
+			//TODO nodes über id und nicht ID
 			// game status before text input
 			int currentID = txtComp.getCurrentID();
 			Node node = nodes.get(currentID);
@@ -65,6 +67,16 @@ public class Updater {
 				notifyInventory = addElements(node);
 			String in = input.getText().toLowerCase().trim();
 
+			if (in.equals("help")) {
+				String currentText = buildNodeText(nodes.get(currentID));
+				String help = "save: speichert am letzten Kapitel und schließt das Spiel\n"
+						+ "inventory: zeigt das Inventar an\n"
+						+ "about: zeigt das Impressum an\n\n";
+				output.setText(help + currentText);
+				input.setText("");
+				return;
+			}
+			
 			// proof text input
 			// special cases
 			if (in.equals("demo")) {
@@ -77,12 +89,18 @@ public class Updater {
 			}
 
 			if (in.equals("about")) {
-				// TODO about us
+				String currentText = buildNodeText(nodes.get(currentID));
+				String credits = "Credits\n"
+						+ "Johanna Binnewitt\n"
+						+ "Stefan Krause\n"
+						+ "Anne-K. Pietsch\n"
+						+ "Universität zu Köln\n\n";
+				output.setText(credits + currentText);
 				input.setText("");
 				return;
 			}
 
-			if (in.equals("i")) { // show inventory
+			if (in.equals("inventory")) { // show inventory
 				String newText = getInventory(output.getText(), player);
 				output.setText(newText);
 				input.setText("");
@@ -207,7 +225,7 @@ public class Updater {
 		if (!player.getInventory().isEmpty()) {
 			StringBuilder sb = new StringBuilder();
 			for (String icon : player.getInventory()) {
-				sb.append(icon + "\t"); //TODO format inventory output
+				sb.append(icon + "\n"); //TODO format inventory output
 			}
 			sb.append("\n\n" + currentText);
 			return sb.toString();

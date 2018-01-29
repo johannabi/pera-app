@@ -99,7 +99,7 @@ public class ImgComposite extends BaseComposite {
 		super(parent);
 	}
 
-	public ImgComposite(Composite parent, List<Node> nodes, Player player) {
+	public ImgComposite(Composite parent, java.util.Map<Integer, Node> nodes, Player player) {
 		super(parent, nodes, player);
 	}
 

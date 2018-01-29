@@ -143,14 +143,27 @@ public class Map extends Composite {
 
 		MapContent mContent = new MapContent();
 		try {
-			mContent.addLayer(getRasterLayer("src/main/resources/gis/rasterlayer/textadventure.tif", "karte"));
+			
+			mContent.addLayer(getRasterLayer("src/main/resources/gis/rasterlayer/Textadventrue_neu_Proj.tif", "karte"));
+			Layer layer = mContent.layers().get(0);
+			logger.info(layer.getTitle() + "\n" + layer.getFeatureSource().getSchema()
+					.getCoordinateReferenceSystem().getCoordinateSystem().toString());
 			mContent.addLayer(getShapeLayer("src/main/resources/gis/shapelayer/Reiseroute.shp",
 					"routen", new Color(202,30,0), true));
+			layer = mContent.layers().get(1);
+			logger.info(layer.getTitle() + "\n" + layer.getFeatureSource().getSchema()
+					.getCoordinateReferenceSystem().getCoordinateSystem().toString());
 			mContent.addLayer(getShapeLayer("src/main/resources/gis/shapelayer/Standorte_neu.shp", 
 					"orte", new Color(202,30,0))); //TODO font
+			layer = mContent.layers().get(2);
+			logger.info(layer.getTitle() + "\n" + layer.getFeatureSource().getSchema()
+					.getCoordinateReferenceSystem().getCoordinateSystem().toString());
 			mContent.addLayer(getShapeLayer
 					("src/main/resources/gis/shapelayer/politicallayer/AegyptischesMamelukenSultanat.shp",
 							"AegyptischesMamelukenSultanat", new Color(180,133,21)));
+			layer = mContent.layers().get(3);
+			logger.info(layer.getTitle() + "\n" + layer.getFeatureSource().getSchema()
+					.getCoordinateReferenceSystem().getCoordinateSystem().toString());
 			mContent.addLayer(getShapeLayer
 					("src/main/resources/gis/shapelayer/politicallayer/Byzantinische Gebiete.shp/",
 							"Byzantinische Gebiete", new Color(227,25,77)));
@@ -250,7 +263,6 @@ public class Map extends Composite {
 
 	private Layer getRasterLayer(String path, String title) {
 		File rasterFile = new File(path);
-
 		AbstractGridFormat format = GridFormatFinder.findFormat(rasterFile);
 		Hints hints = new Hints();
 
@@ -267,15 +279,14 @@ public class Map extends Composite {
 		
 		ContrastEnhancement ce = sf.contrastEnhancement(ff.literal(1.0), ContrastMethod.NORMALIZE);
 		SelectedChannelType sct = sf.createSelectedChannelType(String.valueOf(/* band */1), ce);
-
+	
 		RasterSymbolizer sym = sf.getDefaultRasterSymbolizer();
 		ChannelSelection sel = sf.channelSelection(sct);
 		sym.setChannelSelection(sel);
-
 		return SLD.wrapSymbolizers(sym);
 	}
 	/**
-	 * default: layer set insivible
+	 * default: layer set invisible
 	 * @param path
 	 * @param title
 	 * @param color
@@ -291,14 +302,15 @@ public class Map extends Composite {
 		ShapefileDataStore shapeFile = new ShapefileDataStore(file.toURI().toURL());
 		SimpleFeatureSource featureSource = shapeFile.getFeatureSource();
 
-		try {
-			CoordinateReferenceSystem crs = CRS.decode("EPSG:3857");
-			shapeFile.forceSchemaCRS(crs);
-		} catch (NoSuchAuthorityCodeException e) {
-			e.printStackTrace();
-		} catch (FactoryException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			CoordinateReferenceSystem crs = CRS.decode("EPSG:3857");
+//			shapeFile.forceSchemaCRS(crs);
+//			
+//		} catch (NoSuchAuthorityCodeException e) {
+//			e.printStackTrace();
+//		} catch (FactoryException e) {
+//			e.printStackTrace();
+//		}
 
 		Style style = null;
 		if (title.equals("routen"))

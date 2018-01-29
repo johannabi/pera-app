@@ -1,6 +1,7 @@
 package de.uni_koeln.dh.pera.gui.core.text;
 
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Font;
@@ -26,7 +27,7 @@ public class TextComposite extends BaseComposite {
 		this.neighbour = neighbour;
 	}
 	
-	public TextComposite(Composite parent, ImgComposite neighbour, List<Node> nodes, Player player) {
+	public TextComposite(Composite parent, ImgComposite neighbour, Map<Integer, Node> nodes, Player player) {
 		super(parent, nodes, player);
 		this.neighbour = neighbour;
 	}

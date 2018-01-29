@@ -2,7 +2,9 @@ package de.uni_koeln.dh.pera.gui;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.swt.widgets.Composite;
 import org.slf4j.Logger;
@@ -26,12 +28,16 @@ public class ClientWrapper {
 		private Composite parent = null;
 		
 		private Player player = null;
-		private List<Node> nodes = null;
+		private Map<Integer, Node> nodes = null;
 	
 	protected ClientWrapper(Composite parent) {
 		this.parent = parent;
 		try {
-			this.nodes = IO.readJson(new File("src/main/resources/textadventure/textadventure.json"));
+			List<Node> nodeList = IO.readJson(new File("src/main/resources/textadventure/textadventure.json"));
+			nodes = new HashMap<Integer, Node>();
+			for (Node node : nodeList) {
+				nodes.put(node.getId(), node);
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
