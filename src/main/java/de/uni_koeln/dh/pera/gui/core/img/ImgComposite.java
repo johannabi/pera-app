@@ -1,8 +1,6 @@
 package de.uni_koeln.dh.pera.gui.core.img;
 
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.RowLayout;
@@ -12,7 +10,6 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Layout;
 import org.eclipse.swt.widgets.Listener;
-import org.eclipse.swt.widgets.Shell;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -35,6 +32,7 @@ public class ImgComposite extends BaseComposite {
 
 	private Coordinate position = null;
 
+	////////////////LISTENER/////////////////////////////////
 	private Listener placesSelection = new Listener() {
 		public void handleEvent(Event e) {
 			map.setLayerVisibility(
@@ -60,6 +58,7 @@ public class ImgComposite extends BaseComposite {
 		}		
 	};
 
+	///////////////////////CONSTRUCTORS////////////////////////////
 	public ImgComposite(Composite parent) {
 		super(parent);
 	}
@@ -68,6 +67,7 @@ public class ImgComposite extends BaseComposite {
 		super(parent, nodes, player);
 	}
 
+	////////////METHODS/////////////////////////////
 	public void init(int height) {
 		logger.info("Initialize image composite...");
 		super.init(height);
@@ -94,6 +94,27 @@ public class ImgComposite extends BaseComposite {
 		map.updatePosition(position);
 
 		setControls();
+	}
+	
+	public int getInnerWidth() {
+		return map.getWidth();
+	}
+
+	public void updateAll() {
+		header.setText(getChapter());
+
+		Coordinate newCoordinate = new Coordinate(Double.parseDouble(nodes.get(currentID).getLatitude()),
+				Double.parseDouble(nodes.get(currentID).getLongitude()));
+
+		if (!newCoordinate.equals(position)) { // if position changed
+			position = newCoordinate;
+			map.updatePosition(position);
+		}
+
+	}
+	
+	protected int getWidth() {
+		return parentWidth;
 	}
 
 	private void setHeader(int headHeight) {
@@ -141,27 +162,6 @@ public class ImgComposite extends BaseComposite {
 	private Layout getCtrlLayout() {
 		RowLayout layout = LayoutHelper.getRowLayout(parentWidth / 8);
 		return layout;
-	}
-
-	protected int getWidth() {
-		return parentWidth;
-	}
-
-	public int getInnerWidth() {
-		return map.getWidth();
-	}
-
-	public void updateAll() {
-		header.setText(getChapter());
-
-		Coordinate newCoordinate = new Coordinate(Double.parseDouble(nodes.get(currentID).getLatitude()),
-				Double.parseDouble(nodes.get(currentID).getLongitude()));
-
-		if (!newCoordinate.equals(position)) { // if position changed
-			position = newCoordinate;
-			map.updatePosition(position);
-		}
-
 	}
 
 	private String getChapter() {

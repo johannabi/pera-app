@@ -57,6 +57,8 @@ public class Updater {
 			// game status before text input
 			int currentID = txtComp.getCurrentID();
 			Node node = nodes.get(currentID);
+			
+			logger.info(node.getId() + " - " + currentID + " " + node.getOpenanswer().toString());
 			String currentChapter = node.getChapter();
 			Boolean notifyInventory = false; // variable is set to true every time the inventory is updated (added,
 												// deleted,...)
@@ -83,6 +85,7 @@ public class Updater {
 				currentID = player.getCurrentChapterNode();
 
 				node = nodes.get(currentID);
+				
 				currentChapter = node.getChapter();
 				notifyInventory = false; // variable is set to true every time the inventory is updated (added,
 													// deleted,...)
@@ -124,10 +127,12 @@ public class Updater {
 			// regular cases
 			if (node.getOpenanswer()) { // behandelt freie Antwort
 
-				String correct = node.getChoices().get(0).getChoice();
-				if (correct.equals(in)) {
+				String correct = node.getChoices().get(0).getChoice().toLowerCase(); //TODO EINFÜGEN
+				if (correct.equals(in.toLowerCase())) { //TODO EINFÜGEN!
 					currentID = node.getChoices().get(0).getNext();
 					updateNode = nodes.get(currentID);
+					imgComp.setCurrentID(currentID); //TODO EINFÜGEN!
+					txtComp.setCurrentID(currentID);
 					output.setText(buildNodeText(updateNode));
 				} else {
 					String prevText = buildNodeText(node);

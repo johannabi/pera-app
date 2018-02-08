@@ -16,89 +16,70 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Shell;
-import org.geotools.coverage.grid.io.AbstractGridFormat;
-import org.geotools.coverage.grid.io.GridCoverage2DReader;
-import org.geotools.coverage.grid.io.GridFormatFinder;
-import org.geotools.data.DataUtilities;
 import org.geotools.data.FileDataStore;
 import org.geotools.data.FileDataStoreFinder;
-import org.geotools.data.shapefile.ShapefileDataStore;
 import org.geotools.data.simple.SimpleFeatureSource;
-import org.geotools.factory.CommonFactoryFinder;
-import org.geotools.factory.Hints;
-import org.geotools.feature.DefaultFeatureCollection;
 import org.geotools.feature.FeatureCollection;
-import org.geotools.feature.SchemaException;
-import org.geotools.feature.simple.SimpleFeatureBuilder;
-import org.geotools.gce.geotiff.GeoTiffFormat;
-import org.geotools.geometry.jts.JTS;
-import org.geotools.geometry.jts.JTSFactoryFinder;
 import org.geotools.map.FeatureLayer;
-import org.geotools.map.GridReaderLayer;
 import org.geotools.map.Layer;
 import org.geotools.map.MapContent;
-import org.geotools.referencing.CRS;
 import org.geotools.renderer.lite.StreamingRenderer;
-import org.geotools.styling.ChannelSelection;
-import org.geotools.styling.ContrastEnhancement;
+import org.geotools.styling.FeatureTypeStyle;
+import org.geotools.styling.Fill;
 import org.geotools.styling.Font;
-import org.geotools.styling.RasterSymbolizer;
+import org.geotools.styling.Graphic;
+import org.geotools.styling.GraphicImpl;
+import org.geotools.styling.PointSymbolizer;
+import org.geotools.styling.Rule;
 import org.geotools.styling.SLD;
-import org.geotools.styling.SelectedChannelType;
+import org.geotools.styling.Stroke;
 import org.geotools.styling.Style;
-import org.geotools.styling.StyleFactory;
+import org.geotools.styling.StyleBuilder;
+import org.geotools.styling.TextSymbolizer;
 import org.geotools.swt.SwtMapPane;
-import org.opengis.feature.simple.SimpleFeature;
-import org.opengis.feature.simple.SimpleFeatureType;
-import org.opengis.filter.FilterFactory2;
-import org.opengis.referencing.FactoryException;
-import org.opengis.referencing.NoSuchAuthorityCodeException;
-import org.opengis.referencing.crs.CoordinateReferenceSystem;
-import org.opengis.referencing.operation.MathTransform;
-import org.opengis.referencing.operation.TransformException;
-import org.opengis.style.ContrastMethod;
+import org.opengis.style.GraphicalSymbol;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.vividsolutions.jts.geom.Coordinate;
-import com.vividsolutions.jts.geom.GeometryFactory;
-import com.vividsolutions.jts.geom.Point;
 
 import de.uni_koeln.dh.pera.gui.misc.LayoutHelper;
 import de.uni_koeln.dh.pera.util.Calc;
 
 public class Map extends Composite {
 
-	//////////////// ATTRIBUTES/////////////////////////////
+	//////////////// ATTRIBUTES /////////////////////////////
 	private Logger logger = LoggerFactory.getLogger(getClass());
 
 	protected static final int H_HIMGCOMP_PCT = 75;
+	// TODO check PCT
 	private static final int W_WIMGCOMP_PCT = /* 80 */77;
 
 	private static Color BLACK_AWT = Color.BLACK,
 			DARK_RED_AWT = new Color(202, 30, 0),
 			CURRENT_POSITION = Color.YELLOW, //TODO STEFAN color star
 			LAST_POSITION = Color.RED;
-	
+
 	private int STAR_PROPORTION = 40; //TODO STEFAN size star
 
 	private ImgComposite parent = null;
-
-	private GridLayout layout = null;
-
-	/** number of layers (exclusive the layers of player location */
-	private int layersWithoutLocation = 0;
-
-	private SwtMapPane mPane = null;
 	private Shell legendShell;
+	
+	private GridLayout layout = null;
 
 	private int width = 0, height = 0;
 
-	private List<Layer> territoryLayers;
 	private java.util.Map<String, Integer[]> territoriesMap;
+	
+	private List<Layer> territoryLayers;
 	private Layer routeLayer;
-	private Layer placesLayer;
-
+	private Layer placesLayer;	
+	
+	private SwtMapPane mPane = null;
+	
+	/** number of layers (exclusive the layers of player location */
+	private int layersWithoutLocation = 0;
+	
 	/// LISTENERS////////////////////
 	private Listener labelListener = new Listener() {
 		public void handleEvent(Event e) {
@@ -239,16 +220,18 @@ public class Map extends Composite {
 		mContent.addLayer(
 				LayerCreator.getRasterLayer("src/main/resources/gis/rasterlayer/Textadventrue_neu_Proj.tif", "karte"));
 
+		territoryLayers = setShapeLayers("territories");
+		mContent.addLayers(territoryLayers);
+		
 		routeLayer = setShapeLayer("Reiseroute", true);		// parent.getRouteSelection()	
 		mContent.addLayer(routeLayer);
 		placesLayer = setShapeLayer("Standorte_neu", false);	// parent.getCitySelection()
 		mContent.addLayer(placesLayer);
 		
-		territoryLayers = setShapeLayers("territories");
-		mContent.addLayers(territoryLayers);
-
 		layersWithoutLocation = mContent.layers().size();
 
+		////////////
+		
 		mPane = new SwtMapPane(this, SWT.NO_BACKGROUND);
 		mPane.setBackground(parent.getDefaultBgColor()); // TODO pane standard color?
 		mPane.setRenderer(new StreamingRenderer());
@@ -323,6 +306,52 @@ public class Map extends Composite {
 		layer.setVisible(selected);
 	}
 
+	// TODO split
+	private Style createPointStyle(Color lineColor, Color fillColor, float size, String field, Color textColor, Font labelFont) {
+		StyleBuilder sb = new StyleBuilder();
+	    Style style = sb.createStyle();
+
+	    /*
+	     * POINTSYMBOLIZER
+	     * */
+	    Fill fill = LayerCreator.sf.getDefaultFill();
+	    fill.setColor(LayerCreator.ff.literal(fillColor));
+	    
+	    Stroke stroke = LayerCreator.sf.getDefaultStroke();
+	    stroke.setColor(LayerCreator.ff.literal(lineColor));
+	    
+	    GraphicalSymbol symbol = LayerCreator.sf.mark(LayerCreator.ff.literal("Circle"), fill, stroke);
+	    	    
+	    Graphic circle = new GraphicImpl(LayerCreator.ff);	    
+	    circle.graphicalSymbols().add(symbol);
+	    circle.setSize(LayerCreator.ff.literal(size));	    
+	    
+	    // String name, Expression geometry, Description description, Unit<?> unit, Graphic graphic
+	    PointSymbolizer pointSymbolizer = LayerCreator.sf.pointSymbolizer(
+	    			"point", 
+	    			LayerCreator.ff.property("the_geom"), 
+	    			null, 
+	    			null, 
+	    			circle);
+	    
+	    Rule pointRule = sb.createRule(pointSymbolizer);
+
+	    /*
+	     * TEXTSYMBOLIZER
+	     * */
+	    // Color color, Font font, String attributeName
+	    TextSymbolizer textSymbolizer = sb.createTextSymbolizer(
+	    			textColor, 
+	    			labelFont, 
+	    			field);
+	    Rule textRule = sb.createRule(textSymbolizer);
+	    
+	    FeatureTypeStyle featureTypeStyle = sb.createFeatureTypeStyle("Feature", new Rule[] { pointRule, textRule });
+	    style.featureTypeStyles().add(featureTypeStyle);
+	    
+	    return style;
+	}
+	
 	private Layer setShapeLayer(String subPath, boolean visible) {
 		Layer layer = null;
 		// TODO file reference (deployment)
@@ -339,8 +368,12 @@ public class Map extends Composite {
 				if (subPath.startsWith("Standorte")) {
 					float size = (float) width / 80; // TODO pct calculation
 
-					style = SLD.createPointStyle("Circle", BLACK_AWT, DARK_RED_AWT, 1.0f, size, "Standort",
-							LayerCreator.getPlacesFont(width));
+					/*style = SLD.createPointStyle("Circle", BLACK_AWT, DARK_RED_AWT, 1.0f, size, "Standort",
+							LayerCreator.getPlacesFont(width));*/
+					style = createPointStyle(
+							BLACK_AWT, DARK_RED_AWT, size,
+							"Standort",
+							new Color(0,128,255), LayerCreator.getPlacesFont(width));
 				} else if (subPath.startsWith("Reiseroute")) {
 					float size = (float) width / 400; // TODO pct calculation
 

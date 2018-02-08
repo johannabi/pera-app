@@ -3,7 +3,7 @@
     {
         "id": 0,
         "chapter": "Willkommen!",
-        "text": "Willkommen meine Damen und Herren. Es ist eine Freude, Sie bei meiner Reise willkommen zu heißen. Mein Name ist Pero und ich bin stolzer Kastilier und enger Vertrauter unseres verehrten Königs Juans II. Außerdem bin ich ein direkter Nachfahre des berühmtem Pedro Ruiz Tafur, welcher bei Cordoba unsere Truppen zum Sieg über die gefürchteten Mauren führte.Auch ich beabsichtige meiner Familie und meinem Titel alle Ehrezu machen. Um dies zu erreichen, habe ich beschlossen, den Waffenstillstand zwischen Kastilien und Granada zu nutzen und bin im Jahr 1435 aufgebrochen, um die Fremde zu erkunden. Meine Abenteuer führten mich nach Italien, Palästina und Ägypten. Doch nun ist es an der Zeit, weiter zu reisen. Mein nächstes Ziel steht fest -  Konstantinopel. Sie bekommen die einzigartige Gelegenheit, mich bei diesem Kapitel meiner Reise zu begleiten. Doch Vorsicht! Gefahren lauern an jeder Ecke, sodass jede falsche Entscheidung schnell zur letzten werden kann…",
+        "text": "Willkommen meine Damen und Herren. Es ist eine Freude, Sie bei meiner Reise willkommen zu heißen. Mein Name ist Pero und ich bin stolzer Kastilier und enger Vertrauter unseres verehrten Königs Juans II. Außerdem bin ich ein direkter Nachfahre des berühmtem Pedro Ruiz Tafur, welcher bei Cordoba unsere Truppen zum Sieg über die gefürchteten Mauren führte. Auch ich beabsichtige meiner Familie und meinem Titel alle Ehre zu machen. Um dies zu erreichen, habe ich beschlossen, den Waffenstillstand zwischen Kastilien und Granada zu nutzen und bin im Jahr 1435 aufgebrochen, um die Fremde zu erkunden. Meine Abenteuer führten mich nach Italien, Palästina und Ägypten. Doch nun ist es an der Zeit, weiter zu reisen. Mein nächstes Ziel steht fest - Konstantinopel. Sie bekommen die einzigartige Gelegenheit, mich bei diesem Kapitel meiner Reise zu begleiten. Doch Vorsicht! Gefahren lauern an jeder Ecke, sodass jede falsche Entscheidung schnell zur Letzten werden kann…",
         "latitude": "31.2135",
         "longitude": "29.927661",
         "openanswer": false,
@@ -60,7 +60,12 @@
         "choices":[
         {
             "choice": "Ich überreiche den Brief meines Vaters an den Gouverneur.",
-            "next": 5
+            "next": 5,
+            "accesses":[
+            {
+                "access": "Brief"
+            }
+            ]
         },
         {
             "choice": "Ich betrinke mich am Wein und mache der schönen Tochter den Hof. ",
@@ -196,7 +201,7 @@
     {
         "id": 12,
         "chapter": "Kapitel III - Nikosia",
-        "text": "Ich reise zum Schloss des Königs und treffe dort einen Kardinal und viele bedeutende Herren des Hofes. Sie sind gekommen, um mich in Empfang zu nehmen und zum König zu geleiten.",
+        "text": "Ich reise zum Schloss des Königs und treffe dort einen Kardinal und viele bedeutsame Herren des Hofes. Sie sind gekommen, um mich in Empfang zu nehmen und zum König zu geleiten.",
         "latitude": "35.166667",
         "longitude": "33.35",
         "openanswer": false,
@@ -297,7 +302,7 @@
     {
         "id": 18,
         "chapter": "Kapitel III - Nikosia",
-        "text": "Am nächsten Tag schickt der König nach mir. In Gegenwart des Kardinals und gewisser Adliger bittet er mich, von ihm zu nehmen, was ich für die Kosten meiner Reise haben will. Ich antworte ihm, dass ich seiner Majestät für immer verpflichtet sei, aber seine Großzügigkeit keinesfalls ausnutzen möchte. Ich bitte ihn einzig um sicheres Geleit aus Zypern und um ein Schiff, um mich nach Rhodos zu begleiten.",
+        "text": "Am nächsten Tag schickt der König nach mir. In Gegenwart des Kardinals und gewisser Adliger bittet er mich, von ihm zu nehmen, was ich für die Kosten meiner Reise haben will. Ich antworte ihm, dass ich seiner Majestät für immer verpflichtet sei, aber seine Großzügigkeit keinesfalls ausnutzen möchte. Ich bitte ihn einzig um sicheres Geleit aus Zypern und um ein Schiff, welches mich nach Rhodos begleitet.",
         "latitude": "35.166667",
         "longitude": "33.35",
         "openanswer": false,
@@ -339,7 +344,7 @@
     {
         "id": 20,
         "chapter": "Kapitel IV – Auf dem Weg nach Rhodos",
-        "text": "Mit meinem kleineren alten Schiff und dem vollbeladenen Schiff vom König vom Zypern fahren wir am Golf von Satalia auf dem Weg in die Türkei immer weiter aus Meer hinaus. Aber noch bevor die Uhr zwei schlägt, sehen wir eine bewaffnete türkische Galeere auf uns zukommen, mit der Absicht, uns zu entern und zu zerstören. Meine gesamte Besatzung sieht mich Rat suchend an. ",
+        "text": "Mit meinem kleineren alten Schiff und dem vollbeladenen Schiff vom König vom Zypern fahren wir am Golf von Antalya auf dem Weg in die Türkei immer weiter auf das Meer hinaus. Aber noch bevor die Uhr zwei schlägt, sehen wir eine bewaffnete türkische Galeere auf uns zukommen, mit der Absicht, uns zu entern und zu zerstören. Meine gesamte Besatzung sieht mich Rat suchend an. ",
         "latitude": "36.668419",
         "longitude": "30.9375",
         "openanswer": false,
@@ -375,7 +380,7 @@
     {
         "id": 22,
         "chapter": "Kapitel IV – Auf dem Weg nach Rhodos",
-        "text": "Wir kämpfen mit Segeln und Rudern, um mehr Fahrt aufzunehmen und ihnen zu entkommen, aber es scheint kein Entrinnen zu geben. Unsere Arme und Hände werden stetig müder. Ich habe außerordentliches Glück, da ich einen ganz besonderen Bootsmann auf meiner katalanischen Galeere dabeihabe. Er hat vor einiger Zeit einen Neffen seines damaligen Kapitäns im Trunk getötet. Daraufhin wurde er dazu verurteilt, am Hofe des Königs gehängt zu werden. Aber das Seil an dem er aufgeknüpft werden sollte, gab unter seinem Gewicht nach und riss entzwei. Ich, der mir das Spektakel mitangesehen hatte, sah es als Zeichen Gottes und bat den Kapitän, ihn mir zu geben. Der Kapitän stimmte meiner Bitte zu und der Bootsmann wurde einer der geschicktesten Navigatoren, mit denen ich je reisen durfte.",
+        "text": "Wir kämpfen mit Segeln und Rudern, um mehr Fahrt aufzunehmen und ihnen zu entkommen, aber es scheint kein Entrinnen zu geben. Unsere Arme und Hände werden stetig müder. Ich habe außerordentliches Glück, da ich einen ganz besonderen Bootsmann auf meiner katalanischen Galeere dabeihabe. Er hat vor einiger Zeit einen Neffen seines damaligen Kapitäns im Trunk getötet. Daraufhin wurde er dazu verurteilt, am Hofe des Königs gehängt zu werden. Aber das Seil, an dem er aufgeknüpft werden sollte, gab unter seinem Gewicht nach und riss entzwei. Ich, der mir das Spektakel mitangesehen hatte, sah es als Zeichen Gottes und bat den Kapitän, ihn mir zu geben. Der Kapitän stimmte meiner Bitte zu und der Bootsmann wurde einer der geschicktesten Navigatoren, mit denen ich je reisen durfte.",
         "latitude": "36.668419",
         "longitude": "30.9375",
         "openanswer": false,
@@ -404,21 +409,21 @@
     {
         "id": 24,
         "chapter": "Kapitel IV – Auf dem Weg nach Rhodos",
-        "text": "Durch die entstandene Verwirrung nutzen wir die Zeit, unsere Distanz zu vergrößern. Alle nehmen die Ruder in die Hände und arbeiten so gut wie sie nur können. Als die Nacht schließlich hereinbricht, raffen wir die Segel, löschen sämtliche Lichter und drehen steil nach Steuerbord. Wir rudern so lautlos wie möglich und passierten die Galeere unserer Feinde, ohne dass jemand Notiz von uns nimmt. Wir ändern schließlich unseren Kurs und entkommen unseren Verfolgern endgültig.",
+        "text": "Durch die entstandene Verwirrung nutzen wir die Zeit, unsere Distanz zu vergrößern. Alle nehmen die Ruder in die Hände und arbeiten so gut wie sie nur können. Als die Nacht schließlich hereinbricht, raffen wir die Segel, löschen sämtliche Lichter und drehen steil nach Steuerbord. Wir rudern so lautlos wie möglich und passieren die Galeere unserer Feinde, ohne dass jemand Notiz von uns nimmt. Wir ändern schließlich unseren Kurs und entkommen unseren Verfolgern endgültig.",
         "latitude": "36.668419",
         "longitude": "30.9375",
         "openanswer": false,
         "choices":[
         {
             "choice": "Weiter",
-            "next": 25
+            "next": 124
         }
         ]
     },
     {
         "id": 25,
         "chapter": "Kapitel IV – Auf dem Weg nach Rhodos",
-        "text": "Der restliche Weg nach Rhodos ist durch schlechtes Wetter erschwert und die Stimmung von mir und meiner Besatzung leidet immer noch unter den Folgen des Angriffs. Aber nach zwei langen Tagen Fahrt kommen wir endlich in Rhodos an. Ich verabschiede mich von meiner Crew und wir beschließen alle, getrennte Wege zu gehen. Ich betrete erleichtert den Hafen und gehe zur Herberge von Bruder Nuño de Cabrera, einem ausgezeichneten Ritter, welcher in Kastilien geboren wurde. Er ist dort wohl der reichste und berühmteste Ritter und empfängt mich sehr fröhlich und äußerst wohlwollend. Er versorgt mich außerdem mit ausreichend Proviant für meine weitere Reise. Aufgrund seiner Gesellschaft und Gastfreundschaft verzweifele ich nicht am Erlebten und schöpfe neue Kraft für meine weitere Reise. ",
+		"text":"Er ist geborener Kastilier und wohl der reichste und berühmteste Ritter auf ganz Rhodos. Er empfängt mich äußerst wohlwollend und versorgt mich mit ausreichend Proviant für meine weitere Reise. Aufgrund seiner Gesellschaft und Gastfreundschaft verzweifele ich nicht am Erlebten und schöpfe neue Kraft.",
         "latitude": "36.668419",
         "longitude": "30.9375",
         "openanswer": false,
@@ -612,7 +617,7 @@
     {
         "id": 37,
         "chapter": "Kapitel VII – Konstantinopel: Ein Besuch beim Kaiser",
-        "text": "Ich muss eine Stunde im Foyer der Eingangshalle warten, während verschiedene Ritter immer wieder an mir vorbeieilen. Durch die Wartezeit entwerfe ich einen Plan, über was ich mit dem Kaiser eigentlich reden möchte.",
+        "text": "Ich muss eine Stunde im Foyer der Eingangshalle warten, während verschiedene Ritter immer wieder an mir vorbeieilen. Durch die Wartezeit entwerfe ich einen Plan, worüber ich mit dem Kaiser eigentlich reden möchte.",
         "latitude": "41.006389",
         "longitude": "28.977778",
         "openanswer": false,
@@ -658,7 +663,7 @@
     {
         "id": 40,
         "chapter": "Kapitel VII – Konstantinopel: Ein Besuch beim Kaiser",
-        "text": "Er antwortet mir nicht sofort, aber sagt schließlich, dass ich willkommen sei, zu verweilen und dass er bezüglich der Frage meiner Abstammung die alten Aufzeichnungen von seinen Gelehrten durchsuchen lassen würde. Er wolle sehen, ob die Behauptungen sich als richtig erweisen würden. Nach einer weiteren längeren Wartezeit erzählt man mir schließlich die Geschichte des vierten Kreuzzugs und damit die Wahrheit über meinen Familienstammbaum.",
+        "text": "Er antwortet mir nicht sofort, aber sagt schließlich, dass ich willkommen sei, zu verweilen und dass er, bezüglich der Frage meiner Abstammung, die alten Aufzeichnungen von seinen Gelehrten durchsuchen lassen würde. Er wolle sehen, ob die Behauptungen sich als richtig erweisen würden. Nach einer weiteren längeren Wartezeit erzählt man mir schließlich die Geschichte des vierten Kreuzzugs und damit die Wahrheit über meinen Familienstammbaum. DEMOVERSION ENDS HERE. PAY US IF YOU WANT TO KNOW THE TRUTH.",
         "latitude": "41.006389",
         "longitude": "28.977778",
         "openanswer": false,
@@ -686,7 +691,7 @@
     {
         "id": 42,
         "chapter": "Kapitel VII – Konstantinopel: Ein Besuch beim Kaiser",
-        "text": "Am nächsten Tag schickt der Kaiser nach mir und bittet mich, mit ihm auf die Jagd zu gehen. Er stellt mir eines seiner besten Pferde zur Verfügung. Ich willige ein und gehe mit ihm und seiner wunderschönen Gemahlin, der Kaiserin Maria von Trapezunt, auf die Jagd. Mehrere flüsternde Stimmen am Hof haben mich darüber aufgeklärt, dass dies bereits die dritte Frau des Kaisers ist und noch immer kein Thronfolger gezeugt wurde. Wir haben eine ausgezeichnete Jagd und kehren erst zur Vesperzeit zum Palast zurück, wo ein festliches Abendmahl bereits auf uns wartet.",
+        "text": "Am nächsten Tag schickt der Kaiser nach mir und bittet mich, mit ihm auf die Jagd zu gehen. Er stellt mir eines seiner besten Pferde zur Verfügung. Ich willige ein und gehe mit ihm und seiner wunderschönen Gemahlin, der Kaiserin Maria von Trapezunt, auf die Jagd. Mehrere flüsternde Stimmen am Hof haben mich darüber aufgeklärt, dass dies bereits die dritte Frau des Kaisers sei und noch immer kein Thronfolger gezeugt wurde. Wir haben eine ausgezeichnete Jagd und kehren erst zur Vesperzeit zum Palast zurück, wo ein festliches Abendmahl bereits auf uns wartet.",
         "latitude": "41.031944",
         "longitude": "28.976111",
         "openanswer": false,
@@ -700,7 +705,21 @@
     {
         "id": 43,
         "chapter": "Kapitel VII – Konstantinopel: Ein Besuch beim Kaiser",
-        "text": "Von da an behandelt mich der Kaiser mit großer Zuneigung. Er sagt, dass er es sich wünschen würde, mich in seinem Land zu behalten. Ich solle heiraten und mich niederlassen. Und tatsächlich spiele ich mit dem Gedanken, hier sesshaft zu werden. Aber die Stadt ist schlecht besiedelt, und der Bedarf an guten Soldaten hoch, da die Griechen so viele mächtige Nationen als Feinde haben. Deshalb verwerfe ich die Idee so schnell wie sie gekommen ist auch wieder. Meine Reise soll weitergehen, ich will noch mehr von Griechenland, der Türkei und den Tataren sehen. Als der Kaiser merkt, dass er mich nicht umstimmen kann, befielt er mir, ihn und die Kaiserin noch einmal zu besuchen, bevor ich endgültig in mein Land zurückkehre. Ich schwöre ihm, dass ich dies auf jeden Fall tun werde und verlasse Konstantinopel für ein weiteres Kapitel meines Abenteuers.",
+        "text": "Von da an behandelt mich der Kaiser mit großer Zuneigung. Er sagt, dass er es sich wünschen würde, mich in seinem Land zu behalten. Ich solle heiraten und mich niederlassen. Und tatsächlich spiele ich mit dem Gedanken, hier sesshaft zu werden. Aber die Stadt ist schlecht besiedelt, und der Bedarf an guten Soldaten hoch, da die Griechen so viele mächtige Nationen als Feinde haben. Dabei geht wohl die größte Gefahr für den byzantinischer Kaiser von dem ... aus.",
+		"latitude": "41.006389",
+        "longitude": "28.977778",
+		"openanswer": true,
+		 "choices":[
+        {
+            "choice": "Osmanischen Reich",
+            "next": 44
+        }
+		]
+	},
+	{
+		"id":44,
+		"chapter": "Kapitel VII – Konstantinopel: Ein Besuch beim Kaiser",
+		"text":"Deshalb verwerfe ich die Idee auch wieder. Meine Reise soll weitergehen, ich will noch mehr von Griechenland, der Türkei und den Tataren sehen. Als der Kaiser merkt, dass er mich nicht umstimmen kann, befielt er mir, ihn und die Kaiserin noch einmal zu besuchen, bevor ich endgültig in mein Land zurückkehre. Ich schwöre ihm, dass ich dies auf jeden Fall tun werde und verlasse Konstantinopel für ein weiteres Kapitel meines Abenteuers.",
         "latitude": "41.006389",
         "longitude": "28.977778",
         "openanswer": false,
@@ -708,9 +727,23 @@
         {
             "choice": "THE END",
             "next": 999
+			}
+			]
+    },
+	{ 
+		"id":124,
+		"chapter":"Kapitel V – Land in Sicht",
+		"text": "Der restliche Weg nach Rhodos ist durch schlechtes Wetter erschwert und die Stimmung von mir und meiner Besatzung leidet immer noch unter den Folgen des Angriffs. Aber nach zwei langen Tagen Fahrt erreichen wir endlich Rhodos. Ich verabschiede mich von meiner Crew und wir beschließen, getrennte Wege zu gehen. Ich betrete erleichtert den Hafen und gehe zur Herberge von Bruder Nuño de Cabrera, einem ausgezeichneten Ritter des Hoheitsgebiets ... .", 	
+		"latitude": "36.433333",
+        "longitude": "28.216667",
+		"openanswer": true,
+		 "choices":[
+        {
+            "choice": "Johanniterorden",
+            "next": 25
         }
         ]
-    }
-    
+	}
+         
   ]
 }

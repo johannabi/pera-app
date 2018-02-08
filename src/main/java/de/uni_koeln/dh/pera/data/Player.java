@@ -15,6 +15,7 @@ public class Player {
 	
 	public Player() {
 		inventory = new ArrayList<String>();
+		inventory.add("Brief");
 		currentChapterNode = 0;
 	}
 

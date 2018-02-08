@@ -51,8 +51,8 @@ import com.vividsolutions.jts.geom.Point;
 public class LayerCreator {
 
 	private static GridCoverage2DReader reader = null;
-	private static StyleFactory sf = CommonFactoryFinder.getStyleFactory();
-	private static FilterFactory2 ff = CommonFactoryFinder.getFilterFactory2();
+	protected static StyleFactory sf = CommonFactoryFinder.getStyleFactory();
+	protected static FilterFactory2 ff = CommonFactoryFinder.getFilterFactory2();
 	
 	
 
