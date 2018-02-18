@@ -52,6 +52,8 @@ public class Updater {
 	 * referred output (e.g. text output of the next node)
 	 */
 	public void updateFields() {
+		
+		//TODO warum Krokohaut doppelt??
 
 		try {
 			// game status before text input
